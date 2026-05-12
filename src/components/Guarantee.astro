@@ -1,0 +1,51 @@
+---
+import { ShieldCheck, Phone, Users, Map, ChevronDown } from 'lucide-react';
+---
+<section class="w-full px-5 py-12 bg-surface border-t border-borderLight rounded-t-[32px] mt-[-20px] relative z-10">
+    <div class="text-center mb-8">
+        <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 block">The No-Ghosting Guarantee</span>
+        <h2 class="text-[26px] font-bold text-textPrimary leading-[1.15]">A Partner, Not Just a Developer</h2>
+    </div>
+
+    <div class="flex flex-col gap-6 mb-8">
+        <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0">
+                <ShieldCheck className="w-6 h-6" />
+            </div>
+            <div>
+                <h3 class="text-[16px] font-[650] text-textPrimary mb-1">Structured & Transparent</h3>
+                <p class="text-[14px] text-textSecondary leading-[1.5]">Clear SOWs, timelines, and milestones. You always know what's happening.</p>
+            </div>
+        </div>
+        <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0">
+                <Phone className="w-6 h-6" />
+            </div>
+            <div>
+                <h3 class="text-[16px] font-[650] text-textPrimary mb-1">Direct Communication</h3>
+                <p class="text-[14px] text-textSecondary leading-[1.5]">You work directly with me. I pick up the phone.</p>
+            </div>
+        </div>
+        <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0">
+                <Users className="w-6 h-6" />
+            </div>
+            <div>
+                <h3 class="text-[16px] font-[650] text-textPrimary mb-1">In It for the Long Term</h3>
+                <p class="text-[14px] text-textSecondary leading-[1.5]">I care about your business growth, not just a one-time project.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-surfaceMuted rounded-2xl p-5 border border-borderLight flex gap-4 items-center">
+        <Map className="w-8 h-8 text-textMuted flex-shrink-0" />
+        <div>
+            <h3 class="text-[14px] font-[650] text-textPrimary">Alabama Based</h3>
+            <p class="text-[13px] text-textSecondary">Local developer. Real support. I'm here when you need me.</p>
+        </div>
+    </div>
+    
+    <div class="w-full flex justify-center text-borderStrong mt-10">
+        <ChevronDown className="w-6 h-6" />
+    </div>
+</section>

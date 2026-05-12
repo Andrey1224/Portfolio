@@ -1,86 +1,65 @@
 ---
-import { Gauge, Smartphone, TriangleAlert, TrendingDown, Star, ArrowDown } from 'lucide-react';
+import { Gauge, Smartphone, TriangleAlert, DollarSign, Star, ChevronDown } from 'lucide-react';
 ---
+<section class="w-full px-5 py-12 bg-surfaceWarm border-t border-borderLight flex flex-col items-center">
+    <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2">The Problem</span>
+    <h2 class="text-[28px] leading-[1.15] font-bold text-textPrimary mb-4 text-center">Is your website<br>an asset — or a liability?</h2>
+    <p class="text-[15px] text-textSecondary text-center mb-10">Most local business sites are "Digital Ghost Towns".</p>
 
-<!-- ========================================== -->
-<!-- СЕКЦИЯ 2: THE PROBLEM (Sticky Slide-Over)  -->
-<!-- ========================================== -->
-<section class="sticky-section sticky top-0 w-full min-h-[100dvh] bg-surfaceWarm border-t border-borderLight shadow-[0_-24px_80px_rgba(28,25,23,0.08)] rounded-t-[40px] flex flex-col justify-center py-24 z-20 relative">
-    <div class="max-w-[1240px] w-full mx-auto px-6">
-        
-        <!-- Заголовок секции -->
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <h2 class="text-[34px] sm:text-[44px] leading-[1.12] tracking-[-0.03em] font-bold text-textPrimary mb-6">
-                Is your website an asset — <br class="hidden sm:block"/>or a liability?
-            </h2>
-            <p class="text-[18px] text-textSecondary leading-[1.65]">
-                Most small business websites are holding them back. If any of these sound familiar, you're not alone.
-            </p>
+    <!-- Вертикальный список проблем -->
+    <div class="flex flex-col gap-3 w-full mb-8">
+        <!-- Проблема 1 -->
+        <div class="bg-surface border border-borderLight rounded-2xl p-4 flex gap-4 items-start shadow-subtle">
+            <div class="w-10 h-10 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0 mt-1">
+                <Gauge className="w-5 h-5" />
+            </div>
+            <div>
+                <h3 class="text-[15px] font-[650] text-textPrimary mb-1">Slow & Bloated</h3>
+                <p class="text-[13px] text-textSecondary leading-[1.5]">Taking 5+ seconds to load, killing your Google ranking.</p>
+            </div>
         </div>
-
-        <!-- Сетка карточек с проблемами (4 колонки) -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            
-            <!-- Карточка 1: Медленный сайт -->
-            <div class="bg-surface border border-borderLight rounded-[24px] p-8 shadow-subtle hover:shadow-card transition-shadow">
-                <div class="w-12 h-12 bg-surfaceMuted rounded-full flex items-center justify-center mb-6 text-textPrimary">
-                    <Gauge className="w-6 h-6 stroke-[1.75]" />
-                </div>
-                <h3 class="text-[20px] font-[650] leading-[1.25] text-textPrimary mb-3">Slow & Bloated</h3>
-                <p class="text-[16px] leading-[1.6] text-textSecondary">
-                    Slow load times frustrate visitors and hurt your Google visibility.
-                </p>
+        <!-- Проблема 2 -->
+        <div class="bg-surface border border-borderLight rounded-2xl p-4 flex gap-4 items-start shadow-subtle">
+            <div class="w-10 h-10 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0 mt-1">
+                <Smartphone className="w-5 h-5" />
             </div>
-
-            <!-- Карточка 2: Проблемы с мобильной версией -->
-            <div class="bg-surface border border-borderLight rounded-[24px] p-8 shadow-subtle hover:shadow-card transition-shadow">
-                <div class="w-12 h-12 bg-surfaceMuted rounded-full flex items-center justify-center mb-6 text-textPrimary">
-                    <Smartphone className="w-6 h-6 stroke-[1.75]" />
-                </div>
-                <h3 class="text-[20px] font-[650] leading-[1.25] text-textPrimary mb-3">Mobile-Broken</h3>
-                <p class="text-[16px] leading-[1.6] text-textSecondary">
-                    Customers leave when your site is hard to use on their phone.
-                </p>
+            <div>
+                <h3 class="text-[15px] font-[650] text-textPrimary mb-1">Mobile-Broken</h3>
+                <p class="text-[13px] text-textSecondary leading-[1.5]">Frustrating customers who try to find you on their phones.</p>
             </div>
-
-            <!-- Карточка 3: Технически заброшен -->
-            <div class="bg-surface border border-borderLight rounded-[24px] p-8 shadow-subtle hover:shadow-card transition-shadow">
-                <div class="w-12 h-12 bg-surfaceMuted rounded-full flex items-center justify-center mb-6 text-warning">
-                    <TriangleAlert className="w-6 h-6 stroke-[1.75]" />
-                </div>
-                <h3 class="text-[20px] font-[650] leading-[1.25] text-textPrimary mb-3">Technically Abandoned</h3>
-                <p class="text-[16px] leading-[1.6] text-textSecondary">
-                    Old plugins, broken forms, and no one responsible for maintenance.
-                </p>
-            </div>
-
-            <!-- Карточка 4: Потерянные лиды -->
-            <div class="bg-surface border border-borderLight rounded-[24px] p-8 shadow-subtle hover:shadow-card transition-shadow">
-                <div class="w-12 h-12 bg-surfaceMuted rounded-full flex items-center justify-center mb-6 text-textPrimary">
-                    <TrendingDown className="w-6 h-6 stroke-[1.75]" />
-                </div>
-                <h3 class="text-[20px] font-[650] leading-[1.25] text-textPrimary mb-3">Lost Leads & Revenue</h3>
-                <p class="text-[16px] leading-[1.6] text-textSecondary">
-                    Forms fail, calls are missed, and opportunities quietly slip away.
-                </p>
-            </div>
-
         </div>
-
-        <!-- Строка-обещание снизу -->
-        <div class="max-w-3xl mx-auto bg-surface border border-borderLight rounded-full py-4 px-6 sm:px-10 shadow-subtle flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
-            <div class="text-success flex-shrink-0">
-                <Star className="w-6 h-6 fill-success/20 stroke-[1.5]" />
+        <!-- Проблема 3 -->
+        <div class="bg-surface border border-borderLight rounded-2xl p-4 flex gap-4 items-start shadow-subtle">
+            <div class="w-10 h-10 rounded-full bg-surfaceMuted flex items-center justify-center text-warning flex-shrink-0 mt-1">
+                <TriangleAlert className="w-5 h-5" />
             </div>
-            <p class="text-[16px] font-[550] text-textPrimary">
-                Your local technical partner who fixes what’s broken and builds what lasts.
-            </p>
+            <div>
+                <h3 class="text-[15px] font-[650] text-textPrimary mb-1">Technically Abandoned</h3>
+                <p class="text-[13px] text-textSecondary leading-[1.5]">Built on old WordPress versions by a dev who "ghosted" you.</p>
+            </div>
         </div>
+        <!-- Проблема 4 -->
+        <div class="bg-surface border border-borderLight rounded-2xl p-4 flex gap-4 items-start shadow-subtle">
+            <div class="w-10 h-10 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0 mt-1">
+                <DollarSign className="w-5 h-5" />
+            </div>
+            <div>
+                <h3 class="text-[15px] font-[650] text-textPrimary mb-1">Lost Leads & Revenue</h3>
+                <p class="text-[13px] text-textSecondary leading-[1.5]">Forms don't work, calls aren't tracked, and opportunities slip away.</p>
+            </div>
+        </div>
+    </div>
 
+    <!-- Обещание -->
+    <div class="bg-primarySoft border border-primary/20 rounded-2xl p-5 flex gap-4 items-start w-full">
+        <Star className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+        <div>
+            <h3 class="text-[15px] font-[650] text-textPrimary mb-1">The Promise</h3>
+            <p class="text-[13px] text-textSecondary leading-[1.5]">I solve the "Confidence Whiplash." I'm your local technical partner who picks up the phone and delivers results.</p>
+        </div>
     </div>
     
-    <!-- Индикатор следующей секции (Стрелка вниз) -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-borderStrong animate-bounce">
-        <ArrowDown className="w-6 h-6" />
+    <div class="w-full flex justify-center text-borderStrong mt-10">
+        <ChevronDown className="w-6 h-6" />
     </div>
 </section>

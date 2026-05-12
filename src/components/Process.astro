@@ -1,0 +1,42 @@
+---
+import { Search, Code2, Rocket, Headphones, ChevronDown } from 'lucide-react';
+---
+<section class="w-full px-5 py-10 bg-surfaceMuted border-t border-borderLight rounded-t-[32px]">
+    <div class="text-center mb-6">
+        <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 block">My Process</span>
+        <h2 class="text-[20px] font-bold text-textPrimary">Audit → Build → Launch → Support</h2>
+    </div>
+    
+    <div class="flex justify-between items-start pt-4 relative">
+        <!-- Линия процесса (фон) -->
+        <div class="absolute top-8 left-[10%] w-[80%] h-0.5 bg-borderStrong -z-10"></div>
+        
+        <div class="flex flex-col items-center text-center w-1/4">
+            <div class="w-10 h-10 bg-surface rounded-full border border-borderStrong flex items-center justify-center mb-2 z-10 shadow-sm">
+                <Search className="w-4 h-4" />
+            </div>
+            <span class="text-[10px] text-textSecondary leading-tight">We find<br>the leaks.</span>
+        </div>
+        <div class="flex flex-col items-center text-center w-1/4">
+            <div class="w-10 h-10 bg-surface rounded-full border border-borderStrong flex items-center justify-center mb-2 z-10 shadow-sm">
+                <Code2 className="w-4 h-4" />
+            </div>
+            <span class="text-[10px] text-textSecondary leading-tight">We engineer<br>the solution.</span>
+        </div>
+        <div class="flex flex-col items-center text-center w-1/4">
+            <div class="w-10 h-10 bg-surface rounded-full border border-borderStrong flex items-center justify-center mb-2 z-10 shadow-sm">
+                <Rocket className="w-4 h-4" />
+            </div>
+            <span class="text-[10px] text-textSecondary leading-tight">You dominate<br>your market.</span>
+        </div>
+        <div class="flex flex-col items-center text-center w-1/4">
+            <div class="w-10 h-10 bg-surface rounded-full border-2 border-textPrimary flex items-center justify-center mb-2 z-10 shadow-sm">
+                <Headphones className="w-4 h-4" />
+            </div>
+            <span class="text-[10px] text-textSecondary leading-tight font-bold">I'm here<br>after launch.</span>
+        </div>
+    </div>
+    <div class="w-full flex justify-center text-borderStrong mt-8">
+        <ChevronDown className="w-6 h-6" />
+    </div>
+</section>

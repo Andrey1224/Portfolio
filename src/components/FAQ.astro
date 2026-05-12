@@ -1,0 +1,57 @@
+---
+import { Plus, ArrowRight, ChevronDown } from 'lucide-react';
+---
+<section class="w-full px-5 py-12 bg-surface border-t border-borderLight">
+    <div class="text-center mb-8">
+        <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 block">Common Questions</span>
+        <h2 class="text-[26px] font-bold text-textPrimary">FAQs</h2>
+    </div>
+
+    <div class="flex flex-col divide-y divide-borderLight mb-6 border-b border-t border-borderLight">
+        <details class="group py-4">
+            <summary class="flex justify-between items-center font-[650] text-[15px] cursor-pointer text-textPrimary list-none [&::-webkit-details-marker]:hidden">
+                How long does a typical project take?
+                <Plus className="w-5 h-5 text-textMuted group-open:text-primary transition-colors group-open:rotate-45 duration-300" />
+            </summary>
+            <p class="text-[14px] text-textSecondary mt-3 leading-[1.5] animate-[slideDown_0.3s_ease-in-out]">Most custom modernization projects take between 3 to 6 weeks, depending on the complexity and scope.</p>
+        </details>
+        <details class="group py-4">
+            <summary class="flex justify-between items-center font-[650] text-[15px] cursor-pointer text-textPrimary list-none [&::-webkit-details-marker]:hidden">
+                Do you work with WordPress?
+                <Plus className="w-5 h-5 text-textMuted group-open:text-primary transition-colors group-open:rotate-45 duration-300" />
+            </summary>
+            <p class="text-[14px] text-textSecondary mt-3 leading-[1.5] animate-[slideDown_0.3s_ease-in-out]">Yes, I can repair and optimize existing WordPress sites, or migrate you to a faster, modern platform if needed.</p>
+        </details>
+        <details class="group py-4">
+            <summary class="flex justify-between items-center font-[650] text-[15px] cursor-pointer text-textPrimary list-none [&::-webkit-details-marker]:hidden">
+                Can you fix my existing website?
+                <Plus className="w-5 h-5 text-textMuted group-open:text-primary transition-colors group-open:rotate-45 duration-300" />
+            </summary>
+            <p class="text-[14px] text-textSecondary mt-3 leading-[1.5] animate-[slideDown_0.3s_ease-in-out]">Absolutely. The "Technical Rescue" service is specifically designed to hunt down bugs, fix SEO errors, and optimize speed on current sites.</p>
+        </details>
+        <details class="group py-4">
+            <summary class="flex justify-between items-center font-[650] text-[15px] cursor-pointer text-textPrimary list-none [&::-webkit-details-marker]:hidden">
+                Do you offer ongoing support?
+                <Plus className="w-5 h-5 text-textMuted group-open:text-primary transition-colors group-open:rotate-45 duration-300" />
+            </summary>
+            <p class="text-[14px] text-textSecondary mt-3 leading-[1.5] animate-[slideDown_0.3s_ease-in-out]">Yes, my No-Ghosting Guarantee means I stay available after launch to keep your systems updated and secure.</p>
+        </details>
+        <details class="group py-4">
+            <summary class="flex justify-between items-center font-[650] text-[15px] cursor-pointer text-textPrimary list-none [&::-webkit-details-marker]:hidden">
+                What do you need from me to get started?
+                <Plus className="w-5 h-5 text-textMuted group-open:text-primary transition-colors group-open:rotate-45 duration-300" />
+            </summary>
+            <p class="text-[14px] text-textSecondary mt-3 leading-[1.5] animate-[slideDown_0.3s_ease-in-out]">Just a quick 20-minute chat to understand your business goals, and access to your current domain/hosting (if applicable).</p>
+        </details>
+    </div>
+
+    <div class="text-center">
+        <a href="#cta" class="text-[14px] font-[650] text-textPrimary inline-flex items-center gap-1 hover:text-primary">
+            More questions? Let's talk <ArrowRight className="w-4 h-4" />
+        </a>
+    </div>
+    
+    <div class="w-full flex justify-center text-borderStrong mt-10">
+        <ChevronDown className="w-6 h-6" />
+    </div>
+</section>

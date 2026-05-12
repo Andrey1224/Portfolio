@@ -1,166 +1,117 @@
 ---
-import { Rocket, Hourglass, ChevronsLeftRight, Activity, ArrowDown } from 'lucide-react';
+import { ImageOff, Image as ImageIcon, MapPin, ArrowRight, ChevronDown } from 'lucide-react';
 ---
+<section class="w-full px-5 py-12 bg-bgMain border-t border-borderLight">
+    <div class="text-center mb-8">
+        <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 block">The Proof</span>
+        <h2 class="text-[28px] font-bold text-textPrimary">Case Studies</h2>
+    </div>
 
-<!-- ========================================== -->
-<!-- СЕКЦИЯ 3: CASE STUDIES (Sticky Slide-Over) -->
-<!-- ========================================== -->
-<section id="work" class="sticky-section sticky top-0 w-full min-h-[100dvh] bg-bgMain border-t border-borderLight shadow-[0_-24px_80px_rgba(28,25,23,0.08)] rounded-t-[40px] flex flex-col justify-center py-24 z-30 relative overflow-hidden">
-    <div class="max-w-[1240px] w-full mx-auto px-6">
+    <!-- Главный кейс -->
+    <div class="bg-surface border border-borderLight rounded-[24px] p-5 shadow-card mb-6">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="w-6 h-6 rounded bg-primary text-white flex items-center justify-center text-[12px] font-bold">1</div>
+            <h3 class="text-[18px] font-[650] leading-tight text-textPrimary">Veterinary Clinic Modernization</h3>
+        </div>
         
-        <!-- Заголовок секции -->
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <h2 class="text-[34px] sm:text-[44px] leading-[1.12] tracking-[-0.03em] font-bold text-textPrimary mb-6">
-                Proof, not promises.
-            </h2>
+        <div class="w-full h-[160px] flex gap-2 mb-4">
+            <div class="w-1/2 bg-surfaceMuted rounded-lg border border-borderLight relative overflow-hidden flex items-center justify-center text-textMuted">
+                <span class="absolute top-2 left-2 text-[10px] font-bold uppercase">Before</span>
+                <ImageOff className="w-6 h-6 opacity-30" />
+            </div>
+            <div class="w-1/2 bg-surfaceWarm rounded-lg border border-borderLight relative overflow-hidden flex items-center justify-center text-success">
+                <span class="absolute top-2 right-2 text-[10px] font-bold uppercase text-textPrimary">After</span>
+                <ImageIcon className="w-6 h-6 opacity-50" />
+            </div>
         </div>
 
-        <!-- Сетка кейсов -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            
-            <!-- Главный кейс -->
-            <div class="lg:col-span-12 bg-surface border border-borderLight rounded-[32px] p-6 sm:p-10 shadow-card hover:shadow-elevated transition-shadow flex flex-col lg:flex-row gap-10 items-center">
-                
-                <!-- Визуал: До/После Слайдер -->
-                <div class="w-full lg:w-1/2 before-after-slider relative h-[300px] sm:h-[400px] bg-surfaceMuted rounded-2xl overflow-hidden border border-borderLight select-none container">
-                    
-                    <!-- ПОСЛЕ (Фон) -->
-                    <div class="absolute inset-0 w-full h-full bg-surfaceWarm flex items-center justify-center text-textSecondary overflow-hidden">
-                        <div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNFMkU4RjAiLz48L3N2Zz4=')]"></div>
-                        <div class="relative z-10 flex flex-col items-center text-success text-center px-4">
-                            <Rocket className="w-10 h-10 mb-3" />
-                            <span class="font-mono text-sm">[Изображение обновленного сайта]</span>
-                        </div>
-                    </div>
-                    
-                    <!-- ДО (Обертка с обрезкой) -->
-                    <div class="before-image-wrapper absolute inset-0 w-1/2 h-full overflow-hidden border-r-2 border-white z-10">
-                        <!-- Контейнер ДО -->
-                        <div class="before-inner absolute top-0 left-0 h-full bg-surfaceMuted flex items-center justify-center text-textMuted border-r border-borderLight">
-                            <div class="flex flex-col items-center text-warning text-center px-4">
-                                <Hourglass className="w-10 h-10 mb-3" />
-                                <span class="font-mono text-sm">[Изображение старого сайта]</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Линия слайдера и ручка -->
-                    <div class="slider-line absolute top-0 bottom-0 left-1/2 w-1 bg-white pointer-events-none z-20 -ml-0.5">
-                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white border border-borderLight rounded-full flex items-center justify-center shadow-md text-textPrimary transition-transform hover:scale-110">
-                            <ChevronsLeftRight className="w-5 h-5" />
-                        </div>
-                    </div>
-
-                    <!-- Невидимый ползунок (управление) -->
-                    <input type="range" min="0" max="100" value="50" class="slider-input absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30 m-0" />
-                </div>
-
-                <!-- Текстовая часть кейса -->
-                <div class="w-full lg:w-1/2 flex flex-col items-start">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surfaceMuted border border-borderLight text-textSecondary text-[12px] font-[650] uppercase tracking-wide mb-6">
-                        Local Healthcare / Alabama
-                    </div>
-                    <h3 class="text-[24px] sm:text-[28px] font-[650] leading-[1.2] text-textPrimary mb-6">
-                        Veterinary Clinic Modernization
-                    </h3>
-                    
-                    <div class="space-y-4 mb-8 text-[16px] leading-[1.6]">
-                        <p><strong class="text-textPrimary font-[650]">Situation:</strong> <span class="text-textSecondary">A local clinic had an outdated site that was slow, hard to update, and weak for local search.</span></p>
-                        <p><strong class="text-textPrimary font-[650]">Action:</strong> <span class="text-textSecondary">I rebuilt the site on a faster custom stack, improved mobile UX, cleaned up technical SEO, and simplified lead flows.</span></p>
-                        <p><strong class="text-textPrimary font-[650]">Result:</strong> <span class="text-textSecondary">A faster, more trustworthy website designed to improve local visibility and make patient inquiries easier to manage.</span></p>
-                    </div>
-
-                    <div class="flex flex-wrap items-center gap-4 mt-auto">
-                        <div class="flex items-center gap-2 bg-success/10 text-success px-4 py-2 rounded-lg font-[650] text-[14px] shadow-subtle border border-success/20">
-                            <Activity className="w-4 h-4" />
-                            100/100 Performance
-                        </div>
-                        <button class="bg-surface hover:bg-primarySoft text-textPrimary border border-borderStrong hover:border-primary px-5 py-2.5 rounded-sm transition-all font-[650] text-[14px]">
-                            View Case Study
-                        </button>
-                    </div>
-                </div>
+        <div class="flex items-center gap-2 mb-3">
+            <span class="text-[18px] font-bold text-success">100 / 100</span>
+            <span class="text-[12px] text-textSecondary font-medium uppercase">Performance Score</span>
+        </div>
+        <p class="text-[14px] text-textSecondary leading-[1.5] mb-5">
+            A full custom redesign and migration to a lightning-fast engine with Local SEO optimization.
+        </p>
+        <div class="flex justify-between items-center border-t border-borderLight pt-4">
+            <div class="flex items-center gap-1.5 text-[12px] text-textMuted">
+                <MapPin className="w-3.5 h-3.5" /> Local Healthcare (AL)
             </div>
-
-            <!-- Вторичный кейс 1 -->
-            <div class="lg:col-span-6 bg-surface border border-borderLight rounded-[28px] p-8 shadow-subtle hover:shadow-card transition-shadow flex flex-col">
-                <div class="w-full h-48 bg-surfaceMuted rounded-xl mb-8 flex items-center justify-center border border-borderLight overflow-hidden relative">
-                    <div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNFMkU4RjAiLz48L3N2Zz4=')]"></div>
-                    <span class="font-mono text-sm text-textMuted relative z-10">[Изображение: Walk-In Baths]</span>
-                </div>
-                <h3 class="text-[20px] font-[650] leading-[1.25] text-textPrimary mb-4">Walk-In Baths Accessibility Redesign</h3>
-                <div class="space-y-3 mb-8 text-[15px] leading-[1.6] flex-grow">
-                    <p><strong class="text-textPrimary font-[650]">Situation:</strong> <span class="text-textSecondary">Poor mobile experience, confusing UX.</span></p>
-                    <p><strong class="text-textPrimary font-[650]">Action:</strong> <span class="text-textSecondary">Redesigned for accessibility and clarity, optimized for conversions.</span></p>
-                    <p><strong class="text-textPrimary font-[650]">Result:</strong> <span class="text-textSecondary">67% increase in contact form submissions.</span></p>
-                </div>
-                <button class="w-full bg-surface hover:bg-primarySoft text-textPrimary border border-borderStrong hover:border-primary px-5 py-2.5 rounded-sm transition-all font-[650] text-[14px]">
-                    View Case Study
-                </button>
-            </div>
-
-            <!-- Вторичный кейс 2 -->
-            <div class="lg:col-span-6 bg-surface border border-borderLight rounded-[28px] p-8 shadow-subtle hover:shadow-card transition-shadow flex flex-col">
-                <div class="w-full h-48 bg-surfaceMuted rounded-xl mb-8 flex items-center justify-center border border-borderLight overflow-hidden relative">
-                    <div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNFMkU4RjAiLz48L3N2Zz4=')]"></div>
-                    <span class="font-mono text-sm text-textMuted relative z-10">[Изображение: Bulldog Breeder]</span>
-                </div>
-                <h3 class="text-[20px] font-[650] leading-[1.25] text-textPrimary mb-4">Premium Bulldog Breeder Brand</h3>
-                <div class="space-y-3 mb-8 text-[15px] leading-[1.6] flex-grow">
-                    <p><strong class="text-textPrimary font-[650]">Situation:</strong> <span class="text-textSecondary">Needed a premium brand presence.</span></p>
-                    <p><strong class="text-textPrimary font-[650]">Action:</strong> <span class="text-textSecondary">Custom branding, content, and SEO foundation.</span></p>
-                    <p><strong class="text-textPrimary font-[650]">Result:</strong> <span class="text-textSecondary">Stronger brand, higher engagement, and more qualified inquiries.</span></p>
-                </div>
-                <button class="w-full bg-surface hover:bg-primarySoft text-textPrimary border border-borderStrong hover:border-primary px-5 py-2.5 rounded-sm transition-all font-[650] text-[14px]">
-                    View Case Study
-                </button>
-            </div>
-
+            <a href="#" class="text-[14px] font-[650] text-textPrimary flex items-center gap-1">
+                View Case Study <ArrowRight className="w-4 h-4" />
+            </a>
         </div>
     </div>
+
+    <!-- Вторичный кейс 1 -->
+    <div class="bg-surface border border-borderLight rounded-[24px] p-5 shadow-subtle mb-6">
+        <div class="flex items-start justify-between gap-4 mb-4">
+            <div>
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-6 h-6 rounded bg-primarySoft text-primary flex items-center justify-center text-[12px] font-bold">2</div>
+                    <h3 class="text-[16px] font-[650] leading-tight text-textPrimary">Senior Accessibility Redesign: Walk-In Baths</h3>
+                </div>
+            </div>
+        </div>
+        <div class="flex gap-4 mb-4">
+            <div class="w-2/3">
+                 <p class="text-[13px] text-textSecondary leading-[1.5] mb-3">
+                    Re-engineered the UI with a focus on extreme accessibility, cleaned up technical debt.
+                </p>
+                <div class="flex items-center gap-2">
+                    <span class="text-[16px] font-bold text-primary">2x</span>
+                    <span class="text-[11px] text-textSecondary font-medium leading-tight">Increase in clarity<br>leading to inquiries.</span>
+                </div>
+            </div>
+            <div class="w-1/3 bg-surfaceMuted rounded-lg border border-borderLight flex items-center justify-center text-textMuted">
+                <ImageIcon className="w-6 h-6 opacity-30" />
+            </div>
+        </div>
+        <div class="flex justify-between items-center border-t border-borderLight pt-4">
+            <div class="flex items-center gap-1.5 text-[12px] text-textMuted">
+                <MapPin className="w-3.5 h-3.5" /> High-Ticket Service (UK)
+            </div>
+            <a href="#" class="text-[13px] font-[650] text-textPrimary flex items-center gap-1">
+                View Case Study <ArrowRight className="w-4 h-4" />
+            </a>
+        </div>
+    </div>
+
+    <!-- Вторичный кейс 2 -->
+    <div class="bg-surface border border-borderLight rounded-[24px] p-5 shadow-subtle mb-6">
+        <div class="flex items-start justify-between gap-4 mb-4">
+            <div>
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-6 h-6 rounded bg-primarySoft text-primary flex items-center justify-center text-[12px] font-bold">3</div>
+                    <h3 class="text-[16px] font-[650] leading-tight text-textPrimary">Premium Branding: Bulldog Breeder</h3>
+                </div>
+            </div>
+        </div>
+        <div class="flex gap-4 mb-4">
+            <div class="w-2/3">
+                 <p class="text-[13px] text-textSecondary leading-[1.5] mb-3">
+                    Built a custom, visually rich platform focused on mobile speed and social proof.
+                </p>
+                <div class="text-[13px] font-bold text-success mb-1">Stronger brand identity</div>
+            </div>
+            <div class="w-1/3 bg-surfaceMuted rounded-lg border border-borderLight flex items-center justify-center text-textMuted">
+                <ImageIcon className="w-6 h-6 opacity-30" />
+            </div>
+        </div>
+        <div class="flex justify-between items-center border-t border-borderLight pt-4">
+            <div class="flex items-center gap-1.5 text-[12px] text-textMuted">
+                <MapPin className="w-3.5 h-3.5" /> Niche Private Brand (AL)
+            </div>
+            <a href="#" class="text-[13px] font-[650] text-textPrimary flex items-center gap-1">
+                View Case Study <ArrowRight className="w-4 h-4" />
+            </a>
+        </div>
+    </div>
+
+    <button class="w-full bg-surface border border-borderStrong text-textPrimary py-4 rounded-xl font-[650] text-[15px] mt-2">
+        View All Projects
+    </button>
     
-    <!-- Индикатор следующей секции -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-borderStrong animate-bounce">
-        <ArrowDown className="w-6 h-6" />
+    <div class="w-full flex justify-center text-borderStrong mt-10">
+        <ChevronDown className="w-6 h-6" />
     </div>
 </section>
-
-<!-- Скрипт инициализации слайдера - запускается на клиенте -->
-<script>
-    const setupSliders = () => {
-        const sliders = document.querySelectorAll('.before-after-slider');
-        
-        sliders.forEach(slider => {
-            const input = slider.querySelector('.slider-input') as HTMLInputElement;
-            const beforeWrapper = slider.querySelector('.before-image-wrapper') as HTMLElement;
-            const beforeInner = slider.querySelector('.before-inner') as HTMLElement;
-            const sliderLine = slider.querySelector('.slider-line') as HTMLElement;
-            
-            if (!input || !beforeWrapper || !beforeInner || !sliderLine) return;
-
-            const updateInnerWidth = () => {
-                const sliderWidth = (slider as HTMLElement).offsetWidth;
-                beforeInner.style.width = `${sliderWidth}px`;
-            };
-
-            updateInnerWidth();
-            window.addEventListener('resize', updateInnerWidth);
-
-            input.addEventListener('input', (e) => {
-                const target = e.target as HTMLInputElement;
-                const value = target.value;
-                beforeWrapper.style.width = `${value}%`;
-                sliderLine.style.left = `${value}%`;
-            });
-        });
-    };
-
-    // Запуск скрипта при загрузке страницы в Astro
-    document.addEventListener('astro:page-load', setupSliders);
-    // На случай если view transitions не включены
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setupSliders);
-    } else {
-        setupSliders();
-    }
-</script>

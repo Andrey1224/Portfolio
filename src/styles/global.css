@@ -1,16 +1,101 @@
-/* Плавный скролл для всего документа */
-html { scroll-behavior: smooth; }
-
-/* Устранение скачков при sticky позиционировании */
-.sticky-section {
-    will-change: transform;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Уважение к настройкам пользователя (отключение анимаций) */
+.page-section {
+    position: relative;
+    overflow: hidden;
+    scroll-margin-top: 5rem;
+}
+
+.section-inner {
+    padding-top: clamp(6rem, 10vh, 8rem);
+    padding-bottom: clamp(5rem, 9vh, 7rem);
+}
+
+.responsive-mockup {
+    height: min(520px, 56vh);
+}
+
+.reveal-section,
+.reveal-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-section.is-revealed,
+.reveal-card.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 {
+    transition-delay: 100ms;
+}
+
+.reveal-delay-2 {
+    transition-delay: 200ms;
+}
+
+.reveal-delay-3 {
+    transition-delay: 300ms;
+}
+
+/* Fallback for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .reveal-section,
+    .reveal-card {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+@media (min-width: 1024px) and (max-height: 800px) {
+    .section-inner {
+        padding-top: 5.5rem;
+        padding-bottom: 4.5rem;
+    }
+
+    .desktop-tight-title {
+        font-size: clamp(2.25rem, 4vw, 3.75rem);
+        line-height: 1.05;
+    }
+
+    .desktop-tight-title-balanced {
+        font-size: clamp(2.1rem, 3.5vw, 3.25rem);
+        line-height: 1.05;
+    }
+
+    .desktop-tight-copy {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .desktop-tight-card {
+        padding: 1rem;
+    }
+
+    .desktop-tight-gap {
+        gap: 1rem;
+    }
+
+    .responsive-mockup {
+        height: min(360px, 46vh);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     * {
         animation: none !important;
         transition: none !important;
         scroll-behavior: auto !important;
     }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
