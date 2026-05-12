@@ -1,0 +1,75 @@
+---
+import { Check, Phone, Mail, ExternalLink } from 'lucide-react';
+---
+
+<!-- ========================================== -->
+<!-- СЕКЦИЯ 6: FINAL CTA & CONTACT (Sticky)     -->
+<!-- ========================================== -->
+<section id="contact" class="sticky-section sticky top-0 w-full min-h-[100dvh] bg-surfaceWarm border-t border-borderLight shadow-[0_-24px_80px_rgba(28,25,23,0.08)] rounded-t-[40px] flex flex-col justify-center py-24 z-[60] relative overflow-hidden">
+    <div class="max-w-[1240px] w-full mx-auto px-6">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 flex flex-col items-start">
+                <h2 class="text-[34px] sm:text-[44px] leading-[1.12] tracking-[-0.03em] font-bold text-textPrimary mb-6">
+                    Ready to fix what’s holding your website back?
+                </h2>
+                <p class="text-[18px] leading-[1.65] text-textSecondary mb-10 max-w-[540px]">
+                    Get a clear plan, a faster website, and a technical partner who keeps things moving.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mb-8 w-full sm:w-auto">
+                    <button class="bg-primary hover:bg-primaryHover text-white px-6 py-4 rounded-sm shadow-btn transition-all transform hover:-translate-y-[1px] font-[650] flex items-center justify-center gap-2">
+                        Book a Free Strategy Call
+                    </button>
+                    <button class="bg-surface hover:bg-primarySoft text-textPrimary border border-borderStrong hover:border-primary px-6 py-4 rounded-sm transition-all font-[650] flex items-center justify-center">
+                        Get My Free Technical Audit
+                    </button>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4 sm:gap-6 text-[14px] font-[550] text-textMuted">
+                    <div class="flex items-center gap-2">
+                        <Check className="w-4 h-4 text-success stroke-[3]" /> No pressure
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <Check className="w-4 h-4 text-success stroke-[3]" /> Free audit
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <Check className="w-4 h-4 text-success stroke-[3]" /> 20–30 min call
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 w-full">
+                <div class="bg-surface border border-borderLight rounded-[32px] p-8 sm:p-10 shadow-card">
+                    <h3 class="text-[20px] font-[650] text-textPrimary mb-8 pb-6 border-b border-borderLight">
+                        Direct Contact
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <a href="tel:+12055550198" class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 rounded-full bg-surfaceMuted group-hover:bg-primarySoft text-textPrimary group-hover:text-primary flex items-center justify-center transition-colors flex-shrink-0">
+                                <Phone className="w-5 h-5" />
+                            </div>
+                            <span class="text-[16px] font-[550] text-textSecondary group-hover:text-textPrimary transition-colors">(205) 555-0198</span>
+                        </a>
+                        
+                        <a href="mailto:hello@yourdomain.com" class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 rounded-full bg-surfaceMuted group-hover:bg-primarySoft text-textPrimary group-hover:text-primary flex items-center justify-center transition-colors flex-shrink-0">
+                                <Mail className="w-5 h-5" />
+                            </div>
+                            <span class="text-[16px] font-[550] text-textSecondary group-hover:text-textPrimary transition-colors">hello@yourdomain.com</span>
+                        </a>
+
+                        <a href="#" class="flex items-center gap-4 group">
+                            <div class="w-12 h-12 rounded-full bg-surfaceMuted group-hover:bg-primarySoft text-textPrimary group-hover:text-primary flex items-center justify-center transition-colors flex-shrink-0">
+                                <ExternalLink className="w-5 h-5" />
+                            </div>
+                            <span class="text-[16px] font-[550] text-textSecondary group-hover:text-textPrimary transition-colors">linkedin.com/in/yourname</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

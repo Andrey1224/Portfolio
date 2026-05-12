@@ -1,0 +1,16 @@
+/* Плавный скролл для всего документа */
+html { scroll-behavior: smooth; }
+
+/* Устранение скачков при sticky позиционировании */
+.sticky-section {
+    will-change: transform;
+}
+
+/* Уважение к настройкам пользователя (отключение анимаций) */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

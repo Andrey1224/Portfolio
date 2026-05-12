@@ -1,0 +1,151 @@
+---
+import { Search, Settings, Sparkles, LifeBuoy, ClipboardCheck, Code2, Rocket, Headphones, ArrowDown, Check } from 'lucide-react';
+---
+
+<!-- ========================================== -->
+<!-- СЕКЦИЯ 4: SERVICES & PROCESS (Sticky)      -->
+<!-- ========================================== -->
+<section id="services" class="sticky-section sticky top-0 w-full min-h-[100dvh] bg-surfaceWarm border-t border-borderLight shadow-[0_-24px_80px_rgba(28,25,23,0.08)] rounded-t-[40px] flex flex-col justify-center py-24 z-40 relative overflow-hidden">
+    <div class="max-w-[1240px] w-full mx-auto px-6">
+        
+        <!-- Заголовок секции -->
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-[34px] sm:text-[44px] leading-[1.12] tracking-[-0.03em] font-bold text-textPrimary mb-6">
+                Productized services for growing businesses.
+            </h2>
+        </div>
+
+        <!-- Сетка Услуг (2x2) -->
+        <div class="grid md:grid-cols-2 gap-6 mb-24">
+            
+            <!-- Услуга 1: Diagnostic Audit -->
+            <div class="bg-surface border border-borderLight rounded-[28px] p-8 shadow-subtle hover:shadow-card transition-all flex flex-col">
+                <div class="w-12 h-12 bg-surfaceMuted rounded-full flex items-center justify-center mb-6 text-primary">
+                    <Search className="w-6 h-6 stroke-[1.75]" />
+                </div>
+                <h3 class="text-[20px] font-[650] leading-[1.25] text-textPrimary mb-2">Diagnostic Audit</h3>
+                <p class="text-[16px] text-textSecondary mb-6 border-b border-borderLight pb-6">Find what’s slowing your website down.</p>
+                
+                <ul class="space-y-3 mb-8 text-[15px] text-textSecondary flex-grow">
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> Technical review</li>
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> SEO gap scan</li>
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> Speed/performance check</li>
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> Prioritized action plan</li>
+                </ul>
+                <div class="flex items-center justify-between pt-2">
+                    <span class="text-[14px] font-[650] text-textPrimary uppercase tracking-wide">Starting at $500</span>
+                </div>
+            </div>
+
+            <!-- Услуга 2: Modernization Engine -->
+            <div class="bg-surface border border-borderLight rounded-[28px] p-8 shadow-subtle hover:shadow-card transition-all flex flex-col relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+                <div class="w-12 h-12 bg-primarySoft rounded-full flex items-center justify-center mb-6 text-primary">
+                    <Settings className="w-6 h-6 stroke-[1.75]" />
+                </div>
+                <h3 class="text-[20px] font-[650] leading-[1.25] text-textPrimary mb-2">Modernization Engine</h3>
+                <p class="text-[16px] text-textSecondary mb-6 border-b border-borderLight pb-6">Replace your outdated website with a faster, cleaner system.</p>
+                
+                <ul class="space-y-3 mb-8 text-[15px] text-textSecondary flex-grow">
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> Custom redesign & mobile-first build</li>
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> Clean code & scalable architecture</li>
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> SEO setup & Lead forms</li>
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> Launch support</li>
+                </ul>
+                <div class="flex items-center justify-between pt-2">
+                    <span class="text-[14px] font-[650] text-textPrimary uppercase tracking-wide">Starting at $5,000+</span>
+                </div>
+            </div>
+
+            <!-- Услуга 3: AI Edge -->
+            <div class="bg-surface border border-borderLight rounded-[28px] p-8 shadow-subtle hover:shadow-card transition-all flex flex-col">
+                <div class="w-12 h-12 bg-accentSoft rounded-full flex items-center justify-center mb-6 text-accent">
+                    <Sparkles className="w-6 h-6 stroke-[1.75]" />
+                </div>
+                <h3 class="text-[20px] font-[650] leading-[1.25] text-textPrimary mb-2">AI Edge</h3>
+                <p class="text-[16px] text-textSecondary mb-6 border-b border-borderLight pb-6">Use automation to respond faster and save time.</p>
+                
+                <ul class="space-y-3 mb-8 text-[15px] text-textSecondary flex-grow">
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> Lead routing</li>
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> AI chat & support tools</li>
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> Make/Zapier workflows</li>
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> Customer intake automation</li>
+                </ul>
+                <div class="flex items-center justify-between pt-2">
+                    <span class="text-[14px] font-[650] text-textPrimary uppercase tracking-wide">Starting at $3,000+</span>
+                </div>
+            </div>
+
+            <!-- Услуга 4: Technical Rescue -->
+            <div class="bg-surface border border-borderLight rounded-[28px] p-8 shadow-subtle hover:shadow-card transition-all flex flex-col">
+                <div class="w-12 h-12 bg-surfaceMuted rounded-full flex items-center justify-center mb-6 text-warning">
+                    <LifeBuoy className="w-6 h-6 stroke-[1.75]" />
+                </div>
+                <h3 class="text-[20px] font-[650] leading-[1.25] text-textPrimary mb-2">Technical Rescue</h3>
+                <p class="text-[16px] text-textSecondary mb-6 border-b border-borderLight pb-6">Fix what’s broken without rebuilding everything.</p>
+                
+                <ul class="space-y-3 mb-8 text-[15px] text-textSecondary flex-grow">
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> Bug fixes & emergency cleanup</li>
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> SEO errors resolution</li>
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> Speed optimization</li>
+                    <li class="flex items-start gap-3"><Check className="w-5 h-5 text-success flex-shrink-0" /> Fixing broken forms</li>
+                </ul>
+                <div class="flex items-center justify-between pt-2">
+                    <span class="text-[14px] font-[650] text-textPrimary uppercase tracking-wide">Starting at $750+</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок Процесса (Process) -->
+        <div class="max-w-[1000px] mx-auto mt-12 bg-surface/60 backdrop-blur-sm border border-borderLight rounded-[32px] p-8 sm:p-12 shadow-subtle">
+            <h3 class="text-[24px] font-[650] text-textPrimary text-center mb-12">Simple process. Clear outcomes.</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Десктопная линия между шагами -->
+                <div class="hidden md:block absolute top-[28px] left-[10%] w-[80%] h-[2px] bg-borderLight -z-10"></div>
+
+                <!-- Шаг 1: Audit -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-surface border border-borderStrong rounded-full flex items-center justify-center mb-4 text-textPrimary shadow-sm z-10">
+                        <ClipboardCheck className="w-6 h-6 stroke-[1.75]" />
+                    </div>
+                    <h4 class="text-[18px] font-[650] text-textPrimary mb-2">Audit</h4>
+                    <p class="text-[14px] text-textSecondary leading-[1.6]">We find what’s broken and what’s holding your website back.</p>
+                </div>
+
+                <!-- Шаг 2: Build -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-surface border border-borderStrong rounded-full flex items-center justify-center mb-4 text-textPrimary shadow-sm z-10">
+                        <Code2 className="w-6 h-6 stroke-[1.75]" />
+                    </div>
+                    <h4 class="text-[18px] font-[650] text-textPrimary mb-2">Build</h4>
+                    <p class="text-[14px] text-textSecondary leading-[1.6]">I engineer a clean solution around your business goals.</p>
+                </div>
+
+                <!-- Шаг 3: Launch -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-surface border border-borderStrong rounded-full flex items-center justify-center mb-4 text-textPrimary shadow-sm z-10">
+                        <Rocket className="w-6 h-6 stroke-[1.75]" />
+                    </div>
+                    <h4 class="text-[18px] font-[650] text-textPrimary mb-2">Launch</h4>
+                    <p class="text-[14px] text-textSecondary leading-[1.6]">We test, optimize, and go live with confidence.</p>
+                </div>
+
+                <!-- Шаг 4: Support -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-surface border-borderStrong border-[2px] rounded-full flex items-center justify-center mb-4 text-primary shadow-sm z-10 bg-primarySoft">
+                        <Headphones className="w-6 h-6 stroke-[1.75]" />
+                    </div>
+                    <h4 class="text-[18px] font-[650] text-textPrimary mb-2">Support</h4>
+                    <p class="text-[14px] text-textSecondary leading-[1.6]">I stay available after launch to keep things running.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Индикатор следующей секции -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-borderStrong animate-bounce">
+        <ArrowDown className="w-6 h-6" />
+    </div>
+</section>

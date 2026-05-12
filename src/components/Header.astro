@@ -1,0 +1,34 @@
+---
+import { Code2, Menu } from 'lucide-react';
+---
+
+<!-- Глобальная фиксированная навигация -->
+<header class="fixed top-0 left-0 w-full z-50 bg-bgMain/80 backdrop-blur-md border-b border-borderLight transition-all">
+    <div class="max-w-[1240px] mx-auto px-6 h-[80px] flex justify-between items-center">
+        <!-- Логотип -->
+        <div class="flex items-center gap-3 font-bold text-lg">
+            <div class="w-8 h-8 rounded bg-textPrimary text-white flex items-center justify-center">
+                <Code2 className="w-4 h-4" />
+            </div>
+            Your Logo
+        </div>
+
+        <!-- Ссылки (Десктоп) -->
+        <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-textSecondary">
+            <a href="#work" class="hover:text-textPrimary transition-colors">Work</a>
+            <a href="#services" class="hover:text-textPrimary transition-colors">Services</a>
+            <a href="#about" class="hover:text-textPrimary transition-colors">About</a>
+            <a href="#contact" class="hover:text-textPrimary transition-colors">Contact</a>
+        </nav>
+
+        <!-- Кнопка CTA -->
+        <button class="hidden md:flex bg-surface border border-borderStrong text-textPrimary hover:border-primary hover:bg-primarySoft px-5 py-2.5 rounded-sm transition-all font-semibold text-[15px]">
+            Book a Call
+        </button>
+
+        <!-- Мобильное меню (иконка) -->
+        <button class="md:hidden text-textPrimary">
+            <Menu className="w-6 h-6" />
+        </button>
+    </div>
+</header>
