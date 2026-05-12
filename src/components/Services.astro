@@ -3,14 +3,14 @@ import { Search, Settings, Bot, Wrench, ChevronRight, ChevronDown } from 'lucide
 ---
 <section id="services" class="w-full px-5 py-12 lg:py-20 bg-surfaceWarm border-t border-borderLight flex flex-col items-center">
     <div class="max-w-7xl mx-auto w-full">
-    <div class="text-center mb-10 lg:mb-16">
+    <div class="text-center mb-10 lg:mb-16 reveal-section">
         <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 lg:mb-4 block">How I can help</span>
         <h2 class="text-[28px] lg:text-[40px] font-bold text-textPrimary">Services</h2>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-10 lg:mb-12">
         <!-- Услуга 1 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-6 lg:p-8 flex flex-col items-start shadow-subtle hover:shadow-md transition-shadow relative group">
+        <div class="bg-surface border border-borderLight rounded-2xl p-6 lg:p-8 flex flex-col items-start shadow-subtle hover:shadow-md transition-shadow relative group reveal-card">
             <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-primary mb-5">
                 <Search className="w-6 h-6 lg:w-7 lg:h-7" />
             </div>
@@ -23,7 +23,7 @@ import { Search, Settings, Bot, Wrench, ChevronRight, ChevronDown } from 'lucide
             </div>
         </div>
         <!-- Услуга 2 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-6 lg:p-8 flex flex-col items-start shadow-subtle hover:shadow-md transition-shadow relative group">
+        <div class="bg-surface border border-borderLight rounded-2xl p-6 lg:p-8 flex flex-col items-start shadow-subtle hover:shadow-md transition-shadow relative group reveal-card reveal-delay-1">
             <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary mb-5">
                 <Settings className="w-6 h-6 lg:w-7 lg:h-7" />
             </div>
@@ -36,7 +36,7 @@ import { Search, Settings, Bot, Wrench, ChevronRight, ChevronDown } from 'lucide
             </div>
         </div>
         <!-- Услуга 3 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-6 lg:p-8 flex flex-col items-start shadow-subtle hover:shadow-md transition-shadow relative group">
+        <div class="bg-surface border border-borderLight rounded-2xl p-6 lg:p-8 flex flex-col items-start shadow-subtle hover:shadow-md transition-shadow relative group reveal-card">
             <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-accent mb-5">
                 <Bot className="w-6 h-6 lg:w-7 lg:h-7" />
             </div>
@@ -49,7 +49,7 @@ import { Search, Settings, Bot, Wrench, ChevronRight, ChevronDown } from 'lucide
             </div>
         </div>
         <!-- Услуга 4 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-6 lg:p-8 flex flex-col items-start shadow-subtle hover:shadow-md transition-shadow relative group">
+        <div class="bg-surface border border-borderLight rounded-2xl p-6 lg:p-8 flex flex-col items-start shadow-subtle hover:shadow-md transition-shadow relative group reveal-card reveal-delay-1">
             <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-warning mb-5">
                 <Wrench className="w-6 h-6 lg:w-7 lg:h-7" />
             </div>
@@ -63,10 +63,10 @@ import { Search, Settings, Bot, Wrench, ChevronRight, ChevronDown } from 'lucide
         </div>
     </div>
 
-    <div class="w-full max-w-[400px] mx-auto">
-        <button class="w-full bg-dark text-white py-4 px-6 rounded-xl font-[650] text-[15px] hover:bg-dark/90 transition-colors">
+    <div class="w-full max-w-[400px] mx-auto reveal-section">
+        <a href="#contact" class="w-full bg-primary text-white py-4 px-6 rounded-xl shadow-btn font-[650] text-[15px] hover:bg-primaryHover transition-colors block text-center">
             See Service Packages & Pricing
-        </button>
+        </a>
     </div>
     
     <div class="w-full flex justify-center text-borderStrong mt-10 lg:hidden">

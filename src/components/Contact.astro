@@ -2,29 +2,34 @@
 import { ShieldCheck, Gift, Clock } from 'lucide-react';
 ---
 <section id="contact" class="w-full px-5 py-16 lg:py-24 bg-surfaceMuted border-t border-borderLight lg:rounded-none rounded-t-[32px] mt-[-20px] lg:mt-0 relative z-10 flex flex-col items-center text-center">
-    <div class="max-w-3xl mx-auto w-full">
+    <!-- Warm subtle texture -->
+    <div class="absolute inset-0 opacity-[0.02] pointer-events-none" style="background-image: radial-gradient(#1C1917 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+    <div class="max-w-3xl mx-auto w-full reveal-section relative z-10">
     <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-3 lg:mb-5 block">Ready to Grow?</span>
     <h2 class="text-[28px] lg:text-[44px] font-bold text-textPrimary leading-[1.15] mb-5 lg:mb-6">Ready to fix what's holding your website back?</h2>
     <p class="text-[15px] lg:text-[18px] text-textSecondary mb-10 lg:mb-12 leading-[1.6]">
         Get a clear plan, a faster website, and a technical partner who keeps things moving.
     </p>
 
-    <div class="flex flex-col sm:flex-row gap-6 w-full mb-10 justify-center">
+    <div class="flex flex-col sm:flex-row gap-6 w-full mb-6 justify-center">
         <!-- CTA 1 -->
         <div class="flex flex-col w-full sm:w-[280px]">
-            <button class="w-full bg-dark text-white py-4 px-6 rounded-xl shadow-btn font-[650] text-[15px] hover:bg-dark/90 transition-colors mb-2">
+            <a href="mailto:hello@andrii.dev" class="w-full bg-primary text-white py-4 px-6 rounded-xl shadow-btn font-[650] text-[15px] hover:bg-primaryHover transition-colors mb-2 block">
                 Book a Free Strategy Call
-            </button>
+            </a>
             <span class="text-[12px] text-textSecondary font-medium">Best if you want to discuss a project.</span>
         </div>
         <!-- CTA 2 -->
         <div class="flex flex-col w-full sm:w-[280px]">
-            <button class="w-full bg-surface text-textPrimary border border-borderStrong py-4 px-6 rounded-xl font-[650] text-[15px] hover:bg-surfaceMuted transition-colors mb-2">
+            <a href="mailto:hello@andrii.dev?subject=Technical Audit Request" class="w-full bg-surface text-textPrimary border border-borderStrong py-4 px-6 rounded-xl font-[650] text-[15px] hover:bg-surfaceMuted transition-colors mb-2 block">
                 Get My Free Technical Audit
-            </button>
+            </a>
             <span class="text-[12px] text-textSecondary font-medium">Best if you want me to review what's broken.</span>
         </div>
     </div>
+    
+    <p class="text-[13px] text-textMuted mb-10 italic">Both options lead to a quick scheduling form—no commitment required.</p>
 
     <div class="flex flex-wrap items-center justify-center gap-5 lg:gap-8 text-[13px] lg:text-[14px] font-[550] text-textSecondary bg-surface py-3 px-6 rounded-full border border-borderLight inline-flex">
         <div class="flex items-center gap-1.5">

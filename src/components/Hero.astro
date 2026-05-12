@@ -1,11 +1,13 @@
 ---
 import { ShieldCheck, ChevronDown } from 'lucide-react';
 ---
-<section class="w-full px-5 py-10 lg:py-20 bg-bgMain flex flex-col items-start relative lg:min-h-[calc(100vh-80px)] lg:justify-center overflow-hidden">
+<section class="w-full px-5 py-12 pt-20 lg:py-24 lg:pt-32 bg-bgMain flex flex-col items-start relative overflow-hidden">
+    <!-- Warm technical dot pattern -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#1C1917 1.5px, transparent 1.5px); background-size: 24px 24px;"></div>
     <!-- Optional background accent for desktop to make it feel premium -->
     <div class="hidden lg:block absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] -z-10 translate-x-1/2 -translate-y-1/2"></div>
     
-    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center z-10">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center z-10 reveal-section">
         <!-- Left Column: Content -->
         <div class="flex flex-col items-start">
             <!-- Badge -->
@@ -29,12 +31,12 @@ import { ShieldCheck, ChevronDown } from 'lucide-react';
 
             <!-- CTAs -->
             <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-8">
-                <button class="w-full sm:w-auto bg-dark text-white px-6 py-4 rounded-xl shadow-btn font-[650] text-[15px] flex items-center justify-center hover:bg-dark/90 transition-colors">
+                <a href="#contact" class="w-full sm:w-auto bg-primary text-white px-6 py-4 rounded-xl shadow-btn font-[650] text-[15px] flex items-center justify-center hover:bg-primaryHover transition-colors">
                     Get My Free Technical Audit
-                </button>
-                <button class="w-full sm:w-auto bg-surface text-textPrimary border border-borderStrong px-6 py-4 rounded-xl font-[650] text-[15px] flex items-center justify-center hover:bg-surfaceMuted transition-colors">
+                </a>
+                <a href="#work" class="w-full sm:w-auto bg-surface text-textPrimary border border-borderStrong px-6 py-4 rounded-xl font-[650] text-[15px] flex items-center justify-center hover:bg-surfaceMuted transition-colors">
                     View My Work
-                </button>
+                </a>
             </div>
 
             <!-- Trust line -->
