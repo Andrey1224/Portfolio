@@ -1,87 +1,44 @@
 ---
-import { Plus, ArrowRight, ChevronDown } from 'lucide-react';
+import { Plus } from 'lucide-react';
 ---
-<section id="faq" class="w-full px-5 py-12 lg:py-20 bg-surface border-t border-borderLight flex flex-col items-center">
-    <div class="max-w-7xl mx-auto w-full">
-    <div class="text-center mb-10 lg:mb-16 reveal-section">
-        <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 lg:mb-4 block">Common Questions</span>
-        <h2 class="text-[28px] lg:text-[40px] font-bold text-textPrimary">FAQs</h2>
-    </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 lg:gap-x-16 mb-8 lg:mb-12 border-t lg:border-t-0 border-borderLight pt-4 lg:pt-0 reveal-section">
-        <!-- Левая колонка FAQ -->
-        <div class="flex flex-col lg:border-t border-borderLight">
-            <details class="group border-b border-borderLight transition-colors duration-300 open:bg-primarySoft/30 rounded-t-xl">
-                <summary class="flex justify-between items-center font-[650] text-[15px] lg:text-[16px] cursor-pointer text-textPrimary list-none [&::-webkit-details-marker]:hidden p-5">
-                    How long does a typical project take?
-                    <Plus className="w-5 h-5 text-textMuted group-open:text-primary transition-transform group-open:rotate-45 duration-300 flex-shrink-0 ml-4" />
-                </summary>
-                <p class="text-[14px] lg:text-[15px] text-textSecondary px-5 pb-5 leading-[1.6] animate-[slideDown_0.3s_ease-in-out]">Most custom modernization projects take between 3 to 6 weeks, depending on the complexity and scope.</p>
-            </details>
-            <details class="group border-b border-borderLight transition-colors duration-300 open:bg-primarySoft/30">
-                <summary class="flex justify-between items-center font-[650] text-[15px] lg:text-[16px] cursor-pointer text-textPrimary list-none [&::-webkit-details-marker]:hidden p-5">
-                    Do you work with WordPress?
-                    <Plus className="w-5 h-5 text-textMuted group-open:text-primary transition-transform group-open:rotate-45 duration-300 flex-shrink-0 ml-4" />
-                </summary>
-                <p class="text-[14px] lg:text-[15px] text-textSecondary px-5 pb-5 leading-[1.6] animate-[slideDown_0.3s_ease-in-out]">Yes, I can repair and optimize existing WordPress sites, or migrate you to a faster, modern platform if needed.</p>
-            </details>
-            <details class="group border-b border-borderLight transition-colors duration-300 open:bg-primarySoft/30">
-                <summary class="flex justify-between items-center font-[650] text-[15px] lg:text-[16px] cursor-pointer text-textPrimary list-none [&::-webkit-details-marker]:hidden p-5">
-                    Can you fix my existing website?
-                    <Plus className="w-5 h-5 text-textMuted group-open:text-primary transition-transform group-open:rotate-45 duration-300 flex-shrink-0 ml-4" />
-                </summary>
-                <p class="text-[14px] lg:text-[15px] text-textSecondary px-5 pb-5 leading-[1.6] animate-[slideDown_0.3s_ease-in-out]">Absolutely. The "Technical Rescue" service is specifically designed to hunt down bugs, fix SEO errors, and optimize speed on current sites.</p>
-            </details>
-            <details class="group border-b border-borderLight transition-colors duration-300 open:bg-primarySoft/30">
-                <summary class="flex justify-between items-center font-[650] text-[15px] lg:text-[16px] cursor-pointer text-textPrimary list-none [&::-webkit-details-marker]:hidden p-5">
-                    Do you offer ongoing support?
-                    <Plus className="w-5 h-5 text-textMuted group-open:text-primary transition-transform group-open:rotate-45 duration-300 flex-shrink-0 ml-4" />
-                </summary>
-                <p class="text-[14px] lg:text-[15px] text-textSecondary px-5 pb-5 leading-[1.6] animate-[slideDown_0.3s_ease-in-out]">Yes, my No-Ghosting Guarantee means I stay available after launch to keep your systems updated and secure.</p>
-            </details>
-        </div>
+<section id="faq" class="w-full px-4 sm:px-8 py-16 lg:py-24 bg-bgMain brutal-border-b relative z-10">
+	<div class="max-w-[1000px] mx-auto observe-block">
+		<div class="text-center mb-16">
+			<span class="text-[12px] font-mono font-bold text-primary uppercase tracking-widest block mb-4">[ 06. Intel ]</span>
+			<h2 class="text-fluid-h2 font-bold uppercase leading-tight">
+				<span class="reveal-overflow"><span class="reveal-text block">Common Questions</span></span>
+			</h2>
+		</div>
 
-        <!-- Правая колонка FAQ -->
-        <div class="flex flex-col lg:border-t border-borderLight">
-            <details class="group border-b border-borderLight transition-colors duration-300 open:bg-primarySoft/30 rounded-t-xl">
-                <summary class="flex justify-between items-center font-[650] text-[15px] lg:text-[16px] cursor-pointer text-textPrimary list-none [&::-webkit-details-marker]:hidden p-5">
-                    What do you need from me to get started?
-                    <Plus className="w-5 h-5 text-textMuted group-open:text-primary transition-transform group-open:rotate-45 duration-300 flex-shrink-0 ml-4" />
-                </summary>
-                <p class="text-[14px] lg:text-[15px] text-textSecondary px-5 pb-5 leading-[1.6] animate-[slideDown_0.3s_ease-in-out]">Just a quick 20-minute chat to understand your business goals, and access to your current domain/hosting (if applicable).</p>
-            </details>
-            <details class="group border-b border-borderLight transition-colors duration-300 open:bg-primarySoft/30">
-                <summary class="flex justify-between items-center font-[650] text-[15px] lg:text-[16px] cursor-pointer text-textPrimary list-none [&::-webkit-details-marker]:hidden p-5">
-                    How much does a website usually cost?
-                    <Plus className="w-5 h-5 text-textMuted group-open:text-primary transition-transform group-open:rotate-45 duration-300 flex-shrink-0 ml-4" />
-                </summary>
-                <p class="text-[14px] lg:text-[15px] text-textSecondary px-5 pb-5 leading-[1.6] animate-[slideDown_0.3s_ease-in-out]">Basic rescue projects start at $750, while full custom modernization starts at $5,000. We'll find the right fit for your budget during our strategy call.</p>
-            </details>
-            <details class="group border-b border-borderLight transition-colors duration-300 open:bg-primarySoft/30">
-                <summary class="flex justify-between items-center font-[650] text-[15px] lg:text-[16px] cursor-pointer text-textPrimary list-none [&::-webkit-details-marker]:hidden p-5">
-                    Are third-party tools or subscriptions included?
-                    <Plus className="w-5 h-5 text-textMuted group-open:text-primary transition-transform group-open:rotate-45 duration-300 flex-shrink-0 ml-4" />
-                </summary>
-                <p class="text-[14px] lg:text-[15px] text-textSecondary px-5 pb-5 leading-[1.6] animate-[slideDown_0.3s_ease-in-out]">You will own all your accounts. I'll help you set them up, but you pay directly for hosting or third-party tools to ensure you maintain full control.</p>
-            </details>
-            <details class="group border-b border-borderLight transition-colors duration-300 open:bg-primarySoft/30">
-                <summary class="flex justify-between items-center font-[650] text-[15px] lg:text-[16px] cursor-pointer text-textPrimary list-none [&::-webkit-details-marker]:hidden p-5">
-                    Can you help with SEO after launch?
-                    <Plus className="w-5 h-5 text-textMuted group-open:text-primary transition-transform group-open:rotate-45 duration-300 flex-shrink-0 ml-4" />
-                </summary>
-                <p class="text-[14px] lg:text-[15px] text-textSecondary px-5 pb-5 leading-[1.6] animate-[slideDown_0.3s_ease-in-out]">Yes, all builds include foundational Local SEO. I also offer ongoing maintenance and SEO packages to help you climb the rankings.</p>
-            </details>
-        </div>
-    </div>
-
-    <div class="text-center w-full border-b border-borderLight pb-10 lg:pb-0 lg:border-0 reveal-section">
-        <a href="#contact" class="text-[14px] lg:text-[15px] font-[650] text-textPrimary inline-flex items-center gap-1.5 hover:text-primary transition-colors">
-            More questions? Let's talk <ArrowRight className="w-4 h-4" />
-        </a>
-    </div>
-    
-    <div class="w-full flex justify-center text-borderStrong mt-10 lg:hidden">
-        <ChevronDown className="w-6 h-6" />
-    </div>
-    </div>
+		<div class="stamp-item delay-100 flex flex-col border-t-[3px] border-black">
+			<details class="group border-b-[3px] border-black bg-surface">
+				<summary class="flex justify-between items-center py-6 sm:py-8 font-bold uppercase text-[16px] sm:text-[20px] cursor-pointer outline-none hover:text-primary transition-colors pr-4">
+					How long does a project take?
+					<Plus className="faq-plus w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0 ml-4 border-2 border-black rounded-full p-1 group-hover:border-primary transition-transform duration-200" />
+				</summary>
+				<div class="faq-content pb-8 text-[16px] sm:text-[18px] text-textSecondary font-[500] pr-4 max-w-3xl">
+					Most custom modernization projects take between 3 to 6 weeks, depending on the complexity and scope.
+				</div>
+			</details>
+			<details class="group border-b-[3px] border-black bg-surface">
+				<summary class="flex justify-between items-center py-6 sm:py-8 font-bold uppercase text-[16px] sm:text-[20px] cursor-pointer outline-none hover:text-primary transition-colors pr-4">
+					Do you work with WordPress?
+					<Plus className="faq-plus w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0 ml-4 border-2 border-black rounded-full p-1 group-hover:border-primary transition-transform duration-200" />
+				</summary>
+				<div class="faq-content pb-8 text-[16px] sm:text-[18px] text-textSecondary font-[500] pr-4 max-w-3xl">
+					Yes, I can repair and optimize existing WordPress sites, or migrate you to a faster, modern platform if needed.
+				</div>
+			</details>
+			<details class="group border-b-[3px] border-black bg-surface">
+				<summary class="flex justify-between items-center py-6 sm:py-8 font-bold uppercase text-[16px] sm:text-[20px] cursor-pointer outline-none hover:text-primary transition-colors pr-4">
+					How much does it usually cost?
+					<Plus className="faq-plus w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0 ml-4 border-2 border-black rounded-full p-1 group-hover:border-primary transition-transform duration-200" />
+				</summary>
+				<div class="faq-content pb-8 text-[16px] sm:text-[18px] text-textSecondary font-[500] pr-4 max-w-3xl">
+					Technical rescue projects start around $750, while full custom modernization starts around $5,000+.
+				</div>
+			</details>
+		</div>
+	</div>
 </section>

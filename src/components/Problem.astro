@@ -1,71 +1,43 @@
 ---
-import { Gauge, Smartphone, TriangleAlert, DollarSign, Star, ChevronDown } from 'lucide-react';
+import { DollarSign, Gauge, Smartphone, TriangleAlert } from 'lucide-react';
 ---
-<section class="w-full px-5 py-12 lg:py-20 bg-surfaceWarm border-t border-borderLight flex flex-col items-center">
-    <div class="max-w-7xl mx-auto w-full">
-    <div class="flex flex-col items-center mb-10 lg:mb-16 reveal-section">
-        <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 lg:mb-4 block">The Problem</span>
-        <h2 class="text-[28px] lg:text-[40px] leading-[1.15] font-bold text-textPrimary mb-4 lg:mb-6 text-center">Is your website<br class="lg:hidden"> an asset — or a liability?</h2>
-        <p class="text-[15px] lg:text-[18px] text-textSecondary text-center max-w-[600px]">Most local business sites are "Digital Ghost Towns".</p>
-    </div>
 
-    <!-- 2x2 Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 w-full mb-10 lg:mb-12">
-        <!-- Проблема 1 -->
-        <div class="bg-surface border border-borderLight rounded-[24px] p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover-lift hover:border-primary/20 reveal-card group">
-            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0 mt-1 lg:mt-0 transition-transform group-hover:scale-110">
-                <Gauge className="w-5 h-5 lg:w-7 lg:h-7" />
-            </div>
-            <div>
-                <h3 class="text-[15px] lg:text-[18px] font-[650] text-textPrimary mb-2">Slow & Bloated</h3>
-                <p class="text-[13px] lg:text-[15px] text-textSecondary leading-[1.6]">Slow load times frustrate visitors and hurt your Google visibility.</p>
-            </div>
-        </div>
-        <!-- Проблема 2 -->
-        <div class="bg-surface border border-borderLight rounded-[24px] p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover-lift hover:border-textMuted/30 reveal-card reveal-delay-1 group">
-            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-textMuted flex-shrink-0 mt-1 lg:mt-0 transition-transform group-hover:scale-110">
-                <Smartphone className="w-5 h-5 lg:w-7 lg:h-7" />
-            </div>
-            <div>
-                <h3 class="text-[15px] lg:text-[18px] font-[650] text-textPrimary mb-2">Mobile-Broken</h3>
-                <p class="text-[13px] lg:text-[15px] text-textSecondary leading-[1.6]">Customers leave when your site is hard to use on their phone.</p>
-            </div>
-        </div>
-        <!-- Проблема 3 -->
-        <div class="bg-surface border border-borderLight rounded-[24px] p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover-lift hover:border-warning/30 reveal-card group">
-            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-warning/10 flex items-center justify-center text-warning flex-shrink-0 mt-1 lg:mt-0 transition-transform group-hover:scale-110">
-                <TriangleAlert className="w-5 h-5 lg:w-7 lg:h-7" />
-            </div>
-            <div>
-                <h3 class="text-[15px] lg:text-[18px] font-[650] text-textPrimary mb-2">Technically Abandoned</h3>
-                <p class="text-[13px] lg:text-[15px] text-textSecondary leading-[1.6]">Old plugins, broken forms, and no one responsible for maintenance.</p>
-            </div>
-        </div>
-        <!-- Проблема 4 -->
-        <div class="bg-surface border border-borderLight rounded-[24px] p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover-lift hover:border-success/30 reveal-card reveal-delay-1 group">
-            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-success/10 flex items-center justify-center text-success flex-shrink-0 mt-1 lg:mt-0 transition-transform group-hover:scale-110">
-                <DollarSign className="w-5 h-5 lg:w-7 lg:h-7" />
-            </div>
-            <div>
-                <h3 class="text-[15px] lg:text-[18px] font-[650] text-textPrimary mb-2">Lost Leads & Revenue</h3>
-                <p class="text-[13px] lg:text-[15px] text-textSecondary leading-[1.6]">Forms fail, calls are missed, and opportunities quietly slip away.</p>
-            </div>
-        </div>
-    </div>
+<section class="w-full px-4 sm:px-8 py-16 lg:py-24 bg-bgMain brutal-border-b relative z-10">
+	<div class="max-w-[1400px] mx-auto observe-block">
+		<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+			<div>
+				<span class="text-[12px] font-mono font-bold text-primary uppercase tracking-widest block mb-4">[ 01. The Problem ]</span>
+				<h2 class="text-fluid-h2 leading-[0.95] font-bold uppercase flex flex-col">
+					<span class="reveal-overflow"><span class="reveal-text block">Is Your Site</span></span>
+					<span class="reveal-overflow"><span class="reveal-text block text-outline">A Liability?</span></span>
+				</h2>
+			</div>
+			<p class="stamp-item delay-200 text-[16px] md:text-[18px] font-[500] text-textSecondary border-l-4 border-black pl-4 max-w-md">
+				Most local business websites are slow, outdated, or barely maintained. They quietly lose visitors, leads, and trust every day.
+			</p>
+		</div>
 
-    <!-- Обещание -->
-    <div class="bg-primarySoft border border-primary/20 rounded-2xl p-6 lg:p-8 flex gap-4 lg:gap-6 items-center w-full max-w-3xl mx-auto shadow-sm reveal-section hover:shadow-md transition-shadow duration-300">
-        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-            <Star className="w-6 h-6 text-primary" />
-        </div>
-        <div>
-            <h3 class="text-[15px] lg:text-[18px] font-[650] text-textPrimary mb-1">The Promise</h3>
-            <p class="text-[13px] lg:text-[16px] text-textSecondary leading-[1.6]">Your local technical partner who fixes what's broken and builds what lasts.</p>
-        </div>
-    </div>
-    
-    <div class="w-full flex justify-center text-borderStrong mt-10 lg:hidden">
-        <ChevronDown className="w-6 h-6" />
-    </div>
-    </div>
+		<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+			<div class="stamp-item shadow-brutal delay-100 bg-surface brutal-border p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+				<Gauge className="w-8 h-8 lg:w-10 lg:h-10 mb-6" />
+				<h3 class="text-[20px] font-bold uppercase mb-3">Slow & Bloated</h3>
+				<p class="text-[15px] text-textSecondary font-[500]">Taking 5+ seconds to load kills your Google ranking and frustrates users.</p>
+			</div>
+			<div class="stamp-item shadow-brutal delay-200 bg-surface brutal-border p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+				<Smartphone className="w-8 h-8 lg:w-10 lg:h-10 mb-6" />
+				<h3 class="text-[20px] font-bold uppercase mb-3">Mobile-Broken</h3>
+				<p class="text-[15px] text-textSecondary font-[500]">A broken mobile experience guarantees lost local searches to competitors.</p>
+			</div>
+			<div class="stamp-item shadow-brutal delay-300 bg-warning text-black brutal-border p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+				<TriangleAlert className="w-8 h-8 lg:w-10 lg:h-10 mb-6" />
+				<h3 class="text-[20px] font-bold uppercase mb-3">Abandoned</h3>
+				<p class="text-[15px] font-[500]">Built on old WordPress plugins by a developer who vanished. Security risk.</p>
+			</div>
+			<div class="stamp-item shadow-brutal delay-400 bg-black text-white brutal-border p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+				<DollarSign className="w-8 h-8 lg:w-10 lg:h-10 mb-6" />
+				<h3 class="text-[20px] font-bold uppercase mb-3">Lost Leads</h3>
+				<p class="text-[15px] text-gray-300 font-[500]">Forms silently fail, calls aren't tracked, and opportunities slip away.</p>
+			</div>
+		</div>
+	</div>
 </section>

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Alabama SMB Web Developer - Brutalism Animated</title>
+    
+    <!-- Подключение шрифтов -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-sans/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-mono/style.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Настройка бруталистичной дизайн-системы -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Geist Sans"', 'sans-serif'],
+                        mono: ['"Geist Mono"', 'monospace'],
+                    },
+                    colors: {
+                        bgMain: '#F2F2F2',
+                        surface: '#FFFFFF',
+                        textPrimary: '#000000',
+                        textSecondary: '#404040',
+                        borderStrong: '#000000',
+                        primary: '#2563EB',
+                        success: '#16A34A',
+                        warning: '#F59E0B',
+                        dark: '#0F172A',
+                    },
+                    boxShadow: {
+                        'brutal-sm': '3px 3px 0px #000000',
+                        'brutal': '6px 6px 0px #000000',
+                        'brutal-hover': '2px 2px 0px #000000',
+                        'brutal-primary': '6px 6px 0px #2563EB',
+                        'brutal-white': '6px 6px 0px #FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; background-color: #F2F2F2; }
+        
+        /* === BOLD TYPOGRAPHY EFFECTS === */
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1.5px #000000;
+        }
+        @media (min-width: 768px) {
+            .text-outline { -webkit-text-stroke: 2.5px #000000; }
+        }
+        .text-outline-white {
+            color: transparent;
+            -webkit-text-stroke: 2px #FFFFFF;
+        }
+
+        .text-fluid-hero {
+            font-size: clamp(3rem, 10vw, 9rem);
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+        }
+
+        .text-fluid-h2 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+        }
+
+        /* === BRUTALIST UI === */
+        .brutal-border { border: 3px solid #000000; }
+        .brutal-border-t { border-top: 3px solid #000000; }
+        .brutal-border-b { border-bottom: 3px solid #000000; }
+        .brutal-border-l { border-left: 3px solid #000000; }
+        .brutal-border-r { border-right: 3px solid #000000; }
+
+        .btn-brutal { transition: all 0.15s ease; }
+        .btn-brutal:hover, .btn-brutal:active {
+            transform: translate(4px, 4px);
+            box-shadow: 2px 2px 0px #000000 !important; /* Force shadow shrink on hover */
+        }
+
+        /* === NEW: BRUTALIST ANIMATIONS === */
+        
+        /* 1. Эффект "штамповки" (Stamping) для карточек */
+        .stamp-item {
+            opacity: 0;
+            transform: translate(16px, 16px);
+            box-shadow: 0px 0px 0px transparent !important;
+            transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1.1), box-shadow 0.6s cubic-bezier(0.2, 0.8, 0.2, 1.1);
+        }
+        
+        /* Восстанавливаем оригинальные тени Tailwind при появлении */
+        .stamp-item.is-visible, .is-visible .stamp-item {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+        .stamp-item.shadow-brutal.is-visible, .is-visible .stamp-item.shadow-brutal { box-shadow: 6px 6px 0px #000 !important; }
+        .stamp-item.shadow-brutal-sm.is-visible, .is-visible .stamp-item.shadow-brutal-sm { box-shadow: 3px 3px 0px #000 !important; }
+        .stamp-item.shadow-[5px_5px_0px_#FFFFFF].is-visible, .is-visible .stamp-item.shadow-[5px_5px_0px_#FFFFFF] { box-shadow: 5px 5px 0px #FFFFFF !important; }
+        .stamp-item.shadow-[6px_6px_0px_#FFFFFF].is-visible, .is-visible .stamp-item.shadow-[6px_6px_0px_#FFFFFF] { box-shadow: 6px 6px 0px #FFFFFF !important; }
+
+        /* 2. Агрессивное появление текста с наклоном */
+        .reveal-overflow {
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: top;
+            padding-bottom: 0.1em; /* Защита от обрезки хвостов букв */
+        }
+        .reveal-text {
+            display: inline-block;
+            transform: translateY(120%) rotate(4deg);
+            transform-origin: top left;
+            opacity: 0;
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+        }
+        .is-visible .reveal-text, .reveal-text.is-visible {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+
+        /* Утилиты задержки */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* === БЕГУЩАЯ СТРОКА === */
+        .marquee-content {
+            display: flex;
+            animation: marquee 20s linear infinite;
+        }
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* === FAQ ACCORDION === */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary .lucide-plus { transform: rotate(45deg); transition: transform 0.2s ease; }
+        details summary .lucide-plus { transition: transform 0.2s ease; }
+        details[open] .faq-content { animation: slideDown 0.2s ease-out; }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Индустриальный ползунок */
+        .slider-handle-brutal {
+            background-color: #FFFFFF;
+            border: 3px solid #000000;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 4px 4px 0px #000000;
+            cursor: ew-resize;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+            .reveal-text { transform: none !important; opacity: 1 !important; }
+            .stamp-item { transform: none !important; opacity: 1 !important; }
+        }
+    </style>
+</head>
+<body class="bg-bgMain text-textPrimary font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+
+    <!-- 1. HEADER -->
+    <header class="fixed top-0 left-0 w-full z-[100] bg-surface brutal-border-b h-[72px] flex justify-between items-stretch">
+        <div class="flex items-center gap-3 px-6 brutal-border-r bg-primary text-white font-bold uppercase tracking-widest text-[16px]">
+            <i data-lucide="zap" class="w-5 h-5 fill-white"></i>
+            <span class="hidden sm:inline">Andrii.Dev</span>
+            <span class="sm:hidden">Andrii</span>
+        </div>
+
+        <nav class="hidden md:flex items-stretch font-bold text-[14px] uppercase tracking-widest">
+            <a href="#work" class="flex items-center px-8 brutal-border-r hover:bg-black hover:text-white transition-colors">Work</a>
+            <a href="#services" class="flex items-center px-8 brutal-border-r hover:bg-black hover:text-white transition-colors">Services</a>
+            <a href="#about" class="flex items-center px-8 brutal-border-r hover:bg-black hover:text-white transition-colors">About</a>
+        </nav>
+
+        <div class="flex items-stretch ml-auto">
+            <div class="hidden lg:flex items-center gap-2 px-8 brutal-border-l font-mono text-[12px] uppercase tracking-widest text-textPrimary font-bold">
+                <div class="w-3 h-3 bg-success border-2 border-black"></div>
+                Alabama Based
+            </div>
+            <button class="hidden md:flex bg-black text-white px-8 font-bold text-[14px] uppercase tracking-widest hover:bg-primary transition-colors items-center gap-2">
+                Book Call <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+            <button class="md:hidden flex bg-black text-white px-6 items-center justify-center">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Обертка для реализации эффекта Sticky Slide-over -->
+    <main class="w-full relative">
+        
+        <!-- ========================================== -->
+        <!-- 2. HERO (Sticky Background Layer)          -->
+        <!-- ========================================== -->
+        <!-- Эта секция прилипает к верху, пока следующая наезжает на неё -->
+        <div class="w-full relative">
+            <section class="sticky top-[72px] h-[calc(100vh-72px)] w-full px-4 sm:px-8 flex flex-col items-center justify-center bg-bgMain z-0 overflow-hidden">
+                <div class="max-w-[1400px] w-full mx-auto grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Типографика -->
+                    <div class="lg:col-span-7 flex flex-col items-start w-full observe-block">
+                        <div class="stamp-item shadow-brutal-sm delay-100 inline-flex items-center gap-2 px-3 py-1.5 bg-surface brutal-border text-[10px] md:text-[12px] font-mono font-bold uppercase tracking-widest mb-8">
+                            <div class="w-2.5 h-2.5 bg-success brutal-border animate-pulse"></div>
+                            Available in Alabama
+                        </div>
+
+                        <h1 class="text-fluid-hero font-bold uppercase mb-8 flex flex-col items-start w-full">
+                            <span class="reveal-overflow"><span class="reveal-text delay-100 block">I Build &</span></span>
+                            <span class="reveal-overflow"><span class="reveal-text delay-200 block text-outline hover:text-primary hover:-webkit-text-stroke-0 transition-colors duration-300">Repair</span></span>
+                            <span class="reveal-overflow"><span class="reveal-text delay-300 block bg-primary text-white px-2 mt-1 w-full sm:w-auto">Websites.</span></span>
+                        </h1>
+
+                        <p class="stamp-item delay-300 text-[16px] md:text-[20px] leading-[1.5] font-[500] text-textSecondary mb-10 max-w-xl">
+                            Stop losing customers to a slow, broken website. I replace outdated systems with custom, fast websites and automation that generate leads 24/7.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto mb-10 lg:mb-0">
+                            <button class="stamp-item shadow-brutal delay-400 btn-brutal w-full sm:w-auto bg-black text-white brutal-border px-8 py-5 font-bold uppercase tracking-widest text-[14px] flex justify-center items-center gap-2">
+                                Free Technical Audit <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </button>
+                            <button class="stamp-item shadow-brutal delay-400 btn-brutal w-full sm:w-auto bg-surface text-black brutal-border px-8 py-5 font-bold uppercase tracking-widest text-[14px] text-center">
+                                View My Work
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Визуал (Мокапы) -->
+                    <div class="observe-block lg:col-span-5 w-full">
+                        <div class="stamp-item shadow-brutal delay-300 w-full bg-surface brutal-border p-4 lg:p-6 relative h-[250px] sm:h-[350px] lg:h-[450px]">
+                            <!-- Browser top bar -->
+                            <div class="border-b-3 border-black pb-3 mb-4 flex gap-2">
+                                <div class="w-3 h-3 brutal-border rounded-full bg-bgMain"></div>
+                                <div class="w-3 h-3 brutal-border rounded-full bg-bgMain"></div>
+                                <div class="w-3 h-3 brutal-border rounded-full bg-bgMain"></div>
+                            </div>
+                            <!-- Content wireframe -->
+                            <div class="w-3/4 h-6 lg:h-8 bg-black mb-3"></div>
+                            <div class="w-1/2 h-6 lg:h-8 bg-black mb-6"></div>
+                            <div class="w-1/3 h-10 lg:h-12 bg-primary brutal-border shadow-brutal-sm mb-6"></div>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="h-20 lg:h-32 bg-gray-200 brutal-border"></div>
+                                <div class="h-20 lg:h-32 bg-gray-200 brutal-border"></div>
+                                <div class="h-20 lg:h-32 bg-gray-200 brutal-border hidden sm:block"></div>
+                            </div>
+                            
+                            <!-- Mobile Mockup -->
+                            <div class="stamp-item shadow-brutal delay-400 absolute -bottom-6 -right-4 lg:-bottom-10 lg:-left-10 w-[120px] lg:w-[160px] h-[200px] lg:h-[280px] bg-white brutal-border p-3 z-10 flex flex-col hover:-translate-y-4 transition-transform duration-500">
+                                <div class="w-full h-16 lg:h-24 bg-gray-200 brutal-border mb-3"></div>
+                                <div class="w-full h-3 lg:h-4 bg-black mb-2"></div>
+                                <div class="w-2/3 h-3 lg:h-4 bg-black mb-auto"></div>
+                                <div class="w-full h-8 lg:h-12 bg-primary brutal-border"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            
+            <!-- Огромная бегущая строка между Hero и Trust -->
+            <div class="relative z-10 w-full bg-black text-white py-[2vh] border-t-4 border-b-4 border-black marquee-container text-[4vw] font-bold tracking-tighter uppercase cursor-crosshair">
+                <div class="marquee-content gap-8 items-center">
+                    <span>Fast Performance</span> <span class="text-primary">•</span>
+                    <span class="text-outline-white">Zero Ghosting</span> <span class="text-primary">•</span>
+                    <span>SEO Optimized</span> <span class="text-primary">•</span>
+                    <span class="text-outline-white">Mobile Perfect</span> <span class="text-primary">•</span>
+                    <span>Fast Performance</span> <span class="text-primary">•</span>
+                    <span class="text-outline-white">Zero Ghosting</span> <span class="text-primary">•</span>
+                    <span>SEO Optimized</span> <span class="text-primary">•</span>
+                    <span class="text-outline-white">Mobile Perfect</span> <span class="text-primary">•</span>
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- 3. TRUST / IDENTITY (Наезжает поверх Hero) -->
+            <!-- ========================================== -->
+            <section class="relative z-10 w-full px-4 sm:px-8 py-12 lg:py-20 bg-surface brutal-border-b">
+                <div class="max-w-[1400px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-10 observe-block">
+                    
+                    <div class="text-center lg:text-left">
+                        <span class="text-[12px] font-mono font-bold uppercase tracking-widest text-textSecondary block mb-4">Alabama-Based Developer</span>
+                        <h2 class="text-fluid-h2 font-bold uppercase leading-none">
+                            <span class="reveal-overflow"><span class="reveal-text block">Local. Reliable.</span></span><br>
+                            <span class="reveal-overflow"><span class="reveal-text block">Real Comm.</span></span>
+                        </h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 w-full lg:w-auto">
+                        <div class="stamp-item shadow-brutal-sm delay-100 flex flex-col items-center lg:items-start text-center lg:text-left">
+                            <div class="w-12 h-12 lg:w-16 lg:h-16 brutal-border bg-bgMain flex items-center justify-center mb-4 text-primary">
+                                <i data-lucide="map-pin" class="w-6 h-6 lg:w-8 lg:h-8"></i>
+                            </div>
+                            <h3 class="text-[14px] lg:text-[16px] font-bold uppercase mb-2">Local Partner</h3>
+                        </div>
+                        <div class="stamp-item shadow-brutal-sm delay-200 flex flex-col items-center lg:items-start text-center lg:text-left">
+                            <div class="w-12 h-12 lg:w-16 lg:h-16 brutal-border bg-bgMain flex items-center justify-center mb-4 text-primary">
+                                <i data-lucide="phone" class="w-6 h-6 lg:w-8 lg:h-8"></i>
+                            </div>
+                            <h3 class="text-[14px] lg:text-[16px] font-bold uppercase mb-2">Direct Access</h3>
+                        </div>
+                        <div class="stamp-item shadow-brutal-sm delay-300 flex flex-col items-center lg:items-start text-center lg:text-left">
+                            <div class="w-12 h-12 lg:w-16 lg:h-16 brutal-border bg-bgMain flex items-center justify-center mb-4 text-primary">
+                                <i data-lucide="users" class="w-6 h-6 lg:w-8 lg:h-8"></i>
+                            </div>
+                            <h3 class="text-[14px] lg:text-[16px] font-bold uppercase mb-2">No Ghosting</h3>
+                        </div>
+                        <div class="stamp-item shadow-brutal-sm delay-400 flex flex-col items-center lg:items-start text-center lg:text-left">
+                            <div class="w-12 h-12 lg:w-16 lg:h-16 brutal-border bg-bgMain flex items-center justify-center mb-4 text-primary">
+                                <i data-lucide="shield-check" class="w-6 h-6 lg:w-8 lg:h-8"></i>
+                            </div>
+                            <h3 class="text-[14px] lg:text-[16px] font-bold uppercase mb-2">Long-term</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 4. THE PROBLEM                             -->
+        <!-- ========================================== -->
+        <section class="w-full px-4 sm:px-8 py-16 lg:py-24 bg-bgMain brutal-border-b relative z-10">
+            <div class="max-w-[1400px] mx-auto observe-block">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div>
+                        <span class="text-[12px] font-mono font-bold text-primary uppercase tracking-widest block mb-4">[ 01. The Problem ]</span>
+                        <h2 class="text-fluid-h2 leading-[0.95] font-bold uppercase flex flex-col">
+                            <span class="reveal-overflow"><span class="reveal-text block">Is Your Site</span></span>
+                            <span class="reveal-overflow"><span class="reveal-text block text-outline">A Liability?</span></span>
+                        </h2>
+                    </div>
+                    <p class="stamp-item delay-200 text-[16px] md:text-[18px] font-[500] text-textSecondary border-l-4 border-black pl-4 max-w-md">
+                        Most local business sites are "Digital Ghost Towns". They quietly cost you customers every single day.
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <div class="stamp-item shadow-brutal delay-100 bg-surface brutal-border p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                        <i data-lucide="gauge" class="w-8 h-8 lg:w-10 lg:h-10 mb-6"></i>
+                        <h3 class="text-[20px] font-bold uppercase mb-3">Slow & Bloated</h3>
+                        <p class="text-[15px] text-textSecondary font-[500]">Taking 5+ seconds to load kills your Google ranking and frustrates users.</p>
+                    </div>
+                    <div class="stamp-item shadow-brutal delay-200 bg-surface brutal-border p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                        <i data-lucide="smartphone" class="w-8 h-8 lg:w-10 lg:h-10 mb-6"></i>
+                        <h3 class="text-[20px] font-bold uppercase mb-3">Mobile-Broken</h3>
+                        <p class="text-[15px] text-textSecondary font-[500]">A broken mobile experience guarantees lost local searches to competitors.</p>
+                    </div>
+                    <div class="stamp-item shadow-brutal delay-300 bg-warning text-black brutal-border p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                        <i data-lucide="triangle-alert" class="w-8 h-8 lg:w-10 lg:h-10 mb-6"></i>
+                        <h3 class="text-[20px] font-bold uppercase mb-3">Abandoned</h3>
+                        <p class="text-[15px] font-[500]">Built on old WordPress plugins by a developer who vanished. Security risk.</p>
+                    </div>
+                    <div class="stamp-item shadow-brutal delay-400 bg-black text-white brutal-border p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                        <i data-lucide="dollar-sign" class="w-8 h-8 lg:w-10 lg:h-10 mb-6"></i>
+                        <h3 class="text-[20px] font-bold uppercase mb-3">Lost Leads</h3>
+                        <p class="text-[15px] text-gray-300 font-[500]">Forms silently fail, calls aren't tracked, and opportunities slip away.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 5. CASE STUDIES                            -->
+        <!-- ========================================== -->
+        <section id="work" class="w-full px-4 sm:px-8 py-16 lg:py-24 bg-surface brutal-border-b relative z-10">
+            <div class="max-w-[1400px] mx-auto observe-block">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div>
+                        <span class="text-[12px] font-mono font-bold text-primary uppercase tracking-widest block mb-4">[ 02. The Proof ]</span>
+                        <h2 class="text-fluid-h2 font-bold uppercase leading-none">
+                            <span class="reveal-overflow"><span class="reveal-text block">Proof, Not</span></span><br>
+                            <span class="reveal-overflow"><span class="reveal-text block">Promises.</span></span>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="stamp-item shadow-brutal delay-200 bg-bgMain brutal-border mb-10 flex flex-col lg:flex-row">
+                    <div class="p-6 sm:p-10 lg:p-12 lg:w-[40%] flex flex-col justify-between border-b lg:border-b-0 lg:border-r-[3px] border-black">
+                        <div>
+                            <div class="font-mono text-[12px] font-bold uppercase tracking-widest bg-black text-white inline-block px-3 py-1.5 mb-6 brutal-border">Case Study 1</div>
+                            <h3 class="text-[28px] sm:text-[36px] font-bold uppercase leading-tight mb-6">Veterinary Clinic Modernization</h3>
+                            <p class="text-[16px] text-textSecondary font-[500] mb-8">
+                                Engineered a new architecture with a mobile-first approach, cleaned up SEO, and built a seamless lead capture flow.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-4 mb-8 bg-success/20 p-4 brutal-border shadow-brutal-sm inline-flex hover:-translate-y-1 transition-transform">
+                                <span class="text-[32px] font-bold text-success leading-none">100/100</span>
+                                <span class="text-[12px] uppercase font-bold w-20 leading-tight">Performance Score</span>
+                            </div>
+                            <button class="w-full btn-brutal bg-surface text-black brutal-border px-6 py-4 font-bold uppercase text-[14px] tracking-wider shadow-brutal flex justify-center items-center gap-2">
+                                View Case Study <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="before-after-slider relative min-h-[300px] lg:min-h-[500px] lg:w-[60%] select-none overflow-hidden">
+                        <div class="absolute inset-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1576201836106-db1758fd1c97?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center"></div>
+                        <div class="absolute top-4 right-4 lg:top-6 lg:right-6 bg-black text-white px-3 py-1 lg:px-4 lg:py-2 font-mono text-[10px] lg:text-[14px] font-bold uppercase z-10 brutal-border shadow-brutal-sm">After</div>
+                        
+                        <div class="before-image-wrapper absolute inset-0 w-1/2 h-full overflow-hidden z-10 border-r-[3px] border-black">
+                            <div class="before-inner absolute top-0 left-0 h-full bg-[url('https://images.unsplash.com/photo-1596272875886-f6313ed6c99f?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center grayscale blur-[1px]"></div>
+                            <div class="absolute top-4 left-4 lg:top-6 lg:left-6 bg-surface text-black brutal-border px-3 py-1 lg:px-4 lg:py-2 font-mono text-[10px] lg:text-[14px] font-bold uppercase z-20 shadow-brutal-sm">Before</div>
+                        </div>
+
+                        <div class="slider-line absolute top-0 bottom-0 left-1/2 w-[3px] bg-black pointer-events-none z-20 -ml-[1.5px]">
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 slider-handle-brutal">
+                                <i data-lucide="chevrons-left-right" class="w-5 h-5 text-black"></i>
+                            </div>
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="slider-input absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30 m-0">
+                    </div>
+                </div>
+
+                <!-- Вторичные кейсы -->
+                <div class="grid md:grid-cols-2 gap-6 lg:gap-10">
+                    <div class="stamp-item shadow-brutal delay-100 bg-bgMain brutal-border p-6 lg:p-10 flex flex-col justify-between hover:bg-black hover:text-white transition-colors group">
+                        <div>
+                            <div class="font-mono text-[12px] font-bold text-textSecondary group-hover:text-gray-400 uppercase tracking-widest mb-4 transition-colors">[ Case Study 2 ]</div>
+                            <h3 class="text-[24px] font-bold uppercase leading-tight mb-4">Senior Accessibility Redesign</h3>
+                            <p class="text-[15px] text-textSecondary group-hover:text-gray-300 font-[500] mb-6 transition-colors">Re-engineered the UI with a focus on extreme accessibility and improved trust signals.</p>
+                        </div>
+                        <div>
+                            <div class="text-[16px] font-bold text-primary mb-6 border-l-4 border-primary pl-4 py-1 bg-surface group-hover:bg-gray-900 group-hover:text-white transition-colors">2x Increase in clarity & inquiries.</div>
+                            <button class="text-[14px] font-bold uppercase tracking-widest hover:text-primary flex items-center gap-2 group-hover:text-white">Read More <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="stamp-item shadow-brutal delay-200 bg-bgMain brutal-border p-6 lg:p-10 flex flex-col justify-between hover:bg-black hover:text-white transition-colors group">
+                        <div>
+                            <div class="font-mono text-[12px] font-bold text-textSecondary group-hover:text-gray-400 uppercase tracking-widest mb-4 transition-colors">[ Case Study 3 ]</div>
+                            <h3 class="text-[24px] font-bold uppercase leading-tight mb-4">Premium Bulldog Breeder</h3>
+                            <p class="text-[15px] text-textSecondary group-hover:text-gray-300 font-[500] mb-6 transition-colors">Built a custom, visually rich platform focused on mobile speed, SEO foundation, and social proof.</p>
+                        </div>
+                        <div>
+                            <div class="text-[16px] font-bold text-success mb-6 border-l-4 border-success pl-4 py-1 bg-surface group-hover:bg-gray-900 group-hover:text-white transition-colors">Stronger brand identity established.</div>
+                            <button class="text-[14px] font-bold uppercase tracking-widest hover:text-primary flex items-center gap-2 group-hover:text-white">Read More <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 6. SERVICES                                -->
+        <!-- ========================================== -->
+        <section id="services" class="w-full px-4 sm:px-8 py-16 lg:py-24 bg-black text-white brutal-border-b relative z-10">
+            <div class="max-w-[1400px] mx-auto observe-block">
+                <span class="text-[12px] font-mono font-bold text-primary uppercase tracking-widest block mb-4">[ 03. Solutions ]</span>
+                <h2 class="text-fluid-h2 font-bold uppercase mb-12 lg:mb-16 leading-none text-outline-white text-transparent">
+                    <span class="reveal-overflow"><span class="reveal-text block">How I Build.</span></span>
+                </h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
+                    <div class="stamp-item shadow-[5px_5px_0px_#FFFFFF] delay-100 bg-surface text-black brutal-border p-8 relative flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                        <div class="absolute -top-3 -right-3 bg-bgMain brutal-border p-2 font-mono text-[14px] font-bold shadow-brutal-sm">01</div>
+                        <i data-lucide="search" class="w-10 h-10 mb-6 text-primary"></i>
+                        <h3 class="text-[22px] font-bold uppercase mb-3 border-b-3 border-black pb-3">Diagnostic Audit</h3>
+                        <p class="text-[15px] font-[500] text-textSecondary mb-8 flex-grow">Deep-dive technical review to find what's slowing your website down and hurting SEO.</p>
+                        <div class="font-mono text-[14px] font-bold bg-bgMain border-[2px] border-black inline-block px-3 py-1.5 shadow-brutal-hover self-start">Starts at $500</div>
+                    </div>
+
+                    <div class="stamp-item shadow-[6px_6px_0px_#FFFFFF] delay-200 lg:col-span-2 bg-primary text-white border-4 border-white p-8 relative flex flex-col sm:flex-row gap-8 hover:-translate-y-2 transition-transform duration-300" style="border: 4px solid #fff;">
+                        <div class="absolute -top-3 -right-3 bg-black text-white border-3 border-white p-2 font-mono text-[14px] font-bold shadow-[3px_3px_0px_#FFFFFF]">02</div>
+                        <div class="flex-shrink-0">
+                            <i data-lucide="settings" class="w-12 h-12 mb-6"></i>
+                            <h3 class="text-[26px] font-bold uppercase mb-3">Modernization<br>Engine</h3>
+                            <div class="font-mono text-[14px] font-bold bg-black text-white inline-block px-3 py-1.5 border-2 border-white shadow-[2px_2px_0_#FFF]">Starts at $5,000+</div>
+                        </div>
+                        <div class="flex flex-col justify-center border-t-2 sm:border-t-0 sm:border-l-2 border-white/30 pt-6 sm:pt-0 sm:pl-8">
+                            <p class="text-[16px] font-[500] text-white/90 mb-6">Full migration to a custom, lightning-fast system built to scale. Zero maintenance.</p>
+                            <ul class="text-[14px] font-bold uppercase tracking-wider space-y-3">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-black"></i> Custom Redesign</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-black"></i> Mobile-First Architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="stamp-item shadow-[5px_5px_0px_#FFFFFF] delay-300 bg-surface text-black brutal-border p-8 relative flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                        <div class="absolute -top-3 -right-3 bg-bgMain brutal-border p-2 font-mono text-[14px] font-bold shadow-brutal-sm">03</div>
+                        <i data-lucide="bot" class="w-10 h-10 mb-6 text-primary"></i>
+                        <h3 class="text-[22px] font-bold uppercase mb-3 border-b-3 border-black pb-3">AI Edge</h3>
+                        <p class="text-[15px] font-[500] text-textSecondary mb-8 flex-grow">Implement smart automation and chat tools to capture leads 24/7 and save time.</p>
+                        <div class="font-mono text-[14px] font-bold bg-bgMain border-[2px] border-black inline-block px-3 py-1.5 shadow-brutal-hover self-start">Starts at $3,000+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 7. PROCESS                                 -->
+        <!-- ========================================== -->
+        <section class="w-full px-4 sm:px-8 py-16 lg:py-24 bg-bgMain brutal-border-b overflow-hidden relative z-10">
+            <div class="max-w-[1400px] mx-auto observe-block">
+                <span class="text-[12px] font-mono font-bold text-primary uppercase tracking-widest block mb-4">[ 04. The Method ]</span>
+                <h2 class="text-fluid-h2 font-bold uppercase mb-16 leading-none">
+                    <span class="reveal-overflow"><span class="reveal-text block">Clear Process.</span></span><br>
+                    <span class="reveal-overflow"><span class="reveal-text block">No Guesswork.</span></span>
+                </h2>
+                
+                <div class="flex flex-col md:flex-row md:justify-between gap-10 md:gap-6 border-l-4 md:border-l-0 md:border-t-4 border-black ml-4 md:ml-0 pl-6 md:pl-0 md:pt-10 relative">
+                    <div class="stamp-item delay-100 relative md:w-1/4">
+                        <div class="absolute -left-[40px] md:left-0 md:-top-[62px] w-8 h-8 rounded-full bg-surface brutal-border shadow-brutal-sm flex items-center justify-center font-mono text-[12px] font-bold">1</div>
+                        <h3 class="text-[20px] font-bold uppercase mb-2">Audit</h3>
+                        <p class="text-[15px] text-textSecondary font-[500]">We find what's broken and what's holding you back.</p>
+                    </div>
+                    <div class="stamp-item delay-200 relative md:w-1/4">
+                        <div class="absolute -left-[40px] md:left-0 md:-top-[62px] w-8 h-8 rounded-full bg-primary text-white border-[3px] border-black shadow-brutal-sm flex items-center justify-center font-mono text-[12px] font-bold">2</div>
+                        <h3 class="text-[20px] font-bold uppercase mb-2">Build</h3>
+                        <p class="text-[15px] text-textSecondary font-[500]">I engineer a clean solution around your business goals.</p>
+                    </div>
+                    <div class="stamp-item delay-300 relative md:w-1/4">
+                        <div class="absolute -left-[40px] md:left-0 md:-top-[62px] w-8 h-8 rounded-full bg-surface brutal-border shadow-brutal-sm flex items-center justify-center font-mono text-[12px] font-bold">3</div>
+                        <h3 class="text-[20px] font-bold uppercase mb-2">Launch</h3>
+                        <p class="text-[15px] text-textSecondary font-[500]">We test, optimize, and go live with confidence.</p>
+                    </div>
+                    <div class="stamp-item delay-400 relative md:w-1/4">
+                        <div class="absolute -left-[40px] md:left-0 md:-top-[62px] w-8 h-8 rounded-full bg-success text-white border-[3px] border-black shadow-brutal-sm flex items-center justify-center font-mono text-[12px] font-bold">4</div>
+                        <h3 class="text-[20px] font-bold uppercase mb-2">Support</h3>
+                        <p class="text-[15px] text-textSecondary font-[500]">I stay available after launch to keep things running.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 8. ABOUT & GUARANTEE                       -->
+        <!-- ========================================== -->
+        <section id="about" class="w-full px-4 sm:px-8 py-16 lg:py-24 bg-surface brutal-border-b relative z-10">
+            <div class="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center observe-block">
+                
+                <div class="flex flex-col">
+                    <span class="text-[12px] font-mono font-bold text-primary uppercase tracking-widest block mb-4">[ 05. Guarantee ]</span>
+                    <h2 class="text-fluid-h2 font-bold uppercase mb-10 leading-none">
+                        <span class="reveal-overflow"><span class="reveal-text block">A Partner, Not</span></span><br>
+                        <span class="reveal-overflow"><span class="reveal-text block text-outline">Just A Dev.</span></span>
+                    </h2>
+
+                    <div class="stamp-item shadow-brutal delay-100 bg-bgMain brutal-border p-6 mb-10 flex gap-6 items-center">
+                        <div class="w-24 h-24 bg-gray-300 brutal-border flex-shrink-0 flex items-center justify-center text-textMuted hover:bg-primary hover:text-white transition-colors duration-300">
+                            <i data-lucide="camera" class="w-10 h-10 opacity-80"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-[24px] font-bold uppercase mb-1">Andrii</h3>
+                            <p class="text-[14px] font-mono font-bold text-textSecondary uppercase tracking-widest mb-3">Technical Partner</p>
+                            <div class="inline-flex items-center gap-2 bg-black text-white px-3 py-1 text-[12px] font-bold uppercase shadow-brutal-sm">
+                                <i data-lucide="map-pin" class="w-4 h-4"></i> Based in Alabama
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-10">
+                    <div class="stamp-item delay-200 flex flex-col gap-5 border-l-4 border-primary pl-6">
+                        <div class="flex items-center gap-4 hover:translate-x-2 transition-transform cursor-default">
+                            <i data-lucide="check-square" class="w-6 h-6 text-primary"></i>
+                            <span class="text-[18px] font-[600]">Structured SOWs & Timelines</span>
+                        </div>
+                        <div class="flex items-center gap-4 hover:translate-x-2 transition-transform cursor-default">
+                            <i data-lucide="check-square" class="w-6 h-6 text-primary"></i>
+                            <span class="text-[18px] font-[600]">Direct Communication</span>
+                        </div>
+                        <div class="flex items-center gap-4 hover:translate-x-2 transition-transform cursor-default">
+                            <i data-lucide="check-square" class="w-6 h-6 text-primary"></i>
+                            <span class="text-[18px] font-[600]">Ongoing Support</span>
+                        </div>
+                    </div>
+
+                    <div class="stamp-item shadow-brutal delay-300 bg-black text-white brutal-border p-8 sm:p-10 relative mt-6 lg:mt-0">
+                        <div class="absolute -top-6 right-6 bg-primary text-white border-3 border-black p-3 shadow-brutal-sm">
+                            <i data-lucide="shield-check" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-[24px] font-bold uppercase mb-4">No-Ghosting Promise</h3>
+                        <p class="text-[16px] font-[500] text-gray-300 leading-relaxed">
+                            You'll always know the project status, next steps, and how to reach me. I use clear scopes and regular updates so you're never left guessing.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 9. FAQ                                     -->
+        <!-- ========================================== -->
+        <section class="w-full px-4 sm:px-8 py-16 lg:py-24 bg-bgMain brutal-border-b relative z-10">
+            <div class="max-w-[1000px] mx-auto observe-block">
+                <div class="text-center mb-16">
+                    <span class="text-[12px] font-mono font-bold text-primary uppercase tracking-widest block mb-4">[ 06. Intel ]</span>
+                    <h2 class="text-fluid-h2 font-bold uppercase leading-tight">
+                        <span class="reveal-overflow"><span class="reveal-text block">Common Questions</span></span>
+                    </h2>
+                </div>
+
+                <div class="stamp-item delay-100 flex flex-col border-t-[3px] border-black">
+                    <details class="group border-b-[3px] border-black bg-surface">
+                        <summary class="flex justify-between items-center py-6 sm:py-8 font-bold uppercase text-[16px] sm:text-[20px] cursor-pointer outline-none hover:text-primary transition-colors pr-4">
+                            How long does a project take?
+                            <i data-lucide="plus" class="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0 ml-4 border-2 border-black rounded-full p-1 group-hover:border-primary"></i>
+                        </summary>
+                        <div class="faq-content pb-8 text-[16px] sm:text-[18px] text-textSecondary font-[500] pr-4 max-w-3xl">
+                            Most custom modernization projects take between 3 to 6 weeks, depending on the complexity and scope.
+                        </div>
+                    </details>
+                    <details class="group border-b-[3px] border-black bg-surface">
+                        <summary class="flex justify-between items-center py-6 sm:py-8 font-bold uppercase text-[16px] sm:text-[20px] cursor-pointer outline-none hover:text-primary transition-colors pr-4">
+                            Do you work with WordPress?
+                            <i data-lucide="plus" class="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0 ml-4 border-2 border-black rounded-full p-1 group-hover:border-primary"></i>
+                        </summary>
+                        <div class="faq-content pb-8 text-[16px] sm:text-[18px] text-textSecondary font-[500] pr-4 max-w-3xl">
+                            Yes, I can repair and optimize existing WordPress sites, or migrate you to a faster, modern platform if needed.
+                        </div>
+                    </details>
+                    <details class="group border-b-[3px] border-black bg-surface">
+                        <summary class="flex justify-between items-center py-6 sm:py-8 font-bold uppercase text-[16px] sm:text-[20px] cursor-pointer outline-none hover:text-primary transition-colors pr-4">
+                            How much does it usually cost?
+                            <i data-lucide="plus" class="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0 ml-4 border-2 border-black rounded-full p-1 group-hover:border-primary"></i>
+                        </summary>
+                        <div class="faq-content pb-8 text-[16px] sm:text-[18px] text-textSecondary font-[500] pr-4 max-w-3xl">
+                            Technical rescue projects start around $750, while full custom modernization starts around $5,000+.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 10. FINAL CTA                              -->
+        <!-- ========================================== -->
+        <section class="w-full px-4 sm:px-8 py-24 lg:py-32 bg-primary text-white brutal-border-b flex flex-col items-center text-center relative overflow-hidden z-10">
+            <!-- Декор -->
+            <div class="absolute -top-16 -right-16 lg:-top-32 lg:-right-32 w-48 h-48 lg:w-96 lg:h-96 border-[12px] lg:border-[24px] border-black rounded-full opacity-20 pointer-events-none"></div>
+            <div class="absolute -bottom-16 -left-16 lg:-bottom-32 lg:-left-32 w-48 h-48 lg:w-96 lg:h-96 border-[12px] lg:border-[24px] border-black rounded-full opacity-20 pointer-events-none"></div>
+
+            <div class="max-w-[1000px] mx-auto z-10 flex flex-col items-center observe-block">
+                <span class="stamp-item shadow-brutal-sm delay-100 text-[12px] md:text-[14px] font-mono font-bold text-black uppercase tracking-widest bg-white brutal-border px-4 py-2 mb-10 z-10">
+                    Ready to Scale?
+                </span>
+                
+                <h2 class="text-fluid-hero font-bold uppercase leading-none mb-8 z-10 text-outline-white text-transparent drop-shadow-[6px_6px_0_#000]">
+                    <span class="reveal-overflow"><span class="reveal-text block delay-100">Let's Fix</span></span><br>
+                    <span class="reveal-overflow"><span class="reveal-text block delay-200">Your Site.</span></span>
+                </h2>
+                
+                <p class="stamp-item delay-300 text-[18px] md:text-[22px] font-[500] mb-12 max-w-2xl z-10">
+                    Get a clear plan, a faster website, and a technical partner who keeps things moving.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-6 w-full justify-center z-10 mb-10">
+                    <button class="stamp-item shadow-brutal delay-400 btn-brutal w-full sm:w-auto bg-black text-white border-[3px] border-black px-8 py-5 font-bold uppercase tracking-widest text-[16px] flex justify-center items-center gap-3">
+                        Free Strategy Call <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+                    </button>
+                    <button class="stamp-item shadow-brutal delay-400 btn-brutal w-full sm:w-auto bg-white text-black brutal-border px-8 py-5 font-bold uppercase tracking-widest text-[16px]">
+                        Get Technical Audit
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 11. FOOTER -->
+    <footer class="w-full bg-black text-white pt-16 pb-8 px-4 sm:px-8 border-t-[12px] border-black relative z-10">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex flex-col lg:flex-row justify-between items-center lg:items-end mb-16 pb-16 border-b-2 border-gray-800 gap-10">
+                <div class="text-center lg:text-left">
+                    <h3 class="text-[24px] md:text-[32px] font-bold uppercase mb-4">Andrii Web Developer</h3>
+                    <p class="text-[14px] md:text-[16px] text-gray-400 font-[500] leading-relaxed max-w-[400px] mx-auto lg:mx-0">
+                        Serving Alabama small businesses: Birmingham • Huntsville • Mobile • Montgomery
+                    </p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-6 lg:gap-10">
+                    <a href="mailto:hello@andrii.dev" class="flex items-center justify-center gap-3 text-[16px] font-bold uppercase hover:text-primary transition-colors">
+                        <i data-lucide="mail" class="w-6 h-6"></i> hello@andrii.dev
+                    </a>
+                    <a href="tel:2565550198" class="flex items-center justify-center gap-3 text-[16px] font-bold uppercase hover:text-primary transition-colors">
+                        <i data-lucide="phone" class="w-6 h-6"></i> (256) 555-0198
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center text-[12px] font-mono text-gray-600 uppercase tracking-widest gap-4">
+                <span>&copy; 2026 Andrii Web Developer. All rights reserved.</span>
+                <span>System Operational</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script>
+        lucide.createIcons();
+
+        // 1. Анимации при скролле (Intersection Observer)
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // Элемент начнет анимацию, когда покажется на 15%
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Если хотите, чтобы анимация проигрывалась только ОДИН раз, раскомментируйте:
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            // Наблюдаем за контейнерами (observe-block), чтобы одновременно запускать анимации их детей
+            document.querySelectorAll('.observe-block').forEach(el => observer.observe(el));
+        });
+
+        // 2. Слайдер До/После
+        document.addEventListener('DOMContentLoaded', () => {
+            const sliders = document.querySelectorAll('.before-after-slider');
+            sliders.forEach(slider => {
+                const input = slider.querySelector('.slider-input');
+                const beforeWrapper = slider.querySelector('.before-image-wrapper');
+                const beforeInner = slider.querySelector('.before-inner');
+                const sliderLine = slider.querySelector('.slider-line');
+                
+                const updateInnerWidth = () => {
+                    const sliderWidth = slider.getBoundingClientRect().width;
+                    beforeInner.style.width = `${sliderWidth}px`;
+                };
+                
+                updateInnerWidth();
+                window.addEventListener('resize', updateInnerWidth);
+                window.addEventListener('orientationchange', () => setTimeout(updateInnerWidth, 100));
+
+                input.addEventListener('input', (e) => {
+                    const value = e.target.value;
+                    beforeWrapper.style.width = `${value}%`;
+                    sliderLine.style.left = `${value}%`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

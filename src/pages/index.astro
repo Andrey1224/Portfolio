@@ -8,27 +8,27 @@ import CaseStudies from '../components/CaseStudies.astro';
 import Services from '../components/Services.astro';
 import Process from '../components/Process.astro';
 import Guarantee from '../components/Guarantee.astro';
-import ClientResults from '../components/ClientResults.astro';
 import FAQ from '../components/FAQ.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Alabama SMB Web Developer">
-    <Header />
+	<Header />
 
-    <main class="w-full pt-[72px] lg:pt-20">
-        <Hero />
-        <TrustFeatures />
-        <Problem />
-        <CaseStudies />
-        <Services />
-        <Process />
-        <Guarantee />
-        <ClientResults />
-        <FAQ />
-        <Contact />
-    </main>
+	<main class="w-full relative">
+		<div class="w-full relative">
+			<Hero />
+			<TrustFeatures />
+		</div>
+		<Problem />
+		<CaseStudies />
+		<Services />
+		<Process />
+		<Guarantee />
+		<FAQ />
+		<Contact />
+	</main>
 
-    <Footer />
+	<Footer />
 </Layout>

@@ -8,46 +8,29 @@ export default {
 				mono: ['"Geist Mono"', 'monospace'],
 			},
 			colors: {
-				bgMain: '#FAFAF9',       // Warm off-white
+				bgMain: '#F2F2F2',
 				surface: '#FFFFFF',
-				surfaceMuted: '#F5F5F4',
-				surfaceWarm: '#FDFCFB',
-				
-				textPrimary: '#1C1917',  // Deep warm black
-				textSecondary: '#57534E',
-				textMuted: '#78716C',
-				
-				borderLight: '#E7E5E4',
-				borderStrong: '#D6D3D1',
-				
-				primary: '#2563EB',      // Main CTA
+				surfaceMuted: '#E5E7EB',
+				textPrimary: '#000000',
+				textSecondary: '#404040',
+				textMuted: '#6B7280',
+				borderStrong: '#000000',
+				primary: '#2563EB',
 				primaryHover: '#1D4ED8',
-				primarySoft: '#EFF6FF',
-				
-				accent: '#14B8A6',       // Teal
-				accentSoft: '#CCFBF1',
-				
-				success: '#16A34A',      // Positive metrics
-				warning: '#F59E0B',      // Problem highlights
-				
+				primarySoft: 'rgba(37, 99, 235, 0.12)',
+				success: '#16A34A',
+				warning: '#F59E0B',
 				dark: '#0F172A',
 			},
 			boxShadow: {
-				'subtle': '0 1px 2px rgba(28, 25, 23, 0.04)',
-				'card': '0 12px 40px rgba(28, 25, 23, 0.07)',
-				'elevated': '0 24px 80px rgba(28, 25, 23, 0.10)',
-				'mockup': '0 32px 100px rgba(15, 23, 42, 0.14)',
-				'btn': '0 10px 24px rgba(37, 99, 235, 0.22)',
+				'brutal-sm': '3px 3px 0px #000000',
+				brutal: '6px 6px 0px #000000',
+				'brutal-hover': '2px 2px 0px #000000',
+				'brutal-primary': '6px 6px 0px #2563EB',
+				'brutal-white-sm': '5px 5px 0px #FFFFFF',
+				'brutal-white': '6px 6px 0px #FFFFFF',
 			},
-			borderRadius: {
-				'xs': '8px',
-				'sm': '12px',
-				'md': '16px',
-				'lg': '24px',
-				'xl': '32px',
-				'2xl': '40px',
-			}
 		},
 	},
 	plugins: [],
-}
+};

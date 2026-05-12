@@ -1,71 +1,60 @@
 ---
-import { Search, Code2, Rocket, Headphones, ChevronDown } from 'lucide-react';
 ---
-<section id="process" class="w-full px-5 py-12 lg:py-24 bg-dark text-darkText border-t border-dark lg:rounded-none rounded-t-[32px] relative overflow-hidden">
-    <!-- Subtle background effect -->
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-dark to-dark opacity-80 pointer-events-none"></div>
 
-    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center relative z-10">
-        <!-- Левая колонка (Текст) -->
-        <div class="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left reveal-section">
-            <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 lg:mb-4 block">My Process</span>
-            <h2 class="text-[28px] lg:text-[40px] font-bold text-white leading-tight mb-4">Simple process.<br class="hidden lg:block"> Clear outcomes.</h2>
-            <p class="text-[15px] lg:text-[16px] text-slate-400 leading-[1.6] max-w-[400px]">
-                I use a structured 4-step approach to ensure your project stays on track, launches smoothly, and continues to perform long after it goes live.
-            </p>
-        </div>
-        
-        <!-- Правая колонка (Таймлайн) -->
-        <div class="lg:col-span-8 bg-white/5 backdrop-blur-md p-6 lg:p-10 rounded-[32px] border border-white/10 shadow-elevated reveal-section relative">
-            <div class="flex flex-col sm:flex-row justify-between items-start lg:items-start pt-4 relative gap-8 sm:gap-0">
-                <!-- Линия процесса (фон, только десктоп/планшет) -->
-                <div class="hidden sm:block absolute top-8 left-[10%] w-[80%] h-0.5 bg-white/10 -z-10 rounded-full overflow-hidden">
-                    <div class="h-full bg-gradient-to-r from-primary via-accent to-success w-0 animate-draw-line"></div>
-                </div>
-                
-                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0 group">
-                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-dark rounded-full border border-white/20 flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0 group-hover:border-primary transition-colors group-hover:scale-110 duration-300">
-                        <Search className="w-5 h-5 sm:w-4 sm:h-4 text-primary" />
-                    </div>
-                    <div class="flex flex-col sm:items-center text-left sm:text-center">
-                        <span class="text-[14px] font-bold text-white mb-1">Audit</span>
-                        <span class="text-[13px] text-slate-400 leading-[1.4] max-w-[150px]">We find what's broken and what's holding your website back.</span>
-                    </div>
-                </div>
-                
-                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0 group">
-                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-dark rounded-full border border-white/20 flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0 group-hover:border-accent transition-colors group-hover:scale-110 duration-300 delay-100">
-                        <Code2 className="w-5 h-5 sm:w-4 sm:h-4 text-accent" />
-                    </div>
-                    <div class="flex flex-col sm:items-center text-left sm:text-center">
-                        <span class="text-[14px] font-bold text-white mb-1">Build</span>
-                        <span class="text-[13px] text-slate-400 leading-[1.4] max-w-[150px]">I engineer a clean solution around your business goals.</span>
-                    </div>
-                </div>
-                
-                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0 group">
-                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-dark rounded-full border border-white/20 flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0 group-hover:border-success transition-colors group-hover:scale-110 duration-300 delay-200">
-                        <Rocket className="w-5 h-5 sm:w-4 sm:h-4 text-success" />
-                    </div>
-                    <div class="flex flex-col sm:items-center text-left sm:text-center">
-                        <span class="text-[14px] font-bold text-white mb-1">Launch</span>
-                        <span class="text-[13px] text-slate-400 leading-[1.4] max-w-[150px]">We test, optimize, and go live with confidence.</span>
-                    </div>
-                </div>
-                
-                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0 group">
-                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-dark rounded-full border-2 border-primary flex items-center justify-center sm:mb-4 z-10 shadow-[0_0_15px_rgba(37,99,235,0.3)] flex-shrink-0 group-hover:scale-110 duration-300 delay-300">
-                        <Headphones className="w-5 h-5 sm:w-4 sm:h-4 text-primary" />
-                    </div>
-                    <div class="flex flex-col sm:items-center text-left sm:text-center">
-                        <span class="text-[14px] font-bold text-white mb-1">Support</span>
-                        <span class="text-[13px] text-slate-300 leading-[1.4] max-w-[150px] font-medium">I stay available after launch to keep things running.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="w-full flex justify-center text-white/30 mt-10 lg:hidden">
-        <ChevronDown className="w-6 h-6" />
-    </div>
+<section class="w-full px-4 sm:px-8 py-16 lg:py-24 bg-bgMain brutal-border-b overflow-hidden relative z-10">
+	<div class="max-w-[1400px] mx-auto observe-block">
+		<span class="text-[12px] font-mono font-bold text-primary uppercase tracking-widest block mb-4">[ 04. The Method ]</span>
+		<h2 class="text-fluid-h2 font-bold uppercase mb-16 leading-none">
+			<span class="reveal-overflow"><span class="reveal-text block">Clear Process.</span></span><br />
+			<span class="reveal-overflow"><span class="reveal-text block">No Guesswork.</span></span>
+		</h2>
+
+		<div class="flex flex-col gap-16 md:gap-24 mt-16 md:mt-24 relative z-10">
+			<!-- Step 1 -->
+			<div class="stamp-item delay-100 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-12 group">
+				<div class="text-[120px] md:text-[180px] lg:text-[220px] font-black leading-[0.75] font-mono text-transparent shrink-0" style="-webkit-text-stroke: 4px #000;">
+					01
+				</div>
+				<div class="w-full border-t-8 border-black pt-6 group-hover:translate-x-4 md:group-hover:translate-x-8 transition-transform duration-300">
+					<h3 class="text-[32px] md:text-[48px] font-black uppercase mb-3 text-black tracking-tighter leading-none">Audit</h3>
+					<p class="text-[18px] md:text-[20px] text-textSecondary font-[600] max-w-lg">We find what's broken and what's holding you back.</p>
+				</div>
+			</div>
+
+			<!-- Step 2 -->
+			<div class="stamp-item delay-200 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-12 group">
+				<div class="text-[120px] md:text-[180px] lg:text-[220px] font-black leading-[0.75] font-mono text-transparent shrink-0" style="-webkit-text-stroke: 4px #000;">
+					02
+				</div>
+				<div class="w-full border-t-8 border-black pt-6 group-hover:translate-x-4 md:group-hover:translate-x-8 transition-transform duration-300 relative">
+					<div class="absolute -top-[24px] left-0 bg-primary text-white text-[12px] font-bold uppercase px-3 py-1 brutal-border">Core Action</div>
+					<h3 class="text-[32px] md:text-[48px] font-black uppercase mb-3 text-black tracking-tighter leading-none">Build</h3>
+					<p class="text-[18px] md:text-[20px] text-textSecondary font-[600] max-w-lg">I engineer a clean solution around your business goals.</p>
+				</div>
+			</div>
+
+			<!-- Step 3 -->
+			<div class="stamp-item delay-300 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-12 group">
+				<div class="text-[120px] md:text-[180px] lg:text-[220px] font-black leading-[0.75] font-mono text-transparent shrink-0" style="-webkit-text-stroke: 4px #000;">
+					03
+				</div>
+				<div class="w-full border-t-8 border-black pt-6 group-hover:translate-x-4 md:group-hover:translate-x-8 transition-transform duration-300">
+					<h3 class="text-[32px] md:text-[48px] font-black uppercase mb-3 text-black tracking-tighter leading-none">Launch</h3>
+					<p class="text-[18px] md:text-[20px] text-textSecondary font-[600] max-w-lg">We test, optimize, and go live with confidence.</p>
+				</div>
+			</div>
+
+			<!-- Step 4 -->
+			<div class="stamp-item delay-400 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-12 group">
+				<div class="text-[120px] md:text-[180px] lg:text-[220px] font-black leading-[0.75] font-mono text-transparent shrink-0" style="-webkit-text-stroke: 4px #000;">
+					04
+				</div>
+				<div class="w-full border-t-8 border-black pt-6 group-hover:translate-x-4 md:group-hover:translate-x-8 transition-transform duration-300 relative">
+					<div class="absolute -top-[24px] left-0 bg-success text-white text-[12px] font-bold uppercase px-3 py-1 brutal-border">Always ON</div>
+					<h3 class="text-[32px] md:text-[48px] font-black uppercase mb-3 text-black tracking-tighter leading-none">Support</h3>
+					<p class="text-[18px] md:text-[20px] text-textSecondary font-[600] max-w-lg">I stay available after launch to keep things running.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
