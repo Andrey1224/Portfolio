@@ -1,9 +1,10 @@
 ---
 import { ShieldCheck, Gift, Clock } from 'lucide-react';
 ---
-<section id="contact" class="w-full px-5 py-16 lg:py-24 bg-surfaceMuted border-t border-borderLight lg:rounded-none rounded-t-[32px] mt-[-20px] lg:mt-0 relative z-10 flex flex-col items-center text-center">
-    <!-- Warm subtle texture -->
+<section id="contact" class="w-full px-5 py-16 lg:py-24 bg-surfaceMuted border-t border-borderLight lg:rounded-none rounded-t-[32px] mt-[-20px] lg:mt-0 relative z-10 flex flex-col items-center text-center overflow-hidden">
+    <!-- Warm subtle texture and radial gradient -->
     <div class="absolute inset-0 opacity-[0.02] pointer-events-none" style="background-image: radial-gradient(#1C1917 1px, transparent 1px); background-size: 32px 32px;"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-70 pointer-events-none"></div>
 
     <div class="max-w-3xl mx-auto w-full reveal-section relative z-10">
     <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-3 lg:mb-5 block">Ready to Grow?</span>
@@ -15,14 +16,14 @@ import { ShieldCheck, Gift, Clock } from 'lucide-react';
     <div class="flex flex-col sm:flex-row gap-6 w-full mb-6 justify-center">
         <!-- CTA 1 -->
         <div class="flex flex-col w-full sm:w-[280px]">
-            <a href="mailto:hello@andrii.dev" class="w-full bg-primary text-white py-4 px-6 rounded-xl shadow-btn font-[650] text-[15px] hover:bg-primaryHover transition-colors mb-2 block">
+            <a href="mailto:hello@andrii.dev" class="w-full bg-primary text-white py-4 px-6 rounded-xl shadow-btn font-[650] text-[15px] hover:bg-primaryHover hover-lift transition-colors mb-2 block">
                 Book a Free Strategy Call
             </a>
             <span class="text-[12px] text-textSecondary font-medium">Best if you want to discuss a project.</span>
         </div>
         <!-- CTA 2 -->
         <div class="flex flex-col w-full sm:w-[280px]">
-            <a href="mailto:hello@andrii.dev?subject=Technical Audit Request" class="w-full bg-surface text-textPrimary border border-borderStrong py-4 px-6 rounded-xl font-[650] text-[15px] hover:bg-surfaceMuted transition-colors mb-2 block">
+            <a href="mailto:hello@andrii.dev?subject=Technical Audit Request" class="w-full bg-surface text-textPrimary border border-borderStrong py-4 px-6 rounded-xl font-[650] text-[15px] hover:bg-primarySoft hover:text-primary hover:border-primary hover-lift transition-colors mb-2 block">
                 Get My Free Technical Audit
             </a>
             <span class="text-[12px] text-textSecondary font-medium">Best if you want me to review what's broken.</span>
@@ -31,15 +32,15 @@ import { ShieldCheck, Gift, Clock } from 'lucide-react';
     
     <p class="text-[13px] text-textMuted mb-10 italic">Both options lead to a quick scheduling form—no commitment required.</p>
 
-    <div class="flex flex-wrap items-center justify-center gap-5 lg:gap-8 text-[13px] lg:text-[14px] font-[550] text-textSecondary bg-surface py-3 px-6 rounded-full border border-borderLight inline-flex">
+    <div class="flex flex-wrap items-center justify-center gap-5 lg:gap-8 text-[13px] lg:text-[14px] font-[550] text-textSecondary bg-surface py-3 px-6 rounded-full border border-borderLight inline-flex shadow-sm hover:shadow-md transition-shadow">
         <div class="flex items-center gap-1.5">
-            <ShieldCheck className="w-4 h-4 lg:w-5 lg:h-5 text-textPrimary" /> No pressure
+            <ShieldCheck className="w-4 h-4 lg:w-5 lg:h-5 text-primary" /> No pressure
         </div>
         <div class="flex items-center gap-1.5">
-            <Gift className="w-4 h-4 lg:w-5 lg:h-5 text-textPrimary" /> 100% Free
+            <Gift className="w-4 h-4 lg:w-5 lg:h-5 text-primary" /> 100% Free
         </div>
         <div class="flex items-center gap-1.5">
-            <Clock className="w-4 h-4 lg:w-5 lg:h-5 text-textPrimary" /> 20-30 min
+            <Clock className="w-4 h-4 lg:w-5 lg:h-5 text-primary" /> 20-30 min
         </div>
     </div>
     </div>

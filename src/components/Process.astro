@@ -1,66 +1,71 @@
 ---
 import { Search, Code2, Rocket, Headphones, ChevronDown } from 'lucide-react';
 ---
-<section id="process" class="w-full px-5 py-12 lg:py-24 bg-surfaceMuted border-t border-borderLight lg:rounded-none rounded-t-[32px]">
-    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+<section id="process" class="w-full px-5 py-12 lg:py-24 bg-dark text-darkText border-t border-dark lg:rounded-none rounded-t-[32px] relative overflow-hidden">
+    <!-- Subtle background effect -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-dark to-dark opacity-80 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center relative z-10">
         <!-- Левая колонка (Текст) -->
-        <div class="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left reveal-section">
+        <div class="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left reveal-section">
             <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 lg:mb-4 block">My Process</span>
-            <h2 class="text-[28px] lg:text-[40px] font-bold text-textPrimary leading-tight mb-4">Simple process.<br class="hidden lg:block"> Clear outcomes.</h2>
-            <p class="text-[15px] lg:text-[16px] text-textSecondary leading-[1.6] max-w-[400px]">
+            <h2 class="text-[28px] lg:text-[40px] font-bold text-white leading-tight mb-4">Simple process.<br class="hidden lg:block"> Clear outcomes.</h2>
+            <p class="text-[15px] lg:text-[16px] text-slate-400 leading-[1.6] max-w-[400px]">
                 I use a structured 4-step approach to ensure your project stays on track, launches smoothly, and continues to perform long after it goes live.
             </p>
         </div>
         
         <!-- Правая колонка (Таймлайн) -->
-        <div class="lg:col-span-7 bg-surface p-6 lg:p-10 rounded-[24px] border border-borderLight shadow-subtle reveal-section">
-            <div class="flex flex-col sm:flex-row justify-between items-start lg:items-start pt-4 relative gap-6 sm:gap-0">
+        <div class="lg:col-span-8 bg-white/5 backdrop-blur-md p-6 lg:p-10 rounded-[32px] border border-white/10 shadow-elevated reveal-section relative">
+            <div class="flex flex-col sm:flex-row justify-between items-start lg:items-start pt-4 relative gap-8 sm:gap-0">
                 <!-- Линия процесса (фон, только десктоп/планшет) -->
-                <div class="hidden sm:block absolute top-8 left-[10%] w-[80%] h-0.5 bg-borderStrong -z-10"></div>
+                <div class="hidden sm:block absolute top-8 left-[10%] w-[80%] h-0.5 bg-white/10 -z-10 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-primary via-accent to-success w-0 animate-draw-line"></div>
+                </div>
                 
-                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0">
-                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-surface rounded-full border border-borderStrong flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0">
-                        <Search className="w-5 h-5 sm:w-4 sm:h-4 text-textPrimary" />
+                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0 group">
+                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-dark rounded-full border border-white/20 flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0 group-hover:border-primary transition-colors group-hover:scale-110 duration-300">
+                        <Search className="w-5 h-5 sm:w-4 sm:h-4 text-primary" />
                     </div>
                     <div class="flex flex-col sm:items-center text-left sm:text-center">
-                        <span class="text-[14px] font-bold text-textPrimary mb-1">Audit</span>
-                        <span class="text-[13px] text-textSecondary leading-[1.4] max-w-[150px]">We find what's broken and what's holding your website back.</span>
+                        <span class="text-[14px] font-bold text-white mb-1">Audit</span>
+                        <span class="text-[13px] text-slate-400 leading-[1.4] max-w-[150px]">We find what's broken and what's holding your website back.</span>
                     </div>
                 </div>
                 
-                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0">
-                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-surface rounded-full border border-borderStrong flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0">
-                        <Code2 className="w-5 h-5 sm:w-4 sm:h-4 text-textPrimary" />
+                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0 group">
+                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-dark rounded-full border border-white/20 flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0 group-hover:border-accent transition-colors group-hover:scale-110 duration-300 delay-100">
+                        <Code2 className="w-5 h-5 sm:w-4 sm:h-4 text-accent" />
                     </div>
                     <div class="flex flex-col sm:items-center text-left sm:text-center">
-                        <span class="text-[14px] font-bold text-textPrimary mb-1">Build</span>
-                        <span class="text-[13px] text-textSecondary leading-[1.4] max-w-[150px]">I engineer a clean solution around your business goals.</span>
+                        <span class="text-[14px] font-bold text-white mb-1">Build</span>
+                        <span class="text-[13px] text-slate-400 leading-[1.4] max-w-[150px]">I engineer a clean solution around your business goals.</span>
                     </div>
                 </div>
                 
-                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0">
-                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-surface rounded-full border border-borderStrong flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0">
-                        <Rocket className="w-5 h-5 sm:w-4 sm:h-4 text-textPrimary" />
+                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0 group">
+                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-dark rounded-full border border-white/20 flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0 group-hover:border-success transition-colors group-hover:scale-110 duration-300 delay-200">
+                        <Rocket className="w-5 h-5 sm:w-4 sm:h-4 text-success" />
                     </div>
                     <div class="flex flex-col sm:items-center text-left sm:text-center">
-                        <span class="text-[14px] font-bold text-textPrimary mb-1">Launch</span>
-                        <span class="text-[13px] text-textSecondary leading-[1.4] max-w-[150px]">We test, optimize, and go live with confidence.</span>
+                        <span class="text-[14px] font-bold text-white mb-1">Launch</span>
+                        <span class="text-[13px] text-slate-400 leading-[1.4] max-w-[150px]">We test, optimize, and go live with confidence.</span>
                     </div>
                 </div>
                 
-                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0">
-                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-surface rounded-full border-2 border-primary flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0">
+                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0 group">
+                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-dark rounded-full border-2 border-primary flex items-center justify-center sm:mb-4 z-10 shadow-[0_0_15px_rgba(37,99,235,0.3)] flex-shrink-0 group-hover:scale-110 duration-300 delay-300">
                         <Headphones className="w-5 h-5 sm:w-4 sm:h-4 text-primary" />
                     </div>
                     <div class="flex flex-col sm:items-center text-left sm:text-center">
-                        <span class="text-[14px] font-bold text-primary mb-1">Support</span>
-                        <span class="text-[13px] text-textSecondary leading-[1.4] max-w-[150px] font-medium">I stay available after launch to keep things running.</span>
+                        <span class="text-[14px] font-bold text-white mb-1">Support</span>
+                        <span class="text-[13px] text-slate-300 leading-[1.4] max-w-[150px] font-medium">I stay available after launch to keep things running.</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="w-full flex justify-center text-borderStrong mt-10 lg:hidden">
+    <div class="w-full flex justify-center text-white/30 mt-10 lg:hidden">
         <ChevronDown className="w-6 h-6" />
     </div>
 </section>

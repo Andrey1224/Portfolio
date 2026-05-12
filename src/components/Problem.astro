@@ -12,8 +12,8 @@ import { Gauge, Smartphone, TriangleAlert, DollarSign, Star, ChevronDown } from 
     <!-- 2x2 Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 w-full mb-10 lg:mb-12">
         <!-- Проблема 1 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover:shadow-md transition-shadow reveal-card">
-            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0 mt-1 lg:mt-0">
+        <div class="bg-surface border border-borderLight rounded-[24px] p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover-lift hover:border-primary/20 reveal-card group">
+            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0 mt-1 lg:mt-0 transition-transform group-hover:scale-110">
                 <Gauge className="w-5 h-5 lg:w-7 lg:h-7" />
             </div>
             <div>
@@ -22,8 +22,8 @@ import { Gauge, Smartphone, TriangleAlert, DollarSign, Star, ChevronDown } from 
             </div>
         </div>
         <!-- Проблема 2 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover:shadow-md transition-shadow reveal-card reveal-delay-1">
-            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0 mt-1 lg:mt-0">
+        <div class="bg-surface border border-borderLight rounded-[24px] p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover-lift hover:border-textMuted/30 reveal-card reveal-delay-1 group">
+            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-textMuted flex-shrink-0 mt-1 lg:mt-0 transition-transform group-hover:scale-110">
                 <Smartphone className="w-5 h-5 lg:w-7 lg:h-7" />
             </div>
             <div>
@@ -32,8 +32,8 @@ import { Gauge, Smartphone, TriangleAlert, DollarSign, Star, ChevronDown } from 
             </div>
         </div>
         <!-- Проблема 3 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover:shadow-md transition-shadow reveal-card">
-            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-warning flex-shrink-0 mt-1 lg:mt-0">
+        <div class="bg-surface border border-borderLight rounded-[24px] p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover-lift hover:border-warning/30 reveal-card group">
+            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-warning/10 flex items-center justify-center text-warning flex-shrink-0 mt-1 lg:mt-0 transition-transform group-hover:scale-110">
                 <TriangleAlert className="w-5 h-5 lg:w-7 lg:h-7" />
             </div>
             <div>
@@ -42,8 +42,8 @@ import { Gauge, Smartphone, TriangleAlert, DollarSign, Star, ChevronDown } from 
             </div>
         </div>
         <!-- Проблема 4 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover:shadow-md transition-shadow reveal-card reveal-delay-1">
-            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0 mt-1 lg:mt-0">
+        <div class="bg-surface border border-borderLight rounded-[24px] p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover-lift hover:border-success/30 reveal-card reveal-delay-1 group">
+            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-success/10 flex items-center justify-center text-success flex-shrink-0 mt-1 lg:mt-0 transition-transform group-hover:scale-110">
                 <DollarSign className="w-5 h-5 lg:w-7 lg:h-7" />
             </div>
             <div>
@@ -54,7 +54,7 @@ import { Gauge, Smartphone, TriangleAlert, DollarSign, Star, ChevronDown } from 
     </div>
 
     <!-- Обещание -->
-    <div class="bg-primarySoft border border-primary/20 rounded-2xl p-6 lg:p-8 flex gap-4 lg:gap-6 items-center w-full max-w-3xl mx-auto shadow-sm reveal-section">
+    <div class="bg-primarySoft border border-primary/20 rounded-2xl p-6 lg:p-8 flex gap-4 lg:gap-6 items-center w-full max-w-3xl mx-auto shadow-sm reveal-section hover:shadow-md transition-shadow duration-300">
         <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
             <Star className="w-6 h-6 text-primary" />
         </div>

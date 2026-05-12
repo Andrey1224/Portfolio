@@ -1,35 +1,36 @@
 ---
 import { MapPin, Phone, Users, ChevronDown, Compass } from 'lucide-react';
 ---
-<section id="about" class="w-full px-5 py-12 lg:py-20 bg-surfaceMuted flex flex-col items-center text-center border-t border-borderLight">
+<section id="about" class="w-full px-5 py-12 lg:py-20 bg-slate-50 flex flex-col items-center text-center border-t border-borderLight relative overflow-hidden">
+    <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-borderLight to-transparent"></div>
     <div class="max-w-7xl mx-auto w-full">
     <span class="text-[11px] font-[650] text-textMuted uppercase tracking-wide mb-2 lg:mb-4 block reveal-section">Alabama-Based Developer</span>
     <h2 class="text-[26px] lg:text-[32px] leading-[1.15] font-bold text-textPrimary mb-10 lg:mb-16 reveal-section">Alabama-based. Local partner. Direct communication.</h2>
     
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 w-full mb-10 lg:mb-16">
-        <div class="flex flex-col items-center bg-surface p-6 rounded-2xl border border-borderLight shadow-subtle reveal-card">
-            <div class="w-12 h-12 rounded-full bg-surfaceMuted border border-borderLight flex items-center justify-center mb-4 text-textPrimary">
+        <div class="flex flex-col items-center bg-surface p-6 rounded-[24px] border border-borderLight shadow-subtle hover-lift hover:border-primary/30 reveal-card group">
+            <div class="w-12 h-12 rounded-full bg-surfaceMuted border border-borderLight flex items-center justify-center mb-4 text-textPrimary group-hover:bg-primarySoft group-hover:text-primary transition-colors">
                 <MapPin className="w-5 h-5" />
             </div>
             <h3 class="text-[14px] font-bold text-textPrimary mb-2">Local Partner</h3>
             <p class="text-[13px] leading-[1.5] text-textSecondary">Based in Alabama and working with businesses state-wide.</p>
         </div>
-        <div class="flex flex-col items-center bg-surface p-6 rounded-2xl border border-borderLight shadow-subtle reveal-card reveal-delay-1">
-            <div class="w-12 h-12 rounded-full bg-surfaceMuted border border-borderLight flex items-center justify-center mb-4 text-textPrimary">
+        <div class="flex flex-col items-center bg-surface p-6 rounded-[24px] border border-borderLight shadow-subtle hover-lift hover:border-primary/30 reveal-card reveal-delay-1 group">
+            <div class="w-12 h-12 rounded-full bg-surfaceMuted border border-borderLight flex items-center justify-center mb-4 text-textPrimary group-hover:bg-primarySoft group-hover:text-primary transition-colors">
                 <Phone className="w-5 h-5" />
             </div>
             <h3 class="text-[14px] font-bold text-textPrimary mb-2">Direct Communication</h3>
             <p class="text-[13px] leading-[1.5] text-textSecondary">You work with me directly. I pick up the phone.</p>
         </div>
-        <div class="flex flex-col items-center bg-surface p-6 rounded-2xl border border-borderLight shadow-subtle reveal-card reveal-delay-2">
-            <div class="w-12 h-12 rounded-full bg-surfaceMuted border border-borderLight flex items-center justify-center mb-4 text-textPrimary">
+        <div class="flex flex-col items-center bg-surface p-6 rounded-[24px] border border-borderLight shadow-subtle hover-lift hover:border-primary/30 reveal-card reveal-delay-2 group">
+            <div class="w-12 h-12 rounded-full bg-surfaceMuted border border-borderLight flex items-center justify-center mb-4 text-textPrimary group-hover:bg-primarySoft group-hover:text-primary transition-colors">
                 <Users className="w-5 h-5" />
             </div>
             <h3 class="text-[14px] font-bold text-textPrimary mb-2">No Ghosting</h3>
             <p class="text-[13px] leading-[1.5] text-textSecondary">Structured projects, clear timelines, and ongoing support.</p>
         </div>
-        <div class="flex flex-col items-center bg-surface p-6 rounded-2xl border border-borderLight shadow-subtle reveal-card reveal-delay-3">
-            <div class="w-12 h-12 rounded-full bg-surfaceMuted border border-borderLight flex items-center justify-center mb-4 text-textPrimary">
+        <div class="flex flex-col items-center bg-surface p-6 rounded-[24px] border border-borderLight shadow-subtle hover-lift hover:border-primary/30 reveal-card reveal-delay-3 group">
+            <div class="w-12 h-12 rounded-full bg-surfaceMuted border border-borderLight flex items-center justify-center mb-4 text-textPrimary group-hover:bg-primarySoft group-hover:text-primary transition-colors">
                 <Compass className="w-5 h-5" />
             </div>
             <h3 class="text-[14px] font-bold text-textPrimary mb-2">Service Area</h3>
@@ -40,10 +41,6 @@ import { MapPin, Phone, Users, ChevronDown, Compass } from 'lucide-react';
     <div class="text-[13px] lg:text-[15px] text-textSecondary font-medium lg:hidden">
         Trusted by businesses in<br>
         <span class="text-textPrimary font-bold">Birmingham • Huntsville • Mobile • Montgomery • Cullman</span>
-    </div>
-    
-    <div class="w-full flex justify-center text-borderStrong mt-8 lg:mt-0 lg:hidden">
-        <ChevronDown className="w-6 h-6" />
     </div>
     </div>
 </section>

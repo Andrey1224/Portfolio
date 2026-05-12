@@ -1,43 +1,54 @@
 ---
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, TrendingUp, Smartphone, Search } from 'lucide-react';
 ---
-<section class="w-full px-5 py-12 lg:py-20 bg-surfaceMuted border-t border-borderLight flex flex-col items-center">
+<section class="w-full px-5 py-12 lg:py-20 bg-slate-50 border-t border-borderLight flex flex-col items-center">
     <div class="max-w-7xl mx-auto w-full">
-    <div class="text-center mb-10 lg:mb-16">
+    <div class="text-center mb-10 lg:mb-16 reveal-section">
         <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 lg:mb-4 block">Proven Impact</span>
         <h2 class="text-[28px] lg:text-[40px] font-bold text-textPrimary">Project Outcomes</h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full">
         <!-- Outcome 1 -->
-        <div class="bg-surface p-6 lg:p-8 rounded-[24px] border border-borderLight shadow-subtle flex flex-col">
+        <div class="bg-surface p-6 lg:p-8 rounded-[24px] border border-borderLight shadow-subtle flex flex-col hover-lift reveal-card">
             <h3 class="text-[18px] lg:text-[20px] font-bold text-textPrimary mb-4">Veterinary Clinic</h3>
             <p class="text-[14px] lg:text-[15px] text-textSecondary leading-[1.6] mb-6 flex-grow">
                 Modernized an outdated clinic website with faster performance, clearer mobile UX, and stronger local SEO foundations.
             </p>
-            <div class="flex items-center gap-2 text-success font-medium text-[13px] mt-auto">
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2.5 py-1 bg-primarySoft text-primary text-[10px] font-bold uppercase rounded-md flex items-center gap-1"><TrendingUp className="w-3 h-3"/> Performance</span>
+                <span class="px-2.5 py-1 bg-accentSoft text-accent text-[10px] font-bold uppercase rounded-md flex items-center gap-1"><Search className="w-3 h-3"/> Local SEO</span>
+            </div>
+            <div class="flex items-center gap-2 text-success font-medium text-[13px] mt-auto pt-4 border-t border-borderLight">
                 <CheckCircle2 className="w-4 h-4" /> Delivered & Optimized
             </div>
         </div>
         
         <!-- Outcome 2 -->
-        <div class="bg-surface p-6 lg:p-8 rounded-[24px] border border-borderLight shadow-subtle flex flex-col">
+        <div class="bg-surface p-6 lg:p-8 rounded-[24px] border border-borderLight shadow-subtle flex flex-col hover-lift reveal-card reveal-delay-1">
             <h3 class="text-[18px] lg:text-[20px] font-bold text-textPrimary mb-4">Walk-In Baths</h3>
             <p class="text-[14px] lg:text-[15px] text-textSecondary leading-[1.6] mb-6 flex-grow">
                 Improved clarity for an older audience with accessibility-focused UI and simplified inquiry flow.
             </p>
-            <div class="flex items-center gap-2 text-success font-medium text-[13px] mt-auto">
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2.5 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase rounded-md flex items-center gap-1"><Smartphone className="w-3 h-3"/> Mobile UX</span>
+                <span class="px-2.5 py-1 bg-success/10 text-success text-[10px] font-bold uppercase rounded-md flex items-center gap-1"><TrendingUp className="w-3 h-3"/> Lead Flow</span>
+            </div>
+            <div class="flex items-center gap-2 text-success font-medium text-[13px] mt-auto pt-4 border-t border-borderLight">
                 <CheckCircle2 className="w-4 h-4" /> Delivered & Optimized
             </div>
         </div>
 
         <!-- Outcome 3 -->
-        <div class="bg-surface p-6 lg:p-8 rounded-[24px] border border-borderLight shadow-subtle flex flex-col">
+        <div class="bg-surface p-6 lg:p-8 rounded-[24px] border border-borderLight shadow-subtle flex flex-col hover-lift reveal-card reveal-delay-2">
             <h3 class="text-[18px] lg:text-[20px] font-bold text-textPrimary mb-4">Bulldog Breeder</h3>
             <p class="text-[14px] lg:text-[15px] text-textSecondary leading-[1.6] mb-6 flex-grow">
                 Built a premium mobile-first brand presence with stronger visual trust and reservation flow.
             </p>
-            <div class="flex items-center gap-2 text-success font-medium text-[13px] mt-auto">
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-2.5 py-1 bg-purple-50 text-purple-600 text-[10px] font-bold uppercase rounded-md flex items-center gap-1"><TrendingUp className="w-3 h-3"/> Brand Trust</span>
+            </div>
+            <div class="flex items-center gap-2 text-success font-medium text-[13px] mt-auto pt-4 border-t border-borderLight">
                 <CheckCircle2 className="w-4 h-4" /> Delivered & Optimized
             </div>
         </div>
