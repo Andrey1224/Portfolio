@@ -1,118 +1,150 @@
 ---
-import { ImageOff, Image as ImageIcon, MapPin, ArrowRight, ChevronDown } from 'lucide-react';
+import { MapPin, ArrowRight, ChevronDown, LayoutTemplate, Smartphone } from 'lucide-react';
 ---
-<section class="w-full px-5 py-12 bg-bgMain border-t border-borderLight">
-    <div class="max-w-2xl mx-auto w-full">
-    <div class="text-center mb-8">
-        <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 block">The Proof</span>
-        <h2 class="text-[28px] font-bold text-textPrimary">Case Studies</h2>
+<section id="work" class="w-full px-5 py-12 lg:py-20 bg-bgMain border-t border-borderLight flex flex-col items-center">
+    <div class="max-w-7xl mx-auto w-full">
+    <div class="text-center mb-10 lg:mb-16">
+        <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 lg:mb-4 block">The Proof</span>
+        <h2 class="text-[28px] lg:text-[40px] font-bold text-textPrimary">Case Studies</h2>
     </div>
 
-    <!-- Главный кейс -->
-    <div class="bg-surface border border-borderLight rounded-[24px] p-5 shadow-card mb-6">
-        <div class="flex items-center gap-3 mb-4">
-            <div class="w-6 h-6 rounded bg-primary text-white flex items-center justify-center text-[12px] font-bold">1</div>
-            <h3 class="text-[18px] font-[650] leading-tight text-textPrimary">Veterinary Clinic Modernization</h3>
-        </div>
-        
-        <div class="w-full h-[160px] flex gap-2 mb-4">
-            <div class="w-1/2 bg-surfaceMuted rounded-lg border border-borderLight relative overflow-hidden flex items-center justify-center text-textMuted">
-                <span class="absolute top-2 left-2 text-[10px] font-bold uppercase">Before</span>
-                <ImageOff className="w-6 h-6 opacity-30" />
-            </div>
-            <div class="w-1/2 bg-surfaceWarm rounded-lg border border-borderLight relative overflow-hidden flex items-center justify-center text-success">
-                <span class="absolute top-2 right-2 text-[10px] font-bold uppercase text-textPrimary">After</span>
-                <ImageIcon className="w-6 h-6 opacity-50" />
-            </div>
-        </div>
-
-        <div class="flex items-center gap-2 mb-3">
-            <span class="text-[18px] font-bold text-success">100 / 100</span>
-            <span class="text-[12px] text-textSecondary font-medium uppercase">Performance Score</span>
-        </div>
-        <p class="text-[14px] text-textSecondary leading-[1.5] mb-5">
-            A full custom redesign and migration to a lightning-fast engine with Local SEO optimization.
-        </p>
-        <div class="flex justify-between items-center border-t border-borderLight pt-4">
-            <div class="flex items-center gap-1.5 text-[12px] text-textMuted">
-                <MapPin className="w-3.5 h-3.5" /> Local Healthcare (AL)
-            </div>
-            <a href="#" class="text-[14px] font-[650] text-textPrimary flex items-center gap-1">
-                View Case Study <ArrowRight className="w-4 h-4" />
-            </a>
-        </div>
-    </div>
-
-    <!-- Вторичный кейс 1 -->
-    <div class="bg-surface border border-borderLight rounded-[24px] p-5 shadow-subtle mb-6">
-        <div class="flex items-start justify-between gap-4 mb-4">
-            <div>
-                <div class="flex items-center gap-3 mb-2">
-                    <div class="w-6 h-6 rounded bg-primarySoft text-primary flex items-center justify-center text-[12px] font-bold">2</div>
-                    <h3 class="text-[16px] font-[650] leading-tight text-textPrimary">Senior Accessibility Redesign: Walk-In Baths</h3>
+    <div class="flex flex-col gap-6 w-full mb-10 lg:mb-12">
+        <!-- Главный кейс (Top, Full Width) -->
+        <div class="bg-surface border border-borderLight rounded-[24px] p-6 lg:p-10 shadow-card flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+            <div class="w-full lg:w-1/2 flex flex-col items-start order-2 lg:order-1">
+                <div class="flex items-center gap-3 mb-4 lg:mb-6">
+                    <div class="w-8 h-8 rounded bg-primary text-white flex items-center justify-center text-[14px] font-bold">1</div>
+                    <h3 class="text-[20px] lg:text-[28px] font-bold leading-tight text-textPrimary">Veterinary Clinic Modernization</h3>
                 </div>
-            </div>
-        </div>
-        <div class="flex gap-4 mb-4">
-            <div class="w-2/3">
-                 <p class="text-[13px] text-textSecondary leading-[1.5] mb-3">
-                    Re-engineered the UI with a focus on extreme accessibility, cleaned up technical debt.
+                
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-[20px] lg:text-[24px] font-bold text-success">100 / 100</span>
+                    <span class="text-[13px] lg:text-[14px] text-textSecondary font-medium uppercase tracking-wide">Performance Score</span>
+                </div>
+                <p class="text-[15px] lg:text-[16px] text-textSecondary leading-[1.6] mb-8">
+                    A faster, more trustworthy website designed to improve local visibility and make patient inquiries easier to manage.
                 </p>
-                <div class="flex items-center gap-2">
-                    <span class="text-[16px] font-bold text-primary">2x</span>
-                    <span class="text-[11px] text-textSecondary font-medium leading-tight">Increase in clarity<br>leading to inquiries.</span>
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full gap-4 pt-6 border-t border-borderLight">
+                    <div class="flex items-center gap-2 text-[13px] lg:text-[14px] font-medium text-textMuted bg-surfaceMuted px-3 py-1.5 rounded-full border border-borderLight">
+                        <MapPin className="w-4 h-4" /> Local Healthcare (AL)
+                    </div>
+                    <a href="#" class="text-[15px] font-[650] text-textPrimary flex items-center gap-1.5 hover:text-primary transition-colors">
+                        View Case Study <ArrowRight className="w-4 h-4" />
+                    </a>
                 </div>
             </div>
-            <div class="w-1/3 bg-surfaceMuted rounded-lg border border-borderLight flex items-center justify-center text-textMuted">
-                <ImageIcon className="w-6 h-6 opacity-30" />
+            
+            <div class="w-full lg:w-1/2 order-1 lg:order-2">
+                <div class="w-full aspect-[4/3] flex gap-3 relative rounded-xl overflow-hidden bg-surfaceWarm border border-borderLight shadow-inner p-4 lg:p-6">
+                    <!-- Before Mockup -->
+                    <div class="w-1/2 h-full bg-surfaceMuted rounded shadow-sm border border-borderLight flex flex-col relative overflow-hidden">
+                        <div class="h-6 w-full bg-surface border-b border-borderLight flex items-center px-2 gap-1.5">
+                            <div class="w-1.5 h-1.5 rounded-full bg-borderStrong/50"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-borderStrong/50"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-borderStrong/50"></div>
+                        </div>
+                        <div class="p-3 opacity-50">
+                            <div class="w-2/3 h-3 bg-textSecondary/20 rounded mb-2"></div>
+                            <div class="w-full h-2 bg-textSecondary/10 rounded mb-1"></div>
+                            <div class="w-4/5 h-2 bg-textSecondary/10 rounded"></div>
+                        </div>
+                        <span class="absolute top-2 left-1/2 -translate-x-1/2 bg-surface/80 backdrop-blur px-2 py-0.5 rounded text-[10px] font-bold uppercase text-textMuted border border-borderLight">Before</span>
+                    </div>
+                    <!-- After Mockup -->
+                    <div class="w-1/2 h-full bg-surface rounded shadow-md border border-borderLight flex flex-col relative overflow-hidden -translate-y-2">
+                        <div class="h-6 w-full bg-surface border-b border-borderLight flex items-center px-2 gap-1.5">
+                            <div class="w-1.5 h-1.5 rounded-full bg-borderStrong/50"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-borderStrong/50"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-borderStrong/50"></div>
+                        </div>
+                        <div class="p-3">
+                            <div class="w-3/4 h-4 bg-primary/20 rounded mb-3"></div>
+                            <div class="w-full h-2.5 bg-textSecondary/20 rounded mb-1.5"></div>
+                            <div class="w-5/6 h-2.5 bg-textSecondary/20 rounded mb-4"></div>
+                            <div class="w-1/2 h-6 bg-primary/10 rounded-md"></div>
+                        </div>
+                        <span class="absolute top-2 left-1/2 -translate-x-1/2 bg-surface/90 backdrop-blur px-2 py-0.5 rounded text-[10px] font-bold uppercase text-success border border-success/20">After</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="flex justify-between items-center border-t border-borderLight pt-4">
-            <div class="flex items-center gap-1.5 text-[12px] text-textMuted">
-                <MapPin className="w-3.5 h-3.5" /> High-Ticket Service (UK)
+
+        <!-- 2 Secondary Cases side by side on desktop -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+            <!-- Вторичный кейс 1 -->
+            <div class="bg-surface border border-borderLight rounded-[24px] p-6 shadow-subtle flex flex-col">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-7 h-7 rounded bg-primarySoft text-primary flex items-center justify-center text-[13px] font-bold">2</div>
+                    <h3 class="text-[18px] font-bold leading-tight text-textPrimary">Senior Accessibility: Walk-In Baths</h3>
+                </div>
+                
+                <div class="flex gap-4 mb-6 flex-grow">
+                    <div class="w-2/3">
+                        <p class="text-[14px] text-textSecondary leading-[1.6] mb-4">
+                            Improved clarity for an older audience with accessibility-focused UI and simplified inquiry flow.
+                        </p>
+                        <div class="flex items-center gap-2">
+                            <span class="text-[18px] font-bold text-primary">2x</span>
+                            <span class="text-[12px] text-textSecondary font-medium leading-tight">Increase in clarity<br>leading to inquiries.</span>
+                        </div>
+                    </div>
+                    <div class="w-1/3 bg-surfaceMuted rounded-lg border border-borderLight flex items-center justify-center text-textMuted shadow-inner relative overflow-hidden">
+                        <LayoutTemplate className="w-8 h-8 opacity-20" />
+                        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-surface to-transparent"></div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between items-center border-t border-borderLight pt-4 mt-auto">
+                    <div class="flex items-center gap-1.5 text-[12px] text-textMuted font-medium">
+                        <MapPin className="w-3.5 h-3.5" /> High-Ticket Service (UK)
+                    </div>
+                    <a href="#" class="text-[14px] font-[650] text-textPrimary flex items-center gap-1.5 hover:text-primary transition-colors">
+                        Case Study <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                </div>
             </div>
-            <a href="#" class="text-[13px] font-[650] text-textPrimary flex items-center gap-1">
-                View Case Study <ArrowRight className="w-4 h-4" />
-            </a>
+
+            <!-- Вторичный кейс 2 -->
+            <div class="bg-surface border border-borderLight rounded-[24px] p-6 shadow-subtle flex flex-col">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-7 h-7 rounded bg-primarySoft text-primary flex items-center justify-center text-[13px] font-bold">3</div>
+                    <h3 class="text-[18px] font-bold leading-tight text-textPrimary">Premium Branding: Bulldog Breeder</h3>
+                </div>
+                
+                <div class="flex gap-4 mb-6 flex-grow">
+                    <div class="w-2/3">
+                        <p class="text-[14px] text-textSecondary leading-[1.6] mb-4">
+                            Built a premium mobile-first brand presence with stronger visual trust and reservation flow.
+                        </p>
+                        <div class="text-[14px] font-bold text-success mb-1 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-success"></span> Stronger brand identity
+                        </div>
+                    </div>
+                    <div class="w-1/3 bg-surfaceMuted rounded-lg border border-borderLight flex items-center justify-center text-textMuted shadow-inner relative overflow-hidden">
+                        <Smartphone className="w-8 h-8 opacity-20" />
+                        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-surface to-transparent"></div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between items-center border-t border-borderLight pt-4 mt-auto">
+                    <div class="flex items-center gap-1.5 text-[12px] text-textMuted font-medium">
+                        <MapPin className="w-3.5 h-3.5" /> Niche Private Brand (AL)
+                    </div>
+                    <a href="#" class="text-[14px] font-[650] text-textPrimary flex items-center gap-1.5 hover:text-primary transition-colors">
+                        Case Study <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Вторичный кейс 2 -->
-    <div class="bg-surface border border-borderLight rounded-[24px] p-5 shadow-subtle mb-6">
-        <div class="flex items-start justify-between gap-4 mb-4">
-            <div>
-                <div class="flex items-center gap-3 mb-2">
-                    <div class="w-6 h-6 rounded bg-primarySoft text-primary flex items-center justify-center text-[12px] font-bold">3</div>
-                    <h3 class="text-[16px] font-[650] leading-tight text-textPrimary">Premium Branding: Bulldog Breeder</h3>
-                </div>
-            </div>
-        </div>
-        <div class="flex gap-4 mb-4">
-            <div class="w-2/3">
-                 <p class="text-[13px] text-textSecondary leading-[1.5] mb-3">
-                    Built a custom, visually rich platform focused on mobile speed and social proof.
-                </p>
-                <div class="text-[13px] font-bold text-success mb-1">Stronger brand identity</div>
-            </div>
-            <div class="w-1/3 bg-surfaceMuted rounded-lg border border-borderLight flex items-center justify-center text-textMuted">
-                <ImageIcon className="w-6 h-6 opacity-30" />
-            </div>
-        </div>
-        <div class="flex justify-between items-center border-t border-borderLight pt-4">
-            <div class="flex items-center gap-1.5 text-[12px] text-textMuted">
-                <MapPin className="w-3.5 h-3.5" /> Niche Private Brand (AL)
-            </div>
-            <a href="#" class="text-[13px] font-[650] text-textPrimary flex items-center gap-1">
-                View Case Study <ArrowRight className="w-4 h-4" />
-            </a>
-        </div>
+    <div class="w-full max-w-[400px] mx-auto mt-2">
+        <button class="w-full bg-surface border border-borderStrong text-textPrimary py-4 px-6 rounded-xl font-[650] text-[15px] hover:bg-surfaceMuted transition-colors">
+            View All Projects
+        </button>
     </div>
-
-    <button class="w-full bg-surface border border-borderStrong text-textPrimary py-4 rounded-xl font-[650] text-[15px] mt-2">
-        View All Projects
-    </button>
     
-    <div class="w-full flex justify-center text-borderStrong mt-10">
+    <div class="w-full flex justify-center text-borderStrong mt-10 lg:hidden">
         <ChevronDown className="w-6 h-6" />
     </div>
     </div>

@@ -1,65 +1,75 @@
 ---
 import { Search, Settings, Bot, Wrench, ChevronRight, ChevronDown } from 'lucide-react';
 ---
-<section class="w-full px-5 py-12 bg-surfaceWarm border-t border-borderLight">
-    <div class="max-w-2xl mx-auto w-full">
-    <div class="text-center mb-8">
-        <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 block">How I can help</span>
-        <h2 class="text-[28px] font-bold text-textPrimary">Services</h2>
+<section id="services" class="w-full px-5 py-12 lg:py-20 bg-surfaceWarm border-t border-borderLight flex flex-col items-center">
+    <div class="max-w-7xl mx-auto w-full">
+    <div class="text-center mb-10 lg:mb-16">
+        <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 lg:mb-4 block">How I can help</span>
+        <h2 class="text-[28px] lg:text-[40px] font-bold text-textPrimary">Services</h2>
     </div>
 
-    <div class="flex flex-col gap-3 mb-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-10 lg:mb-12">
         <!-- Услуга 1 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-4 flex gap-4 items-center shadow-subtle relative">
-            <div class="w-12 h-12 rounded-full bg-surfaceMuted flex items-center justify-center text-primary flex-shrink-0">
-                <Search className="w-6 h-6" />
+        <div class="bg-surface border border-borderLight rounded-2xl p-6 lg:p-8 flex flex-col items-start shadow-subtle hover:shadow-md transition-shadow relative group">
+            <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-primary mb-5">
+                <Search className="w-6 h-6 lg:w-7 lg:h-7" />
             </div>
-            <div class="flex-grow pr-6">
-                <h3 class="text-[15px] font-[650] text-textPrimary mb-1">1. The Diagnostic Audit</h3>
-                <p class="text-[13px] text-textSecondary leading-[1.4]">Deep-dive into your site's code, SEO, and content gaps.</p>
+            <h3 class="text-[16px] lg:text-[20px] font-[650] text-textPrimary mb-2">1. The Diagnostic Audit</h3>
+            <p class="text-[14px] lg:text-[15px] font-medium text-textPrimary mb-2">Find what's slowing your website down.</p>
+            <p class="text-[13px] lg:text-[15px] text-textSecondary leading-[1.6] mb-6 flex-grow">Technical review, SEO gap scan, speed check, and prioritized action plan.</p>
+            <div class="w-full flex justify-between items-center border-t border-borderLight pt-4 mt-auto">
+                <span class="text-[13px] lg:text-[14px] font-bold text-textPrimary">Starting at $500–$1,500</span>
+                <ChevronRight className="w-5 h-5 text-textMuted group-hover:text-textPrimary transition-colors" />
             </div>
-            <ChevronRight className="w-5 h-5 text-textMuted absolute right-4" />
         </div>
         <!-- Услуга 2 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-4 flex gap-4 items-center shadow-subtle relative">
-            <div class="w-12 h-12 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0">
-                <Settings className="w-6 h-6" />
+        <div class="bg-surface border border-borderLight rounded-2xl p-6 lg:p-8 flex flex-col items-start shadow-subtle hover:shadow-md transition-shadow relative group">
+            <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary mb-5">
+                <Settings className="w-6 h-6 lg:w-7 lg:h-7" />
             </div>
-            <div class="flex-grow pr-6">
-                <h3 class="text-[15px] font-[650] text-textPrimary mb-1">2. The Modernization Engine</h3>
-                <p class="text-[13px] text-textSecondary leading-[1.4]">Full redesign. Moving you to a custom, fast system.</p>
+            <h3 class="text-[16px] lg:text-[20px] font-[650] text-textPrimary mb-2">2. The Modernization Engine</h3>
+            <p class="text-[14px] lg:text-[15px] font-medium text-textPrimary mb-2">Replace your outdated website with a faster, cleaner system.</p>
+            <p class="text-[13px] lg:text-[15px] text-textSecondary leading-[1.6] mb-6 flex-grow">Custom redesign, mobile-first build, SEO setup, lead forms, and launch support.</p>
+            <div class="w-full flex justify-between items-center border-t border-borderLight pt-4 mt-auto">
+                <span class="text-[13px] lg:text-[14px] font-bold text-textPrimary">Starting at $5,000+</span>
+                <ChevronRight className="w-5 h-5 text-textMuted group-hover:text-textPrimary transition-colors" />
             </div>
-            <ChevronRight className="w-5 h-5 text-textMuted absolute right-4" />
         </div>
         <!-- Услуга 3 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-4 flex gap-4 items-center shadow-subtle relative">
-            <div class="w-12 h-12 rounded-full bg-surfaceMuted flex items-center justify-center text-accent flex-shrink-0">
-                <Bot className="w-6 h-6" />
+        <div class="bg-surface border border-borderLight rounded-2xl p-6 lg:p-8 flex flex-col items-start shadow-subtle hover:shadow-md transition-shadow relative group">
+            <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-accent mb-5">
+                <Bot className="w-6 h-6 lg:w-7 lg:h-7" />
             </div>
-            <div class="flex-grow pr-6">
-                <h3 class="text-[15px] font-[650] text-textPrimary mb-1">3. The AI Edge</h3>
-                <p class="text-[13px] text-textSecondary leading-[1.4]">Custom chatbots and automation to capture leads 24/7.</p>
+            <h3 class="text-[16px] lg:text-[20px] font-[650] text-textPrimary mb-2">3. The AI Edge</h3>
+            <p class="text-[14px] lg:text-[15px] font-medium text-textPrimary mb-2">Use automation to respond faster and save time.</p>
+            <p class="text-[13px] lg:text-[15px] text-textSecondary leading-[1.6] mb-6 flex-grow">Lead routing, AI chat/support tools, Make/Zapier workflows, and intake automation.</p>
+            <div class="w-full flex justify-between items-center border-t border-borderLight pt-4 mt-auto">
+                <span class="text-[13px] lg:text-[14px] font-bold text-textPrimary">Starting at $3,000+</span>
+                <ChevronRight className="w-5 h-5 text-textMuted group-hover:text-textPrimary transition-colors" />
             </div>
-            <ChevronRight className="w-5 h-5 text-textMuted absolute right-4" />
         </div>
         <!-- Услуга 4 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-4 flex gap-4 items-center shadow-subtle relative">
-            <div class="w-12 h-12 rounded-full bg-surfaceMuted flex items-center justify-center text-warning flex-shrink-0">
-                <Wrench className="w-6 h-6" />
+        <div class="bg-surface border border-borderLight rounded-2xl p-6 lg:p-8 flex flex-col items-start shadow-subtle hover:shadow-md transition-shadow relative group">
+            <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-warning mb-5">
+                <Wrench className="w-6 h-6 lg:w-7 lg:h-7" />
             </div>
-            <div class="flex-grow pr-6">
-                <h3 class="text-[15px] font-[650] text-textPrimary mb-1">4. Technical Rescue</h3>
-                <p class="text-[13px] text-textSecondary leading-[1.4]">I hunt down bugs, fix SEO errors, and optimize speed.</p>
+            <h3 class="text-[16px] lg:text-[20px] font-[650] text-textPrimary mb-2">4. Technical Rescue</h3>
+            <p class="text-[14px] lg:text-[15px] font-medium text-textPrimary mb-2">Fix what's broken without rebuilding everything.</p>
+            <p class="text-[13px] lg:text-[15px] text-textSecondary leading-[1.6] mb-6 flex-grow">Bug fixes, SEO errors, speed optimization, broken forms, and emergency cleanup.</p>
+            <div class="w-full flex justify-between items-center border-t border-borderLight pt-4 mt-auto">
+                <span class="text-[13px] lg:text-[14px] font-bold text-textPrimary">Starting at $750+</span>
+                <ChevronRight className="w-5 h-5 text-textMuted group-hover:text-textPrimary transition-colors" />
             </div>
-            <ChevronRight className="w-5 h-5 text-textMuted absolute right-4" />
         </div>
     </div>
 
-    <button class="w-full bg-dark text-white py-4 rounded-xl font-[650] text-[15px]">
-        See Service Packages & Pricing
-    </button>
+    <div class="w-full max-w-[400px] mx-auto">
+        <button class="w-full bg-dark text-white py-4 px-6 rounded-xl font-[650] text-[15px] hover:bg-dark/90 transition-colors">
+            See Service Packages & Pricing
+        </button>
+    </div>
     
-    <div class="w-full flex justify-center text-borderStrong mt-10">
+    <div class="w-full flex justify-center text-borderStrong mt-10 lg:hidden">
         <ChevronDown className="w-6 h-6" />
     </div>
     </div>

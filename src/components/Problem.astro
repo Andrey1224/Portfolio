@@ -1,66 +1,70 @@
 ---
 import { Gauge, Smartphone, TriangleAlert, DollarSign, Star, ChevronDown } from 'lucide-react';
 ---
-<section class="w-full px-5 py-12 bg-surfaceWarm border-t border-borderLight flex flex-col items-center">
-    <div class="max-w-2xl mx-auto w-full">
-    <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2">The Problem</span>
-    <h2 class="text-[28px] leading-[1.15] font-bold text-textPrimary mb-4 text-center">Is your website<br>an asset — or a liability?</h2>
-    <p class="text-[15px] text-textSecondary text-center mb-10">Most local business sites are "Digital Ghost Towns".</p>
+<section class="w-full px-5 py-12 lg:py-20 bg-surfaceWarm border-t border-borderLight flex flex-col items-center">
+    <div class="max-w-7xl mx-auto w-full">
+    <div class="flex flex-col items-center mb-10 lg:mb-16">
+        <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 lg:mb-4 block">The Problem</span>
+        <h2 class="text-[28px] lg:text-[40px] leading-[1.15] font-bold text-textPrimary mb-4 lg:mb-6 text-center">Is your website<br class="lg:hidden"> an asset — or a liability?</h2>
+        <p class="text-[15px] lg:text-[18px] text-textSecondary text-center max-w-[600px]">Most local business sites are "Digital Ghost Towns".</p>
+    </div>
 
-    <!-- Вертикальный список проблем -->
-    <div class="flex flex-col gap-3 w-full mb-8">
+    <!-- 2x2 Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 w-full mb-10 lg:mb-12">
         <!-- Проблема 1 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-4 flex gap-4 items-start shadow-subtle">
-            <div class="w-10 h-10 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0 mt-1">
-                <Gauge className="w-5 h-5" />
+        <div class="bg-surface border border-borderLight rounded-2xl p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0 mt-1 lg:mt-0">
+                <Gauge className="w-5 h-5 lg:w-7 lg:h-7" />
             </div>
             <div>
-                <h3 class="text-[15px] font-[650] text-textPrimary mb-1">Slow & Bloated</h3>
-                <p class="text-[13px] text-textSecondary leading-[1.5]">Taking 5+ seconds to load, killing your Google ranking.</p>
+                <h3 class="text-[15px] lg:text-[18px] font-[650] text-textPrimary mb-2">Slow & Bloated</h3>
+                <p class="text-[13px] lg:text-[15px] text-textSecondary leading-[1.6]">Slow load times frustrate visitors and hurt your Google visibility.</p>
             </div>
         </div>
         <!-- Проблема 2 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-4 flex gap-4 items-start shadow-subtle">
-            <div class="w-10 h-10 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0 mt-1">
-                <Smartphone className="w-5 h-5" />
+        <div class="bg-surface border border-borderLight rounded-2xl p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0 mt-1 lg:mt-0">
+                <Smartphone className="w-5 h-5 lg:w-7 lg:h-7" />
             </div>
             <div>
-                <h3 class="text-[15px] font-[650] text-textPrimary mb-1">Mobile-Broken</h3>
-                <p class="text-[13px] text-textSecondary leading-[1.5]">Frustrating customers who try to find you on their phones.</p>
+                <h3 class="text-[15px] lg:text-[18px] font-[650] text-textPrimary mb-2">Mobile-Broken</h3>
+                <p class="text-[13px] lg:text-[15px] text-textSecondary leading-[1.6]">Customers leave when your site is hard to use on their phone.</p>
             </div>
         </div>
         <!-- Проблема 3 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-4 flex gap-4 items-start shadow-subtle">
-            <div class="w-10 h-10 rounded-full bg-surfaceMuted flex items-center justify-center text-warning flex-shrink-0 mt-1">
-                <TriangleAlert className="w-5 h-5" />
+        <div class="bg-surface border border-borderLight rounded-2xl p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-warning flex-shrink-0 mt-1 lg:mt-0">
+                <TriangleAlert className="w-5 h-5 lg:w-7 lg:h-7" />
             </div>
             <div>
-                <h3 class="text-[15px] font-[650] text-textPrimary mb-1">Technically Abandoned</h3>
-                <p class="text-[13px] text-textSecondary leading-[1.5]">Built on old WordPress versions by a dev who "ghosted" you.</p>
+                <h3 class="text-[15px] lg:text-[18px] font-[650] text-textPrimary mb-2">Technically Abandoned</h3>
+                <p class="text-[13px] lg:text-[15px] text-textSecondary leading-[1.6]">Old plugins, broken forms, and no one responsible for maintenance.</p>
             </div>
         </div>
         <!-- Проблема 4 -->
-        <div class="bg-surface border border-borderLight rounded-2xl p-4 flex gap-4 items-start shadow-subtle">
-            <div class="w-10 h-10 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0 mt-1">
-                <DollarSign className="w-5 h-5" />
+        <div class="bg-surface border border-borderLight rounded-2xl p-5 lg:p-8 flex gap-4 lg:gap-6 items-start shadow-subtle hover:shadow-md transition-shadow">
+            <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-surfaceMuted flex items-center justify-center text-textPrimary flex-shrink-0 mt-1 lg:mt-0">
+                <DollarSign className="w-5 h-5 lg:w-7 lg:h-7" />
             </div>
             <div>
-                <h3 class="text-[15px] font-[650] text-textPrimary mb-1">Lost Leads & Revenue</h3>
-                <p class="text-[13px] text-textSecondary leading-[1.5]">Forms don't work, calls aren't tracked, and opportunities slip away.</p>
+                <h3 class="text-[15px] lg:text-[18px] font-[650] text-textPrimary mb-2">Lost Leads & Revenue</h3>
+                <p class="text-[13px] lg:text-[15px] text-textSecondary leading-[1.6]">Forms fail, calls are missed, and opportunities quietly slip away.</p>
             </div>
         </div>
     </div>
 
     <!-- Обещание -->
-    <div class="bg-primarySoft border border-primary/20 rounded-2xl p-5 flex gap-4 items-start w-full">
-        <Star className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+    <div class="bg-primarySoft border border-primary/20 rounded-2xl p-6 lg:p-8 flex gap-4 lg:gap-6 items-center w-full max-w-3xl mx-auto shadow-sm">
+        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+            <Star className="w-6 h-6 text-primary" />
+        </div>
         <div>
-            <h3 class="text-[15px] font-[650] text-textPrimary mb-1">The Promise</h3>
-            <p class="text-[13px] text-textSecondary leading-[1.5]">I solve the "Confidence Whiplash." I'm your local technical partner who picks up the phone and delivers results.</p>
+            <h3 class="text-[15px] lg:text-[18px] font-[650] text-textPrimary mb-1">The Promise</h3>
+            <p class="text-[13px] lg:text-[16px] text-textSecondary leading-[1.6]">Your local technical partner who fixes what's broken and builds what lasts.</p>
         </div>
     </div>
     
-    <div class="w-full flex justify-center text-borderStrong mt-10">
+    <div class="w-full flex justify-center text-borderStrong mt-10 lg:hidden">
         <ChevronDown className="w-6 h-6" />
     </div>
     </div>

@@ -1,14 +1,32 @@
 ---
 import { Menu } from 'lucide-react';
 ---
-<header class="fixed top-0 left-0 w-full z-50 bg-bgMain/90 backdrop-blur-md border-b border-borderLight h-[72px] px-5 flex justify-center">
-    <div class="max-w-2xl mx-auto w-full flex justify-between items-center h-full">
-    <div class="flex flex-col">
-        <span class="font-bold text-[16px] leading-tight">Andrii</span>
-        <span class="text-[12px] text-textSecondary leading-tight">Web Developer</span>
-    </div>
-    <button class="text-textPrimary p-2 -mr-2">
-        <Menu className="w-7 h-7" />
-    </button>
+<header class="fixed top-0 left-0 w-full z-50 bg-bgMain/90 backdrop-blur-md border-b border-borderLight h-[72px] lg:h-20 px-5 lg:px-8 flex justify-center transition-all duration-300">
+    <div class="max-w-7xl mx-auto w-full flex justify-between items-center h-full">
+        <div class="flex flex-col">
+            <span class="font-bold text-[16px] leading-tight text-textPrimary">Andrii</span>
+            <span class="text-[12px] text-textSecondary leading-tight">Web Developer</span>
+        </div>
+        
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8 text-[14px] font-medium text-textSecondary">
+            <a href="#work" class="hover:text-textPrimary transition-colors">Work</a>
+            <a href="#services" class="hover:text-textPrimary transition-colors">Services</a>
+            <a href="#process" class="hover:text-textPrimary transition-colors">Process</a>
+            <a href="#about" class="hover:text-textPrimary transition-colors">About</a>
+            <a href="#faq" class="hover:text-textPrimary transition-colors">FAQ</a>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <div class="hidden lg:flex items-center">
+            <a href="#contact" class="bg-dark text-white px-5 py-2.5 rounded-lg shadow-btn font-[600] text-[14px] hover:bg-dark/90 transition-colors">
+                Book a Free Strategy Call
+            </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="text-textPrimary p-2 -mr-2 lg:hidden">
+            <Menu className="w-7 h-7" />
+        </button>
     </div>
 </header>

@@ -1,26 +1,33 @@
 ---
 import { Mail, Phone } from 'lucide-react';
 ---
-<footer class="w-full bg-dark text-[#94A3B8] pt-10 pb-6 px-5 border-t border-dark">
-    <div class="max-w-2xl mx-auto w-full">
-    <div class="text-center border-b border-[#334155] pb-6 mb-6">
-        <p class="text-[13px] mb-1">Serving Birmingham, Huntsville,</p>
-        <p class="text-[13px]">Mobile, and Montgomery.</p>
-    </div>
-    
-    <div class="flex flex-col gap-4 mb-8">
-        <a href="mailto:hello@andrii.dev" class="flex items-center gap-3 text-[14px] text-white hover:text-primarySoft">
-            <Mail className="w-5 h-5" /> hello@andrii.dev
-        </a>
-        <a href="tel:2565550198" class="flex items-center gap-3 text-[14px] text-white hover:text-primarySoft">
-            <Phone className="w-5 h-5" /> (256) 555-0198
-        </a>
-        <a href="#" class="flex items-center gap-3 text-[14px] text-white hover:text-primarySoft">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn Profile
-        </a>
+<footer class="w-full bg-dark text-[#94A3B8] pt-12 pb-8 px-5 border-t border-dark">
+    <div class="max-w-7xl mx-auto w-full">
+    <div class="flex flex-col lg:flex-row justify-between items-center lg:items-start mb-10 gap-10 lg:gap-0">
+        <!-- Левая часть: Локации -->
+        <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
+            <span class="text-[16px] font-bold text-white mb-2">Andrii Web Developer</span>
+            <p class="text-[14px] mb-1">Serving Alabama small businesses:</p>
+            <p class="text-[14px] text-white font-medium">Birmingham • Huntsville • Mobile • Montgomery • Cullman</p>
+        </div>
+        
+        <!-- Правая часть: Контакты -->
+        <div class="flex flex-col sm:flex-row gap-6 lg:gap-10">
+            <a href="mailto:hello@andrii.dev" class="flex items-center justify-center gap-2.5 text-[14px] text-white hover:text-primary transition-colors">
+                <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center"><Mail className="w-4 h-4" /></div> hello@andrii.dev
+            </a>
+            <a href="tel:2565550198" class="flex items-center justify-center gap-2.5 text-[14px] text-white hover:text-primary transition-colors">
+                <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center"><Phone className="w-4 h-4" /></div> (256) 555-0198
+            </a>
+            <a href="#" class="flex items-center justify-center gap-2.5 text-[14px] text-white hover:text-primary transition-colors">
+                <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </div> LinkedIn
+            </a>
+        </div>
     </div>
 
-    <div class="text-[11px] text-center text-[#64748B]">
+    <div class="border-t border-[#334155] pt-6 flex justify-center text-[12px] text-center text-[#64748B]">
         &copy; 2026 Andrii Web Developer. All rights reserved.
     </div>
     </div>

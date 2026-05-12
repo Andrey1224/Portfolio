@@ -1,44 +1,66 @@
 ---
 import { Search, Code2, Rocket, Headphones, ChevronDown } from 'lucide-react';
 ---
-<section class="w-full px-5 py-10 bg-surfaceMuted border-t border-borderLight rounded-t-[32px]">
-    <div class="max-w-2xl mx-auto w-full">
-    <div class="text-center mb-6">
-        <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 block">My Process</span>
-        <h2 class="text-[20px] font-bold text-textPrimary">Audit → Build → Launch → Support</h2>
-    </div>
-    
-    <div class="flex justify-between items-start pt-4 relative">
-        <!-- Линия процесса (фон) -->
-        <div class="absolute top-8 left-[10%] w-[80%] h-0.5 bg-borderStrong -z-10"></div>
+<section id="process" class="w-full px-5 py-12 lg:py-24 bg-surfaceMuted border-t border-borderLight lg:rounded-none rounded-t-[32px]">
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <!-- Левая колонка (Текст) -->
+        <div class="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <span class="text-[11px] font-[650] text-primary uppercase tracking-wide mb-2 lg:mb-4 block">My Process</span>
+            <h2 class="text-[28px] lg:text-[40px] font-bold text-textPrimary leading-tight mb-4">Simple process.<br class="hidden lg:block"> Clear outcomes.</h2>
+            <p class="text-[15px] lg:text-[16px] text-textSecondary leading-[1.6] max-w-[400px]">
+                I use a structured 4-step approach to ensure your project stays on track, launches smoothly, and continues to perform long after it goes live.
+            </p>
+        </div>
         
-        <div class="flex flex-col items-center text-center w-1/4">
-            <div class="w-10 h-10 bg-surface rounded-full border border-borderStrong flex items-center justify-center mb-2 z-10 shadow-sm">
-                <Search className="w-4 h-4" />
+        <!-- Правая колонка (Таймлайн) -->
+        <div class="lg:col-span-7 bg-surface p-6 lg:p-10 rounded-[24px] border border-borderLight shadow-subtle">
+            <div class="flex flex-col sm:flex-row justify-between items-start lg:items-start pt-4 relative gap-6 sm:gap-0">
+                <!-- Линия процесса (фон, только десктоп/планшет) -->
+                <div class="hidden sm:block absolute top-8 left-[10%] w-[80%] h-0.5 bg-borderStrong -z-10"></div>
+                
+                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0">
+                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-surface rounded-full border border-borderStrong flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0">
+                        <Search className="w-5 h-5 sm:w-4 sm:h-4 text-textPrimary" />
+                    </div>
+                    <div class="flex flex-col sm:items-center text-left sm:text-center">
+                        <span class="text-[14px] font-bold text-textPrimary mb-1">Audit</span>
+                        <span class="text-[13px] text-textSecondary leading-[1.4] max-w-[150px]">We find what's broken and what's holding your website back.</span>
+                    </div>
+                </div>
+                
+                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0">
+                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-surface rounded-full border border-borderStrong flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0">
+                        <Code2 className="w-5 h-5 sm:w-4 sm:h-4 text-textPrimary" />
+                    </div>
+                    <div class="flex flex-col sm:items-center text-left sm:text-center">
+                        <span class="text-[14px] font-bold text-textPrimary mb-1">Build</span>
+                        <span class="text-[13px] text-textSecondary leading-[1.4] max-w-[150px]">I engineer a clean solution around your business goals.</span>
+                    </div>
+                </div>
+                
+                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0">
+                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-surface rounded-full border border-borderStrong flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0">
+                        <Rocket className="w-5 h-5 sm:w-4 sm:h-4 text-textPrimary" />
+                    </div>
+                    <div class="flex flex-col sm:items-center text-left sm:text-center">
+                        <span class="text-[14px] font-bold text-textPrimary mb-1">Launch</span>
+                        <span class="text-[13px] text-textSecondary leading-[1.4] max-w-[150px]">We test, optimize, and go live with confidence.</span>
+                    </div>
+                </div>
+                
+                <div class="flex sm:flex-col items-center sm:text-center w-full sm:w-1/4 gap-4 sm:gap-0">
+                    <div class="w-12 h-12 sm:w-10 sm:h-10 bg-surface rounded-full border-2 border-primary flex items-center justify-center sm:mb-4 z-10 shadow-sm flex-shrink-0">
+                        <Headphones className="w-5 h-5 sm:w-4 sm:h-4 text-primary" />
+                    </div>
+                    <div class="flex flex-col sm:items-center text-left sm:text-center">
+                        <span class="text-[14px] font-bold text-primary mb-1">Support</span>
+                        <span class="text-[13px] text-textSecondary leading-[1.4] max-w-[150px] font-medium">I stay available after launch to keep things running.</span>
+                    </div>
+                </div>
             </div>
-            <span class="text-[10px] text-textSecondary leading-tight">We find<br>the leaks.</span>
-        </div>
-        <div class="flex flex-col items-center text-center w-1/4">
-            <div class="w-10 h-10 bg-surface rounded-full border border-borderStrong flex items-center justify-center mb-2 z-10 shadow-sm">
-                <Code2 className="w-4 h-4" />
-            </div>
-            <span class="text-[10px] text-textSecondary leading-tight">We engineer<br>the solution.</span>
-        </div>
-        <div class="flex flex-col items-center text-center w-1/4">
-            <div class="w-10 h-10 bg-surface rounded-full border border-borderStrong flex items-center justify-center mb-2 z-10 shadow-sm">
-                <Rocket className="w-4 h-4" />
-            </div>
-            <span class="text-[10px] text-textSecondary leading-tight">You dominate<br>your market.</span>
-        </div>
-        <div class="flex flex-col items-center text-center w-1/4">
-            <div class="w-10 h-10 bg-surface rounded-full border-2 border-textPrimary flex items-center justify-center mb-2 z-10 shadow-sm">
-                <Headphones className="w-4 h-4" />
-            </div>
-            <span class="text-[10px] text-textSecondary leading-tight font-bold">I'm here<br>after launch.</span>
         </div>
     </div>
-    <div class="w-full flex justify-center text-borderStrong mt-8">
+    <div class="w-full flex justify-center text-borderStrong mt-10 lg:hidden">
         <ChevronDown className="w-6 h-6" />
-    </div>
     </div>
 </section>
