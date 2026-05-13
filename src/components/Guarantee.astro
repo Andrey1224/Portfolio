@@ -2,54 +2,37 @@
 import { Camera, MapPin, ShieldCheck, SquareCheck } from 'lucide-react';
 ---
 
-<section id="about" class="w-full px-4 sm:px-8 py-16 lg:py-24 bg-surface brutal-border-b relative z-10">
-	<div class="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center observe-block">
-		<div class="flex flex-col">
-			<span class="text-[12px] font-mono font-bold text-primary uppercase tracking-widest block mb-4">[ 05. Guarantee ]</span>
-			<h2 class="text-fluid-h2 font-bold uppercase mb-10 leading-none">
-				<span class="reveal-overflow"><span class="reveal-text block">A Partner, Not</span></span><br />
-				<span class="reveal-overflow"><span class="reveal-text block text-outline">Just A Dev.</span></span>
-			</h2>
-
-			<div class="stamp-item shadow-brutal delay-100 bg-bgMain brutal-border p-6 mb-10 flex gap-6 items-center">
-				<div class="w-24 h-24 bg-gray-300 brutal-border flex-shrink-0 flex items-center justify-center text-textMuted hover:bg-primary hover:text-white transition-colors duration-300">
-					<Camera className="w-10 h-10 opacity-80" />
-				</div>
-				<div>
-					<h3 class="text-[24px] font-bold uppercase mb-1">Andrii</h3>
-					<p class="text-[14px] font-mono font-bold text-textSecondary uppercase tracking-widest mb-3">Technical Partner</p>
-					<div class="inline-flex items-center gap-2 bg-black text-white px-3 py-1 text-[12px] font-bold uppercase shadow-brutal-sm">
-						<MapPin className="w-4 h-4" /> Based in Alabama
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="flex flex-col gap-10">
-			<div class="stamp-item delay-200 flex flex-col gap-5 border-l-4 border-primary pl-6">
-				<div class="flex items-center gap-4 hover:translate-x-2 transition-transform cursor-default">
-					<SquareCheck className="w-6 h-6 text-primary" />
-					<span class="text-[18px] font-[600]">Structured SOWs & Timelines</span>
-				</div>
-				<div class="flex items-center gap-4 hover:translate-x-2 transition-transform cursor-default">
-					<SquareCheck className="w-6 h-6 text-primary" />
-					<span class="text-[18px] font-[600]">Direct Communication</span>
-				</div>
-				<div class="flex items-center gap-4 hover:translate-x-2 transition-transform cursor-default">
-					<SquareCheck className="w-6 h-6 text-primary" />
-					<span class="text-[18px] font-[600]">Ongoing Support</span>
-				</div>
-			</div>
-
-			<div class="stamp-item shadow-brutal delay-300 bg-black text-white brutal-border p-8 sm:p-10 relative mt-6 lg:mt-0">
-				<div class="absolute -top-6 right-6 bg-primary text-white border-[3px] border-black p-3 shadow-brutal-sm">
-					<ShieldCheck className="w-8 h-8" />
-				</div>
-				<h3 class="text-[24px] font-bold uppercase mb-4">No-Ghosting Promise</h3>
-				<p class="text-[16px] font-[500] text-gray-300 leading-relaxed">
-					You'll always know the project status, next steps, and how to reach me. I use clear scopes and regular updates so you're never left guessing.
-				</p>
-			</div>
-		</div>
-	</div>
+<section id="about" class="w-full px-4 sm:px-8 py-16 lg:py-32 bg-bgMain brutal-border-b relative z-10 overflow-hidden">
+    <div class="max-w-[1400px] mx-auto relative pt-20 lg:pt-10 mb-20 lg:mb-0 observe-block">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+            <!-- Empty space for the photo to overlap -->
+            <div class="hidden lg:block"></div>
+            
+            <div class="stamp-item delay-100 bg-black text-white border-4 border-black p-8 md:p-16 relative shadow-[16px_16px_0_0_#000] lg:ml-[-100px] z-10">
+                <span class="text-[12px] font-mono font-bold text-primary uppercase tracking-widest block mb-4">[ 05. Guarantee ]</span>
+                <h2 class="text-[40px] md:text-[60px] font-black uppercase mb-8 leading-[1.1] md:leading-none">A Partner,<br><span class="text-transparent" style="-webkit-text-stroke: 2px white;">Not Just A Dev.</span></h2>
+                
+                <h3 class="text-[24px] font-bold uppercase mb-4 text-[#F59E0B]">No-Ghosting Promise</h3>
+                <p class="text-[18px] font-[500] text-gray-300 leading-relaxed mb-8 max-w-md">
+                    You'll always know the project status, next steps, and how to reach me. I use clear scopes and regular updates so you're never left guessing.
+                </p>
+                
+                <div class="flex flex-col gap-4 font-mono font-bold text-[16px]">
+                    <div class="flex items-center gap-4"><SquareCheck class="text-primary w-6 h-6" /> 6+ Years Experience</div>
+                    <div class="flex items-center gap-4"><SquareCheck class="text-primary w-6 h-6" /> Based in Alabama</div>
+                    <div class="flex items-center gap-4"><SquareCheck class="text-primary w-6 h-6" /> Full-Stack Engineering</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- The Grid Breaking Photo -->
+        <div class="stamp-item delay-200 absolute top-[-50px] left-0 lg:left-10 z-20 w-[80%] max-w-[350px] lg:max-w-[450px]">
+            <div class="relative">
+                <img src="/images/PartnerPhoto.jpg" alt="Andrii" class="w-full aspect-[3/4] object-cover border-8 border-black shadow-[12px_12px_0_0_#000] grayscale contrast-125 transform -rotate-3" />
+                <!-- Stickers -->
+                <div class="absolute -top-6 -right-10 sm:-right-6 bg-[#EF4444] text-white font-black text-[14px] sm:text-[18px] lg:text-[22px] uppercase border-4 border-black px-3 py-2 transform rotate-6 shadow-[4px_4px_0_0_#000]">WORK WITH ME DIRECTLY</div>
+                <div class="absolute -bottom-6 -left-6 bg-warning text-black font-black text-[24px] lg:text-[32px] rounded-full w-24 h-24 lg:w-32 lg:h-32 flex items-center justify-center border-4 border-black transform -rotate-12 shadow-[4px_4px_0_0_#000] leading-none text-center">6+<br>YRS</div>
+            </div>
+        </div>
+    </div>
 </section>

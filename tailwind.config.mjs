@@ -20,6 +20,7 @@ export default {
 				primarySoft: 'rgba(37, 99, 235, 0.12)',
 				success: '#16A34A',
 				warning: '#F59E0B',
+				error: '#EF4444',
 				dark: '#0F172A',
 			},
 			boxShadow: {

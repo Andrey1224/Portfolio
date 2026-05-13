@@ -21,34 +21,37 @@ import { MapPin, Phone, ShieldCheck, Users } from 'lucide-react';
 			<span class="text-[12px] font-mono font-bold uppercase tracking-widest text-textSecondary block mb-4">Alabama-Based Developer</span>
 			<h2 class="text-fluid-trust font-bold uppercase leading-none">
 				<span class="reveal-overflow"><span class="reveal-text block">Local. Reliable.</span></span><br />
-				<span class="reveal-overflow"><span class="reveal-text block">Real Communication.</span></span>
+				<span class="reveal-overflow"><span class="reveal-text block"><span class="bg-primary text-white px-3 pb-1 -ml-3 brutal-border inline-block transform -rotate-2 shadow-[4px_4px_0_0_#000]">REAL</span> COMMUNICATION.</span></span>
 			</h2>
 		</div>
 
-		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 w-full lg:w-auto">
-			<div class="stamp-item shadow-brutal-sm delay-100 flex flex-col items-center lg:items-start text-center lg:text-left">
-				<div class="w-12 h-12 lg:w-16 lg:h-16 brutal-border bg-bgMain flex items-center justify-center mb-4 text-primary">
-					<MapPin className="w-6 h-6 lg:w-8 lg:h-8" />
+		<div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 w-full lg:w-auto mt-10 lg:mt-0">
+			<div class="stamp-item transform rotate-1 hover:-rotate-1 transition-transform bg-white brutal-border border-4 p-4 lg:p-6 shadow-[8px_8px_0_0_#000] flex flex-col items-center lg:items-start text-center lg:text-left">
+				<div class="w-14 h-14 lg:w-16 lg:h-16 bg-primary text-white flex items-center justify-center mb-4 brutal-border border-[3px]">
+					<MapPin className="w-8 h-8" strokeWidth={2.5} />
 				</div>
-				<h3 class="text-[14px] lg:text-[16px] font-bold uppercase mb-2">Local Partner</h3>
+				<h3 class="text-[15px] lg:text-[18px] font-black uppercase tracking-tight leading-tight">Local<br>Partner</h3>
 			</div>
-			<div class="stamp-item shadow-brutal-sm delay-200 flex flex-col items-center lg:items-start text-center lg:text-left">
-				<div class="w-12 h-12 lg:w-16 lg:h-16 brutal-border bg-bgMain flex items-center justify-center mb-4 text-primary">
-					<Phone className="w-6 h-6 lg:w-8 lg:h-8" />
+			
+			<div class="stamp-item transform -rotate-2 hover:rotate-1 transition-transform bg-warning brutal-border border-4 p-4 lg:p-6 shadow-[8px_8px_0_0_#000] flex flex-col items-center lg:items-start text-center lg:text-left mt-2 lg:mt-0">
+				<div class="w-14 h-14 lg:w-16 lg:h-16 bg-black text-warning flex items-center justify-center mb-4 brutal-border border-[3px] border-black">
+					<Phone className="w-8 h-8" strokeWidth={2.5} />
 				</div>
-				<h3 class="text-[14px] lg:text-[16px] font-bold uppercase mb-2">Direct Access</h3>
+				<h3 class="text-[15px] lg:text-[18px] font-black uppercase tracking-tight leading-tight">Direct<br>Access</h3>
 			</div>
-			<div class="stamp-item shadow-brutal-sm delay-300 flex flex-col items-center lg:items-start text-center lg:text-left">
-				<div class="w-12 h-12 lg:w-16 lg:h-16 brutal-border bg-bgMain flex items-center justify-center mb-4 text-primary">
-					<Users className="w-6 h-6 lg:w-8 lg:h-8" />
+			
+			<div class="stamp-item transform rotate-2 hover:-rotate-2 transition-transform bg-white brutal-border border-4 p-4 lg:p-6 shadow-[8px_8px_0_0_#000] flex flex-col items-center lg:items-start text-center lg:text-left">
+				<div class="w-14 h-14 lg:w-16 lg:h-16 bg-success text-white flex items-center justify-center mb-4 brutal-border border-[3px]">
+					<Users className="w-8 h-8" strokeWidth={2.5} />
 				</div>
-				<h3 class="text-[14px] lg:text-[16px] font-bold uppercase mb-2">No Ghosting</h3>
+				<h3 class="text-[15px] lg:text-[18px] font-black uppercase tracking-tight leading-tight">No<br>Ghosting</h3>
 			</div>
-			<div class="stamp-item shadow-brutal-sm delay-400 flex flex-col items-center lg:items-start text-center lg:text-left">
-				<div class="w-12 h-12 lg:w-16 lg:h-16 brutal-border bg-bgMain flex items-center justify-center mb-4 text-primary">
-					<ShieldCheck className="w-6 h-6 lg:w-8 lg:h-8" />
+			
+			<div class="stamp-item transform -rotate-1 hover:rotate-2 transition-transform bg-white brutal-border border-4 p-4 lg:p-6 shadow-[8px_8px_0_0_#000] flex flex-col items-center lg:items-start text-center lg:text-left mt-2 lg:mt-0">
+				<div class="w-14 h-14 lg:w-16 lg:h-16 bg-black text-white flex items-center justify-center mb-4 brutal-border border-[3px] border-black">
+					<ShieldCheck className="w-8 h-8" strokeWidth={2.5} />
 				</div>
-				<h3 class="text-[14px] lg:text-[16px] font-bold uppercase mb-2">Long-term</h3>
+				<h3 class="text-[15px] lg:text-[18px] font-black uppercase tracking-tight leading-tight">Long<br>Term</h3>
 			</div>
 		</div>
 	</div>
