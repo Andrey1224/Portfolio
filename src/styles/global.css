@@ -27,6 +27,13 @@ p {
 	text-wrap: pretty;
 }
 
+/* Custom Brutalist Focus State for Keyboard Accessibility */
+*:focus-visible {
+	outline: 4px solid #F59E0B !important; /* Warning yellow */
+	outline-offset: 2px !important;
+	border-radius: 0 !important;
+}
+
 :root {
 	--hero-marquee-height: clamp(104px, 10.5vw, 168px);
 }

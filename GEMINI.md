@@ -11,6 +11,7 @@ This project is in the design and planning phase for a high-performance portfoli
 
 ## Key Documentation
 
+- **[Core Design System](DESIGN.md)**: The active, centralized documentation for the project's Neo-Brutalism design rules, colors, typography, and UI patterns.
 - **[Design System (v1)](DesighnSystem/alabama-smb-web-developer-design-system-v1.md)**: The foundational document covering brand personality, color palette, typography, layout systems, and component specifications. *(Note: Style shifted from initial V1 to Neo-Brutalism as defined in newDesighn/Brutal.html)*
 - **[Brutalism Spec](newDesighn/Brutal.html)**: The HTML/CSS template defining the Neo-brutalist aesthetic.
 - **[Wireframes](DesktopWireframe/)**: Visual guides for the desktop and mobile layouts.
