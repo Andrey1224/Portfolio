@@ -41,7 +41,7 @@ import Footer from '../components/Footer.astro';
 				<form id="audit-form" novalidate>
 					<!-- Honeypot -->
 					<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-					<input type="hidden" name="access_key" value="984b9139-edd4-49e7-9082-f1643e565af3" />
+					<input type="hidden" name="access_key" value={import.meta.env.PUBLIC_WEB3FORMS_KEY} />
 					<input type="hidden" name="subject" value="New Site Audit Request — nepod77@gmail.com" />
 					<input type="hidden" name="from_name" value="Andrii Portfolio" />
 
