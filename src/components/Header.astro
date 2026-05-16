@@ -23,8 +23,21 @@ import { ArrowRight, Menu, Zap } from 'lucide-react';
 		<a href="/audit" class="hidden md:flex bg-black text-white px-8 font-bold text-[14px] uppercase tracking-widest hover:bg-primary transition-colors items-center gap-2">
 			Request Audit <ArrowRight className="w-5 h-5" />
 		</a>
-		<a href="/audit" class="md:hidden flex bg-black text-white px-6 items-center justify-center" aria-label="Request an audit">
-			<Menu className="w-6 h-6" />
-		</a>
+		<details class="md:hidden relative">
+			<summary class="h-full flex bg-black text-white px-6 items-center justify-center cursor-pointer" aria-label="Open mobile menu">
+				<Menu className="w-6 h-6" />
+			</summary>
+			<div class="absolute right-0 top-full w-screen bg-surface text-black border-b-[3px] border-black shadow-[0_8px_0_0_#000]">
+				<nav class="grid font-bold text-[13px] uppercase tracking-widest">
+					<a href="/#work" class="px-5 py-4 border-b-2 border-black hover:bg-black hover:text-white transition-colors">Work</a>
+					<a href="/#services" class="px-5 py-4 border-b-2 border-black hover:bg-black hover:text-white transition-colors">Services</a>
+					<a href="/#about" class="px-5 py-4 border-b-2 border-black hover:bg-black hover:text-white transition-colors">About</a>
+					<a href="/#faq" class="px-5 py-4 border-b-2 border-black hover:bg-black hover:text-white transition-colors">FAQ</a>
+					<a href="/audit" class="px-5 py-4 bg-primary text-white flex items-center justify-between">
+						Request Audit <ArrowRight className="w-5 h-5" />
+					</a>
+				</nav>
+			</div>
+		</details>
 	</div>
 </header>

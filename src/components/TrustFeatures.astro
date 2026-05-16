@@ -2,7 +2,7 @@
 import { MapPin, Phone, ShieldCheck, Users } from 'lucide-react';
 ---
 
-<div class="relative z-10 w-full h-[var(--hero-marquee-height)] bg-black text-white border-t-4 border-b-4 border-black marquee-container text-[4vw] font-bold uppercase cursor-crosshair overflow-hidden flex items-center">
+<div class="relative z-10 w-full h-[var(--hero-marquee-height)] bg-black text-white border-t-4 border-b-4 border-black marquee-container text-[18px] sm:text-[4vw] font-bold uppercase cursor-crosshair overflow-hidden flex items-center">
 	<div class="marquee-content gap-8 items-center whitespace-nowrap">
 		<span>Fast Performance</span> <span class="text-primary">•</span>
 		<span class="text-outline-white">Zero Ghosting</span> <span class="text-primary">•</span>
@@ -25,29 +25,29 @@ import { MapPin, Phone, ShieldCheck, Users } from 'lucide-react';
 			</h2>
 		</div>
 
-		<div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 w-full lg:w-auto mt-10 lg:mt-0">
-			<div class="stamp-item transform rotate-1 hover:-rotate-1 transition-transform bg-white brutal-border border-4 p-4 lg:p-6 shadow-[8px_8px_0_0_#000] flex flex-col items-center lg:items-start text-center lg:text-left">
+		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 w-full lg:w-auto mt-6 lg:mt-0">
+			<div class="stamp-item transform rotate-1 hover:-rotate-1 transition-transform bg-white brutal-border border-4 p-4 lg:p-6 shadow-[5px_5px_0_0_#000] sm:shadow-[8px_8px_0_0_#000] flex flex-col items-center lg:items-start text-center lg:text-left">
 				<div class="w-14 h-14 lg:w-16 lg:h-16 bg-primary text-white flex items-center justify-center mb-4 brutal-border border-[3px]">
 					<MapPin className="w-8 h-8" strokeWidth={2.5} />
 				</div>
 				<h3 class="text-[15px] lg:text-[18px] font-black uppercase tracking-tight leading-tight">Local<br>Partner</h3>
 			</div>
 			
-			<div class="stamp-item transform -rotate-2 hover:rotate-1 transition-transform bg-warning brutal-border border-4 p-4 lg:p-6 shadow-[8px_8px_0_0_#000] flex flex-col items-center lg:items-start text-center lg:text-left mt-2 lg:mt-0">
+			<div class="stamp-item transform -rotate-2 hover:rotate-1 transition-transform bg-warning brutal-border border-4 p-4 lg:p-6 shadow-[5px_5px_0_0_#000] sm:shadow-[8px_8px_0_0_#000] flex flex-col items-center lg:items-start text-center lg:text-left mt-2 lg:mt-0">
 				<div class="w-14 h-14 lg:w-16 lg:h-16 bg-black text-warning flex items-center justify-center mb-4 brutal-border border-[3px] border-black">
 					<Phone className="w-8 h-8" strokeWidth={2.5} />
 				</div>
 				<h3 class="text-[15px] lg:text-[18px] font-black uppercase tracking-tight leading-tight">Direct<br>Access</h3>
 			</div>
 			
-			<div class="stamp-item transform rotate-2 hover:-rotate-2 transition-transform bg-white brutal-border border-4 p-4 lg:p-6 shadow-[8px_8px_0_0_#000] flex flex-col items-center lg:items-start text-center lg:text-left">
+			<div class="stamp-item transform rotate-2 hover:-rotate-2 transition-transform bg-white brutal-border border-4 p-4 lg:p-6 shadow-[5px_5px_0_0_#000] sm:shadow-[8px_8px_0_0_#000] flex flex-col items-center lg:items-start text-center lg:text-left">
 				<div class="w-14 h-14 lg:w-16 lg:h-16 bg-success text-white flex items-center justify-center mb-4 brutal-border border-[3px]">
 					<Users className="w-8 h-8" strokeWidth={2.5} />
 				</div>
 				<h3 class="text-[15px] lg:text-[18px] font-black uppercase tracking-tight leading-tight">No<br>Ghosting</h3>
 			</div>
 			
-			<div class="stamp-item transform -rotate-1 hover:rotate-2 transition-transform bg-white brutal-border border-4 p-4 lg:p-6 shadow-[8px_8px_0_0_#000] flex flex-col items-center lg:items-start text-center lg:text-left mt-2 lg:mt-0">
+			<div class="stamp-item transform -rotate-1 hover:rotate-2 transition-transform bg-white brutal-border border-4 p-4 lg:p-6 shadow-[5px_5px_0_0_#000] sm:shadow-[8px_8px_0_0_#000] flex flex-col items-center lg:items-start text-center lg:text-left mt-2 lg:mt-0">
 				<div class="w-14 h-14 lg:w-16 lg:h-16 bg-black text-white flex items-center justify-center mb-4 brutal-border border-[3px] border-black">
 					<ShieldCheck className="w-8 h-8" strokeWidth={2.5} />
 				</div>
