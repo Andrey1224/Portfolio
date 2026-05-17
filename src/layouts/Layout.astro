@@ -75,9 +75,99 @@ import '../styles/global.css';
 				});
 			};
 
+			const setupBrutalButtonPress = () => {
+				const shouldDelayPress =
+					window.matchMedia('(hover: none), (pointer: coarse)').matches &&
+					!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+				if (!shouldDelayPress) {
+					return;
+				}
+
+				const pressDelay = 160;
+
+				document.querySelectorAll<HTMLElement>('.btn-brutal').forEach((button) => {
+					if (button.dataset.brutalPressReady === 'true') {
+						return;
+					}
+
+					button.dataset.brutalPressReady = 'true';
+
+					button.addEventListener('click', (event: MouseEvent) => {
+						if (event.defaultPrevented || button.classList.contains('is-pressing')) {
+							return;
+						}
+
+						if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+							return;
+						}
+
+						if (button instanceof HTMLAnchorElement) {
+							const href = button.getAttribute('href');
+
+							if (!href || button.target || button.hasAttribute('download')) {
+								return;
+							}
+
+							event.preventDefault();
+							button.classList.add('is-pressing');
+
+							window.setTimeout(() => {
+								button.classList.remove('is-pressing');
+
+								if (href.startsWith('#')) {
+									const target = document.querySelector(href);
+									if (target) {
+										target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+										window.history.pushState(null, '', href);
+										return;
+									}
+								}
+
+								window.location.href = button.href;
+							}, pressDelay);
+
+							return;
+						}
+
+						if (button instanceof HTMLButtonElement && button.type === 'submit' && button.form) {
+							event.preventDefault();
+							button.classList.add('is-pressing');
+
+							window.setTimeout(() => {
+								button.classList.remove('is-pressing');
+								button.form?.requestSubmit(button);
+							}, pressDelay);
+						}
+					});
+				});
+			};
+
+			const setupProblemSourceToggles = () => {
+				document.querySelectorAll<HTMLButtonElement>('.problem-source-toggle').forEach((toggle) => {
+					if (toggle.dataset.sourceToggleReady === 'true') {
+						return;
+					}
+
+					toggle.dataset.sourceToggleReady = 'true';
+
+					toggle.addEventListener('click', () => {
+						const card = toggle.closest('.problem-card');
+						const isOpen = card?.classList.toggle('is-source-open') ?? false;
+
+						toggle.setAttribute('aria-expanded', String(isOpen));
+						toggle.textContent = isOpen
+							? toggle.dataset.openLabel ?? '[ HIDE SOURCE ]'
+							: toggle.dataset.closedLabel ?? '[ TAP FOR SOURCE ]';
+					});
+				});
+			};
+
 			const setupBrutalPage = () => {
 				setupBrutalReveal();
 				setupBeforeAfterSliders();
+				setupBrutalButtonPress();
+				setupProblemSourceToggles();
 			};
 
 			document.addEventListener('astro:page-load', setupBrutalPage);

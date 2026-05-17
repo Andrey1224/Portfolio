@@ -119,7 +119,7 @@ p {
 }
 
 .btn-brutal {
-	transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+	transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease, color 120ms ease;
 }
 
 .btn-brutal:hover {
@@ -130,10 +130,25 @@ p {
 }
 
 .btn-brutal:active {
-	--hover-x: 6px;
-	--hover-y: 6px;
+	--hover-x: 3px;
+	--hover-y: 3px;
 	transform: translate(var(--stamp-x, 0), var(--stamp-y, 0)) translate(var(--hover-x, 0), var(--hover-y, 0)) rotate(var(--tw-rotate, 0deg));
-	box-shadow: 0 0 0 #000000;
+	box-shadow: 1px 1px 0 #000000;
+}
+
+.btn-brutal.is-pressing {
+	--hover-x: 3px;
+	--hover-y: 3px;
+	transform: translate(var(--stamp-x, 0), var(--stamp-y, 0)) translate(var(--hover-x, 0), var(--hover-y, 0)) rotate(var(--tw-rotate, 0deg));
+	box-shadow: 1px 1px 0 #000000;
+}
+
+@media (min-width: 768px) {
+	.btn-brutal:active {
+		--hover-x: 6px;
+		--hover-y: 6px;
+		box-shadow: 0 0 0 #000000;
+	}
 }
 
 .stamp-item {
@@ -154,6 +169,56 @@ p {
 	.stamp-item {
 		--stamp-x: 16px;
 		--stamp-y: 16px;
+	}
+}
+
+.problem-source-toggle {
+	touch-action: manipulation;
+	transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease, color 120ms ease;
+}
+
+.problem-source-toggle:active,
+.problem-card.is-source-open .problem-source-toggle {
+	transform: translate(2px, 2px);
+	box-shadow: 0 0 0 #000000;
+}
+
+.problem-source-note {
+	overflow: hidden;
+	max-height: 0;
+	margin-top: 0;
+	padding-top: 0;
+	border-top-width: 0;
+	opacity: 0;
+	transition:
+		max-height 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+		margin-top 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+		padding-top 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+		opacity 180ms ease;
+}
+
+.problem-card.is-source-open .problem-source-note {
+	max-height: 12rem;
+	margin-top: 0.75rem;
+	padding-top: 0.75rem;
+	border-top-width: 2px;
+	opacity: 1;
+}
+
+@media (min-width: 768px) {
+	.problem-source-note {
+		overflow: visible;
+		max-height: none;
+		margin-top: auto;
+		padding-top: 0.75rem;
+		border-top-width: 2px;
+		opacity: 0;
+		transition: opacity 300ms ease;
+	}
+
+	.problem-card:hover .problem-source-note,
+	.problem-card:focus-within .problem-source-note {
+		opacity: 1;
 	}
 }
 
@@ -192,13 +257,38 @@ p {
 
 .stamp-item.btn-brutal:active,
 .is-visible .stamp-item.btn-brutal:active {
-	--hover-x: 6px;
-	--hover-y: 6px;
+	--hover-x: 3px;
+	--hover-y: 3px;
 	transform: translate(var(--stamp-x), var(--stamp-y)) translate(var(--hover-x), var(--hover-y)) rotate(var(--tw-rotate, 0deg));
+	box-shadow: 1px 1px 0 #000000;
+}
+
+.stamp-item.btn-brutal.is-pressing,
+.is-visible .stamp-item.btn-brutal.is-pressing {
+	--hover-x: 3px;
+	--hover-y: 3px;
+	transform: translate(var(--stamp-x), var(--stamp-y)) translate(var(--hover-x), var(--hover-y)) rotate(var(--tw-rotate, 0deg));
+	box-shadow: 1px 1px 0 #000000;
 }
 
 .stamp-item.btn-brutal {
-	transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+	transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease, color 120ms ease;
+}
+
+@media (min-width: 768px) {
+	.stamp-item.btn-brutal:active,
+	.is-visible .stamp-item.btn-brutal:active {
+		--hover-x: 6px;
+		--hover-y: 6px;
+		box-shadow: 0 0 0 #000000;
+	}
+
+	.stamp-item.btn-brutal.is-pressing,
+	.is-visible .stamp-item.btn-brutal.is-pressing {
+		--hover-x: 6px;
+		--hover-y: 6px;
+		box-shadow: 0 0 0 #000000;
+	}
 }
 
 .stamp-item.shadow-brutal.is-visible,

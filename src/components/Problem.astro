@@ -25,45 +25,49 @@ import { DollarSign, Gauge, Smartphone, TriangleAlert } from 'lucide-react';
 
 		<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
 			<!-- CARD 1 -->
-			<div class="stamp-item group relative shadow-[5px_5px_0_0_#000] sm:shadow-[8px_8px_0_0_#000] delay-100 bg-white border-2 border-black p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+			<div class="problem-card stamp-item group relative shadow-[5px_5px_0_0_#000] sm:shadow-[8px_8px_0_0_#000] delay-100 bg-white border-2 border-black p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
 				<div class="absolute -top-3 -right-3 bg-warning text-black font-bold font-mono text-[12px] px-2 py-1 border-2 border-black transform rotate-6 shadow-[2px_2px_0_0_#000] z-10">[ 404 UX ]</div>
 				<Gauge className="w-10 h-10 lg:w-12 lg:h-12 mb-6 text-black" strokeWidth={2.5} />
 				<h3 class="text-[20px] lg:text-[22px] font-black uppercase mb-3">Slow &<br>Bloated</h3>
 				<p class="text-[15px] text-textSecondary font-[600] leading-snug mb-4">Slow load times frustrate visitors and can hurt search visibility.</p>
-				<p class="text-[11px] font-mono text-black font-bold leading-tight border-t-2 border-black pt-3 mt-auto opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+				<button type="button" class="problem-source-toggle md:hidden mt-auto self-start bg-warning text-black border-2 border-black px-2 py-1 font-mono text-[11px] font-black uppercase tracking-widest shadow-[2px_2px_0_0_#000]" aria-expanded="false" aria-controls="problem-source-1" data-closed-label="[ TAP FOR SOURCE ]" data-open-label="[ HIDE SOURCE ]">[ TAP FOR SOURCE ]</button>
+				<p id="problem-source-1" class="problem-source-note text-[11px] font-mono text-black font-bold leading-tight border-t-black">
 					<span class="bg-warning px-1 border border-black mr-1">SRC:</span> Google reports 53% of mobile visits are abandoned when pages take over 3 seconds to load.
 				</p>
 			</div>
 			
 			<!-- CARD 2 -->
-			<div class="stamp-item group relative shadow-[5px_5px_0_0_#000] sm:shadow-[8px_8px_0_0_#000] delay-200 bg-white border-2 border-black p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+			<div class="problem-card stamp-item group relative shadow-[5px_5px_0_0_#000] sm:shadow-[8px_8px_0_0_#000] delay-200 bg-white border-2 border-black p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
 				<div class="absolute -top-3 -left-3 bg-primary text-white font-bold font-mono text-[12px] px-2 py-1 border-2 border-black transform -rotate-3 shadow-[2px_2px_0_0_#000] z-10">[ FATAL ]</div>
 				<Smartphone className="w-10 h-10 lg:w-12 lg:h-12 mb-6 text-black" strokeWidth={2.5} />
 				<h3 class="text-[20px] lg:text-[22px] font-black uppercase mb-3">Mobile<br>Broken</h3>
 				<p class="text-[15px] text-textSecondary font-[600] leading-snug mb-4">A poor mobile experience sends customers to competitors.</p>
-				<p class="text-[11px] font-mono text-black font-bold leading-tight border-t-2 border-black pt-3 mt-auto opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+				<button type="button" class="problem-source-toggle md:hidden mt-auto self-start bg-primary text-white border-2 border-black px-2 py-1 font-mono text-[11px] font-black uppercase tracking-widest shadow-[2px_2px_0_0_#000]" aria-expanded="false" aria-controls="problem-source-2" data-closed-label="[ TAP FOR SOURCE ]" data-open-label="[ HIDE SOURCE ]">[ TAP FOR SOURCE ]</button>
+				<p id="problem-source-2" class="problem-source-note text-[11px] font-mono text-black font-bold leading-tight border-t-black">
 					<span class="bg-primary text-white px-1 border border-black mr-1">SRC:</span> Google: 76% of people who search on their smartphones for something nearby visit a business within a day.
 				</p>
 			</div>
 			
 			<!-- CARD 3 -->
-			<div class="stamp-item group relative shadow-[5px_5px_0_0_#000] sm:shadow-[8px_8px_0_0_#000] delay-300 bg-warning text-black border-2 border-black p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+			<div class="problem-card stamp-item group relative shadow-[5px_5px_0_0_#000] sm:shadow-[8px_8px_0_0_#000] delay-300 bg-warning text-black border-2 border-black p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
 				<div class="absolute -top-4 right-4 bg-black text-warning font-bold font-mono text-[12px] px-2 py-1 border-2 border-warning transform rotate-2 shadow-[4px_4px_0_0_#000] z-10">[ HAZARD ]</div>
 				<TriangleAlert className="w-10 h-10 lg:w-12 lg:h-12 mb-6 text-black" strokeWidth={2.5} />
 				<h3 class="text-[20px] lg:text-[22px] font-black uppercase mb-3">Abandoned<br>Code</h3>
 				<p class="text-[15px] font-[600] leading-snug mb-4">Old plugins, broken forms, and no clear maintenance plan.</p>
-				<p class="text-[11px] font-mono text-black font-bold leading-tight border-t-2 border-black pt-3 mt-auto opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+				<button type="button" class="problem-source-toggle md:hidden mt-auto self-start bg-black text-warning border-2 border-black px-2 py-1 font-mono text-[11px] font-black uppercase tracking-widest shadow-[2px_2px_0_0_#000]" aria-expanded="false" aria-controls="problem-source-3" data-closed-label="[ TAP FOR SOURCE ]" data-open-label="[ HIDE SOURCE ]">[ TAP FOR SOURCE ]</button>
+				<p id="problem-source-3" class="problem-source-note text-[11px] font-mono text-black font-bold leading-tight border-t-black">
 					<span class="bg-black text-warning px-1 border border-black mr-1">SRC:</span> Strategic market reports for 2025 show that 73% of SMB websites are technologically outdated, directly leading to broken features and security breaches.
 				</p>
 			</div>
 			
 			<!-- CARD 4 -->
-			<div class="stamp-item group relative shadow-[5px_5px_0_0_#000] sm:shadow-[8px_8px_0_0_#000] delay-400 bg-black text-white border-2 border-black p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+			<div class="problem-card stamp-item group relative shadow-[5px_5px_0_0_#000] sm:shadow-[8px_8px_0_0_#000] delay-400 bg-black text-white border-2 border-black p-6 lg:p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
 				<div class="absolute top-1/2 -right-4 bg-[#EF4444] text-white font-bold font-mono text-[12px] px-2 py-1 border-2 border-black transform -translate-y-1/2 rotate-90 shadow-[2px_2px_0_0_#000] z-10">$$$ LOST</div>
 				<DollarSign className="w-10 h-10 lg:w-12 lg:h-12 mb-6 text-white" strokeWidth={2.5} />
 				<h3 class="text-[20px] lg:text-[22px] font-black uppercase mb-3">Lost<br>Leads</h3>
 				<p class="text-[15px] text-gray-300 font-[600] leading-snug mb-4">Forms fail, calls go untracked, and opportunities slip away.</p>
-				<p class="text-[11px] font-mono text-gray-300 font-bold leading-tight border-t-2 border-gray-700 pt-3 mt-auto opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+				<button type="button" class="problem-source-toggle md:hidden mt-auto self-start bg-[#EF4444] text-white border-2 border-[#EF4444] px-2 py-1 font-mono text-[11px] font-black uppercase tracking-widest shadow-[2px_2px_0_0_#EF4444]" aria-expanded="false" aria-controls="problem-source-4" data-closed-label="[ TAP FOR SOURCE ]" data-open-label="[ HIDE SOURCE ]">[ TAP FOR SOURCE ]</button>
+				<p id="problem-source-4" class="problem-source-note text-[11px] font-mono text-gray-300 font-bold leading-tight border-t-gray-700">
 					<span class="bg-[#EF4444] text-white px-1 border border-[#EF4444] mr-1">SRC:</span> Consumer surveys reveal that 88% of users will not return to a site after a bad technical experience, permanently costing you their business.
 				</p>
 			</div>
